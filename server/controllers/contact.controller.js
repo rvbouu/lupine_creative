@@ -1,9 +1,5 @@
-getContact,
-getSingleContact,
-createContact,
-updateContact,
-deleteContact,
-const { Contact, Student } = require('../models');
+
+const { Contact } = require('../models');
 
 module.exports = {
   // Get all contact
@@ -15,42 +11,36 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Get a course
+  // Get a contact
   async getSingleContact(req, res) {
     try {
-      const course = await Course.findOne({ _id: req.params.courseId })
-        .populate('students');
-
-      if (!course) {
-        return res.status(404).json({ message: 'No course with that ID' });
+      const contact = await Contact.findOne({ _id: req.params.contactId });
+      if (!contact) {
+        return res.status(404).json({ message: 'No contact with that ID' });
       }
-
-      res.json(course);
+      res.json(contact);
     } catch (err) {
       res.status(500).json(err);
     }
   },
-  // Create a course
-  async createCourse(req, res) {
+  // Create a contact
+  async createContact(req, res) {
     try {
-      const course = await Course.create(req.body);
-      res.json(course);
+      const contact = await Contact.create(req.body);
+      res.json(contact);
     } catch (err) {
       console.log(err);
       return res.status(500).json(err);
     }
   },
-  // Delete a course
-  async deleteCourse(req, res) {
+  // Delete a contact
+  async deleteContact(req, res) {
     try {
-      const course = await Course.findOneAndDelete({ _id: req.params.courseId });
-
-      if (!course) {
-        res.status(404).json({ message: 'No course with that ID' });
+      const contact = await Contact.findOneAndDelete({ _id: req.params.contactId });
+      if (!contact) {
+        res.status(404).json({ message: 'No contact with that ID' });
       }
-
-      await Student.deleteMany({ _id: { $in: course.students } });
-      res.json({ message: 'Course and students deleted!' });
+      res.json({ message: 'Contact deleted' });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -58,17 +48,15 @@ module.exports = {
   // Update a course
   async updateCourse(req, res) {
     try {
-      const course = await Course.findOneAndUpdate(
+      const contact = await Contact.findOneAndUpdate(
         { _id: req.params.courseId },
         { $set: req.body },
         { runValidators: true, new: true }
       );
-
-      if (!course) {
-        res.status(404).json({ message: 'No course with this id!' });
+      if (!contact) {
+        res.status(404).json({ message: 'No contact with this id!' });
       }
-
-      res.json(course);
+      res.json(contact);
     } catch (err) {
       res.status(500).json(err);
     }
