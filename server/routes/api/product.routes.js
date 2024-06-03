@@ -4,7 +4,7 @@ const {
   getSingleProduct,
   createProduct,
   updateProduct,
-  deleteProdcuct,
+  deleteProduct,
 
 
 } = require('../../controllers/product.controllers');
@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
 })
 
 
-// /api/thoughts/:productId
+// /api/products/:productId
 // == Get One Product by Id
 router.get("/:id", async (req, res) => {
   try {
@@ -58,11 +58,11 @@ router.put("/:id", async (req, res) => {
 })
 
 
-// /api/thoughts/:productId
+// /api/products/:productId
 // == Delete Product
 router.delete("/:id", async (req, res) => {
   try {
-    const payload = await deleteProdcuct(req.params.id)
+    const payload = await deleteProduct(req.params.id)
     res.status(200).json({ status: 'success', payload: payload })
   } catch(err){
     res.status(500).json({ status: 'error', msg: err.message })
