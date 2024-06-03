@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const {
-  //controllers functions go here
   getContact,
   getSingleContact,
   createContact,

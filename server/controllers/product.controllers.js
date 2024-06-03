@@ -4,7 +4,7 @@ module.exports = {
 
 
   // Get all Products
-  getProducts: async function(req, res){
+  async getProducts(req, res){
     try {
       const products = await Product.find()
       res.json(products);
@@ -16,7 +16,7 @@ module.exports = {
 
 
   // Get one Product by Id
-  getSingleProduct: async function(req, res){
+  async getSingleProduct(req, res){
     try {
       const product = await Product.findOne({ _id: req.params.userId });
 
@@ -31,7 +31,7 @@ module.exports = {
 
 
   // Create one Product
-  createProduct: async function(req, res){
+  async createProduct(req, res){
     try {
       const product = await Product.create(req.body);
       return res.json(product);
@@ -43,17 +43,11 @@ module.exports = {
 
 
   // Update Product by Id
-  updateProduct: async function(req, res){
+  async updateProduct(req, res){
     try {
       const product = await Product.findOneAndUpdate (
         { _id: req.params.productId },
-        // ADD FEATURES OR ELEMENTS OF THE PROJECT OBJECT 
-        // { SOMTHING: req.params.SOMETHING},
-        // { SOMTHING: req.params.SOMETHING},
-        // { SOMTHING: req.params.SOMETHING},
-        // { SOMTHING: req.params.SOMETHING},
-
-        // data, 
+        { $set: req.body },
         { runValidators: true, new: true }
       )
 
@@ -68,7 +62,7 @@ module.exports = {
 
 
   // Delete Product by Id
-  deleteProduct: async function(req, res){
+  async deleteProduct(req, res){
     try {
       const product = await Product.findOneAndDelete({ _id: req.params.userId });
 
