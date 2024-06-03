@@ -46,10 +46,10 @@ module.exports = {
     }
   },
   // Update a course
-  async updateCourse(req, res) {
+  async updateContact(req, res) {
     try {
       const contact = await Contact.findOneAndUpdate(
-        { _id: req.params.courseId },
+        { _id: req.params.contactId },
         { $set: req.body },
         { runValidators: true, new: true }
       );
