@@ -7,8 +7,9 @@ module.exports = {
   getProducts: async function(){
     try {
       return await Product.find({})
+
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "There are no Products in the Store"})
     }
   },
 
@@ -18,7 +19,7 @@ module.exports = {
     try {
       return await Product.findById(id)
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "There is not a Product by that ID."})
     }
   },
 
@@ -28,7 +29,7 @@ module.exports = {
     try {
       return await Product.create(data)
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "Unable to create Product - Serever Issue"})
     }
   },
 
@@ -42,7 +43,7 @@ module.exports = {
         { new: true }
       )
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "Unable to update Product - Serever Issue"})
     }
   },
 
@@ -52,7 +53,7 @@ module.exports = {
     try {
       return await Product.findByIdAndDelete(id)
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "Unable to delete Product - Serever Issue"})
     }
   }
 }
