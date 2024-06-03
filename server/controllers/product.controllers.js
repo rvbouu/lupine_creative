@@ -2,57 +2,83 @@ const { Product } = require("../models")
 
 module.exports = {
 
-  getAll: async function(){
+
+  // Get all Products
+  getProducts: async function(req, res){
     try {
-      return await Product.find({})
+      const products = await Product.find()
+      res.json(products);
+
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "There are no Products in the Store"});
     }
   },
 
-  getOne: async function(criteriaObj){
+
+  // Get one Product by Id
+  getSingleProduct: async function(req, res){
     try {
-      return await Product.findOne(criteriaObj)
+      const product = await Product.findOne({ _id: req.params.userId });
+
+      if(!product) {
+        res.status(404).json({ message: "There is not a Product with that ID."})
+      }
+
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "Unable to find Product with that ID - Server Issue"})
     }
   },
 
-  getById: async function(id){
+
+  // Create one Product
+  createProduct: async function(req, res){
     try {
-      return await Product.findById(id)
+      const product = await Product.create(req.body);
+      return res.json(product);
+
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "Unable to create Product - Serever Issue"})
     }
   },
 
-  create: async function(data){
-    try {
-      return await Product.create(data)
-    } catch(err){
-      throw new Error(err.message)
-    }
-  },
 
-  updateById: async function(id, data){
+  // Update Product by Id
+  updateProduct: async function(req, res){
     try {
-      return await Product.findByIdAndUpdate(
-        id, 
-        data, 
-        { new: true }
+      const product = await Product.findOneAndUpdate (
+        { _id: req.params.productId },
+        // ADD FEATURES OR ELEMENTS OF THE PROJECT OBJECT 
+        // { SOMTHING: req.params.SOMETHING},
+        // { SOMTHING: req.params.SOMETHING},
+        // { SOMTHING: req.params.SOMETHING},
+        // { SOMTHING: req.params.SOMETHING},
+
+        // data, 
+        { runValidators: true, new: true }
       )
+
+      if (!product) {
+        return res.status(404).json({ message: 'This Product doesnt exist.' });
+      }
+
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "Unable to update Product - Serever Issue"})
     }
   },
 
-  deleteById: async function(id){
+
+  // Delete Product by Id
+  deleteProduct: async function(req, res){
     try {
-      return await Product.findByIdAndDelete(id)
+      const product = await Product.findOneAndDelete({ _id: req.params.userId });
+
+      if (!product) {
+        return res.status(404).json({ message: 'This Product does not exist' });
+      }
+
     } catch(err){
-      throw new Error(err.message)
+      res.status(500).json({ message: "Unable to delete Product - Serever Issue"})
     }
   }
-
 }
 
