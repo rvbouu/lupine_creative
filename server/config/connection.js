@@ -1,6 +1,6 @@
 const { connect, connection } = require('mongoose');
 
-const connectionString = 'mongodb://127.0.0.1:27017/dizzyDB';
+const connectionString = 'mongodb://127.0.0.1:27017/lupine_creativeDB';
 
 connect(connectionString);
 
