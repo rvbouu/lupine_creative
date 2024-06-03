@@ -2,7 +2,9 @@ const { Product } = require("../models")
 
 module.exports = {
 
-  getAll: async function(){
+
+  // Get all Products
+  getProducts: async function(){
     try {
       return await Product.find({})
     } catch(err){
@@ -10,15 +12,9 @@ module.exports = {
     }
   },
 
-  getOne: async function(criteriaObj){
-    try {
-      return await Product.findOne(criteriaObj)
-    } catch(err){
-      throw new Error(err.message)
-    }
-  },
 
-  getById: async function(id){
+  // Get one Product by Id
+  getSingleProduct: async function(id){
     try {
       return await Product.findById(id)
     } catch(err){
@@ -26,7 +22,9 @@ module.exports = {
     }
   },
 
-  create: async function(data){
+
+  // Create one Product
+  createProduct: async function(data){
     try {
       return await Product.create(data)
     } catch(err){
@@ -34,7 +32,9 @@ module.exports = {
     }
   },
 
-  updateById: async function(id, data){
+
+  // Update Product by Id
+  updateProduct: async function(id, data){
     try {
       return await Product.findByIdAndUpdate(
         id, 
@@ -46,13 +46,14 @@ module.exports = {
     }
   },
 
-  deleteById: async function(id){
+
+  // Delete Product by Id
+  deleteProdcuct: async function(id){
     try {
       return await Product.findByIdAndDelete(id)
     } catch(err){
       throw new Error(err.message)
     }
   }
-
 }
 
