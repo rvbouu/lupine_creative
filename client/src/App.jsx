@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import About from "./pages/About"
 import Product from "./pages/Product"
@@ -9,6 +9,7 @@ import Contact from "./pages/Contact"
 import SignUp from "./pages/SignUp"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import Cart from "./components/Cart"
 
 
 function App() {
