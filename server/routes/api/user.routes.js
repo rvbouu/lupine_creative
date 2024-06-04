@@ -12,28 +12,28 @@ async function createToken(user){
 
 router.get("/", async (req, res) => {
   try {
-    const payload = await getAll()
-    res.status(200).json({ status: 'success', payload: payload })
+    const user = await getAll()
+    res.status(200).json({ status: 'success', results: user })
   } catch(err){
-    res.status(500).json({ status: 'error', msg: err.message })
+    res.status(500).json({ status: 'error', message: err.message })
   }
 })
 
 
 router.get("/:id", async (req, res) => {
   try {
-    const payload = await getById(req.params.id)
-    res.status(200).json({ status: 'success', payload: payload })
+    const user = await getById(req.params.id)
+    res.status(200).json({ status: 'success', results: user })
   } catch(err){
-    res.status(500).json({ status: 'error', msg: err.message })
+    res.status(500).json({ status: 'error', message: err.message })
   }
 })
 
 
 router.post("/", async (req, res) => {
   try {
-    const payload = await create(req.body)
-    const token = await createToken(payload)
+    const user = await create(req.body)
+    const token = await createToken(user)
     res
       .status(200)
       .cookie('auth-cookie', token, {
@@ -41,22 +41,22 @@ router.post("/", async (req, res) => {
         httpOnly: false,
         secure: process.env.NODE_ENV === 'production'
       })
-      .json({ status: 'success', payload: payload })
+      .json({ status: 'success', results: user })
   } catch(err){
-    res.status(500).json({ status: 'error', msg: err.message })
+    res.status(500).json({ status: 'error', message: err.message })
   }
 })
 
 
 router.post("/login", async(req, res) => {
-  let user
+  let user;
   try {
     user = await getOne({ email: req.body.email })
 
     const verify = await bcrypt.compare(req.body.password, user.password)
     console.log(verify)
   if( !verify ){
-    res.status(500).json({ status: 'error', msg: 'Could not authenticate user' })
+    res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
   
   const token = await createToken(user)
@@ -64,17 +64,17 @@ router.post("/login", async(req, res) => {
   res
   .status(200)
   .cookie('auth-cookie', token, {
-    maxAge: 86400 * 1000,
+    maxAge: 86400000,
     httpOnly: false,
     secure: process.env.NODE_ENV === 'production'
   })
-  .json({ status: 'success', payload: user })
+  .json({ status: 'success', results: user })
   } catch(err){
-    res.status(500).json({ status: 'error', msg: 'Could not authenticate user' })
+    res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
 
   if(!user){
-    res.status(500).json({ status: 'error', msg: 'Could not authenticate user' })
+    res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
 
   
@@ -84,7 +84,7 @@ router.post("/login", async(req, res) => {
 router.post("/verify", async (req, res) => {
   const cookie = req.cookies['auth-cookie']
   if( !cookie ){
-    res.status(500).json({ status: 'error', msg: 'Could not authenticate user' })
+    res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
 
   // Conditional lookup of the user
@@ -94,30 +94,30 @@ router.post("/verify", async (req, res) => {
   const user = await getOne({ email: decryptedCookie.email })
 
   if( !user ){
-    res.status(500).json({ status: 'error', msg: 'Could not authenticate user' })
+    res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
 
-  res.status(200).json({ status: 'success', message: user })
+  res.status(200).json({ status: 'success', results: user })
 })
 
 
 router.put("/:id", async (req, res) => {
   try {
-    let payload = await updateById(req.params.id, req.body)
-    payload = await payload.save()
-    res.status(200).json({ status: 'success', payload: payload })
+    let user = await updateById(req.params.id, req.body)
+    user = await user.save()
+    res.status(200).json({ status: 'success', results: user })
   } catch(err){
-    res.status(500).json({ status: 'error', msg: err.message })
+    res.status(500).json({ status: 'error', message: err.message })
   }
 })
 
 
 router.delete("/:id", async (req, res) => {
   try {
-    const payload = await deleteById(req.params.id)
-    res.status(200).json({ status: 'success', payload: payload })
+    const user = await deleteById(req.params.id)
+    res.status(200).json({ status: 'success', results: user })
   } catch(err){
-    res.status(500).json({ status: 'error', msg: err.message })
+    res.status(500).json({ status: 'error', message: err.message })
   }
 })
 
