@@ -11,6 +11,7 @@ export default function Header() {
             <Link to="/contact">Contact</Link>
             <Link to="/store">Store</Link>
             <Link to="/profile">Your Account</Link>
+            <Link to="/signup">Sign Up | Log In</Link>
         </header>
     )
 }
