@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const {Schema, model} = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
   {
     name: {
       type: String,
@@ -35,6 +35,7 @@ const userSchema = new mongoose.Schema(
 )
 
 userSchema.pre("save", async function (next) {
+  console.log("pre-save hashing")
   this.password = await bcrypt.hash(this.password, 10);
   next()
 });
@@ -43,5 +44,5 @@ userSchema.virtual('purchaseCount').get(function(){
   return this.purchases.length;
 });
 
-const User = mongoose.model("user", userSchema);
+const User = model("user", userSchema);
 module.exports = User;
