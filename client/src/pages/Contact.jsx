@@ -28,68 +28,69 @@ export default function Contact() {
         if (inputType === 'firstName') {
             if (inputValue === '') {
                 setFirstName('')
-                return setErrorMessage('FirstName is required')
-            }
-            if (inputType === 'lastName') {
-                if (inputValue === '') {
-                    setLastName('')
-                    return setErrorMessage('LastName is required')
-                }
-            }
-            if (inputType === 'message') {
-                if (inputValue === '') {
-                    setMessage('')
-                    return setErrorMessage('Message is required')
-                }
+                return setErrorMessage('First name is required')
             }
         }
-
-        return (
-            <>
-                <div className="form-field">
-                    <form className="contact-form">
-                        <h3>Let's talk!</h3>
-                        <label className="firstName">Name</label>
-                        <input
-                            defaultValue={firstName}
-                            firstName="firstName"
-                            onBlur={handleInputChange}
-                            type="text"
-                            placeholder="firstName"
-                        />
-                        <label className="lastName">Name</label>
-                        <input
-                            defaultValue={lastName}
-                            lastName="lastName"
-                            onBlur={handleInputChange}
-                            type="text"
-                            placeholder="lastName"
-                        />
-                        <label className="email">E-mail</label>
-                        <input
-                            defaultValue={email}
-                            name="email"
-                            onBlur={handleInputChange}
-                            type="email"
-                            placeholder="email"
-                        />
-                        <label className="message">Message</label>
-                        <textarea
-                            defaultValue={message}
-                            name='message'
-                            onBlur={handleInputChange}
-                            type='message'
-                            placeholder='message'
-                        />
-                        <button type="submit">Submit</button>
-                        {errorMessage && (
-                            <div>
-                                <p className="error-text">{errorMessage}</p>
-                            </div>
-                        )}
-                    </form>
-                </div>
-            </>
-        )
+        if (inputType === 'lastName') {
+            if (inputValue === '') {
+                setLastName('')
+                return setErrorMessage('Last name is required')
+            }
+        }
+        if (inputType === 'message') {
+            if (inputValue === '') {
+                setMessage('')
+                return setErrorMessage('Message is required')
+            }
+        }
     }
+
+
+    return (
+        <>
+            <div className="form-field">
+                <form className="contact-form">
+                    <h3>Let's talk!</h3>
+                    <label className="firstName">First Name:</label>
+                    <input
+                        defaultValue={firstName}
+                        name="firstName"
+                        onBlur={handleInputChange}
+                        type="text"
+                        placeholder="Gary"
+                    />
+                    <label className="lastName">Last Name:</label>
+                    <input
+                        defaultValue={lastName}
+                        name="lastName"
+                        onBlur={handleInputChange}
+                        type="text"
+                        placeholder="Almes"
+                    />
+                    <label className="email">E-mail</label>
+                    <input
+                        defaultValue={email}
+                        name="email"
+                        onBlur={handleInputChange}
+                        type="email"
+                        placeholder="garytalmes@hotmail.com"
+                    />
+                    <label className="message">Message</label>
+                    <textarea
+                        defaultValue={message}
+                        name='message'
+                        onBlur={handleInputChange}
+                        type='message'
+                        placeholder='Say hello!'
+                    />
+                    <button type="submit">Submit</button>
+                    {errorMessage && (
+                        <div>
+                            <p className="error-text">{errorMessage}</p>
+                        </div>
+                    )}
+                </form>
+            </div>
+        </>
+    )
 }
