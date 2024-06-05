@@ -11,6 +11,7 @@ import Cart from "./components/Cart"
 import CheckoutForm from './components/CheckoutForm'
 import Return from './components/Return'
 import AppProvider from "./providers/AppProvider"
+import Store from './pages/Store'
 // import TopBanner from './components/TopBanner'
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/product" element={<Product />} />
+            <Route path="/shop" element={<Store />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
