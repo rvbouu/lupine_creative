@@ -13,9 +13,7 @@ import Return from './components/Return'
 import AppProvider from "./providers/AppProvider"
 // import TopBanner from './components/TopBanner'
 
-
 function App() {
-
 
   return (
     <AppProvider>
