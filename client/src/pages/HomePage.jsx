@@ -3,7 +3,7 @@ export default function HomePage() {
 
     return (
         <>
-            <h2>Hello Walls!</h2>
+            <h2>Hello Balls!</h2>
         </>
     )
 }

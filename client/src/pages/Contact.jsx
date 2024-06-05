@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import '../assets/Contact.css'
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -45,14 +47,37 @@ export default function Contact() {
         }
     }
 
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm('service_c7aey73', 'template_j0wsdxo', form.current, {
+          publicKey: '6jmeWZE--gIJU4Au5',
+        })
+        .then(
+          () => {
+            console.log('SUCCESS!');
+          },
+          (error) => {
+            console.log('FAILED...', error.text);
+          },
+        );
+    };
+
 
     return (
         <>
             <div className="form-field">
-                <form className="contact-form">
-                    <h3>Let's talk!</h3>
+                <h3 className='contact-title'>I'd love to hear from you!</h3>
+                <form 
+                    className="contact-form"
+                    ref={form}
+                    onSubmit={sendEmail}>
                     <label className="firstName">First Name:</label>
                     <input
+                        className='input'
                         defaultValue={firstName}
                         name="firstName"
                         onBlur={handleInputChange}
@@ -61,6 +86,7 @@ export default function Contact() {
                     />
                     <label className="lastName">Last Name:</label>
                     <input
+                        className='input'
                         defaultValue={lastName}
                         name="lastName"
                         onBlur={handleInputChange}
@@ -69,6 +95,7 @@ export default function Contact() {
                     />
                     <label className="email">E-mail</label>
                     <input
+                        className='input'
                         defaultValue={email}
                         name="email"
                         onBlur={handleInputChange}
@@ -77,13 +104,14 @@ export default function Contact() {
                     />
                     <label className="message">Message</label>
                     <textarea
+                        className='input'
                         defaultValue={message}
                         name='message'
                         onBlur={handleInputChange}
                         type='message'
                         placeholder='Say hello!'
                     />
-                    <button type="submit">Submit</button>
+                    <input className="submitbtn" type="submit" value="Send" />
                     {errorMessage && (
                         <div>
                             <p className="error-text">{errorMessage}</p>

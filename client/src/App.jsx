@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import About from "./pages/About"
 import Product from "./pages/Product"
@@ -11,7 +11,8 @@ import Cart from "./components/Cart"
 import CheckoutForm from './components/CheckoutForm'
 import Return from './components/Return'
 import AppProvider from "./providers/AppProvider"
-import Store from './pages/Store'
+import Store from "./pages/Store"
+import NotFound from "./components/NotFound"
 // import TopBanner from './components/TopBanner'
 
 function App() {
@@ -23,15 +24,17 @@ function App() {
         <Header />
         <div className="bodycontent">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" exact element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/shop" element={<Store />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" exact element={<Cart />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/checkout" element={<CheckoutForm />} />
             <Route path="/return" element={<Return />} />
+            <Route path="notfound" element={<NotFound />} />
+            <Redirect to="/notfound" />
           </Routes>
         </div>
         <Footer />

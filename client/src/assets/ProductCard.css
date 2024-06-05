@@ -1,0 +1,37 @@
+.store-body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px;
+    justify-content: space-around;
+    background-color: #e1ddcc;
+}
+
+.card-image{
+    display: flex;
+    max-width: 80%;
+    height: auto;
+    /* min-width: 30%; */
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+.card-body{
+    width: 700px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    display: flex;   
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid #2b6b6e;
+    margin: 20px;
+    border-radius: 30px;
+    font-size: 60px;
+    height: 800px;
+    padding: 25px;
+    background-color: #cb8cae;
+    text-shadow: 1px 0 5px #e1ddcc;
+    color: #2b6b6e;
+}
