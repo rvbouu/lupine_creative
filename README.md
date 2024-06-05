@@ -3,7 +3,7 @@
 ## Overview Description
 Welcome to Lupine Creative!
 
-[insert welcome message to th store]
+[insert welcome message to the store]
 
 
 ## Table of Contents
