@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import About from "./pages/About"
 import Product from "./pages/Product"
@@ -34,7 +34,7 @@ function App() {
             <Route path="/checkout" element={<CheckoutForm />} />
             <Route path="/return" element={<Return />} />
             <Route path="notfound" element={<NotFound />} />
-            <Redirect to="/notfound" />
+            {/* <Redirect to="/notfound" /> */}
           </Routes>
         </div>
         <Footer />
