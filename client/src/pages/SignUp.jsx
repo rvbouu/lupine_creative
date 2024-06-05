@@ -1,47 +1,56 @@
+import '../assets/SignUp.css'
+
 export default function SignUp() {
 
 
     return (
-        <>
-            <div class="row justify-space-between-md mt-5">
-                <div class="login-card col-6 card">
-                    <h2 class="card-header">Login</h2>
-                    <form class="form login-form">
-                        <div class="form-group">
-                            <label class="form-label" for="email-login">Email:</label>
-                            <input class="form-control" type="text" id="login" />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="password-login">Password:</label>
-                            <input class="form-control" type="password" id="password-login" />
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary" type="submit">login</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="login-card col-6 card">
-                    <h2 class="card-header">Signup</h2>
-                    <form class="form signup-form">
-                        <div class="form-group">
-                            <label class="form-label" for="username-signup">Full Name:</label>
-                            <input class="form-control" type="text" id="username-signup" />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="email-signup">Email:</label>
-                            <input class="form-control" type="text" id="email-signup" />
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="password-signup">Password:</label>
-                            <input class="form-control" type="password" id="password-signup" />
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-primary" type="submit">signup</button>
-                        </div>
-                    </form>
-                </div>
+        <div className="authForm">
+            <section className='login'>
+                <h2 className='form-title'>Login</h2>
 
-            </div>
-        </>
+                {/* Submission handling through netlify */}
+                {/* onBlur used for when user clicks out of field and leaves it empty, the errMsg will display */}
+                <form className='form'>
+                    {/* Email input field */}
+                    <label className='label' htmlFor="email" >Email:</label>
+                    <input id='lemail' className='input' name="email" type="email" defaultValue='' onBlur='' required />
+
+                    {/* Message input field */}
+                    <label className='label' htmlFor="password">Password:</label>
+                    <input className='input' name="password" id='lpassword' type="password" defaultValue='' onBlur='' required />
+
+                    <button id="submit-login" type='submit' className='submitbtn'>Submit</button>
+
+                    {/* errMsg and successMsg */}
+                    {/* <div className='successMsg'>{successMsg}</div>
+                    <div className='errMsg'>{errMsg}</div> */}
+                </form>
+            </section>
+            <section className='signup'>
+                <h2 className='form-title'>Sign Up</h2>
+
+                {/* Submission handling through netlify */}
+                {/* onBlur used for when user clicks out of field and leaves it empty, the errMsg will display */}
+                <form className='form'>
+                    {/* Name input field */}
+                    <label className='label' htmlFor="name" >Name:</label>
+                    <input id='sname' className='input' name="name" type="text" defaultValue='' placeholder='Enter Your Name' onBlur='' required />
+
+                    {/* Email input field */}
+                    <label className='label' htmlFor="email" >Email:</label>
+                    <input id='semail' className='input' name="email" type="email" defaultValue='' placeholder='Enter Your Email Address' onBlur='' required />
+
+                    {/* Message input field */}
+                    <label className='label' htmlFor="password">Password:</label>
+                    <input id='spassword' className='input' name="password" type="password" defaultValue='' onBlur='' required />
+
+                    <button id="submit-signup" type='submit' className='submitbtn'>Submit</button>
+
+                    {/* errMsg and successMsg */}
+                    {/* <div className='successMsg'>{successMsg}</div>
+                    <div className='errMsg'>{errMsg}</div> */}
+                </form>
+            </section>
+        </div>
     )
 }
