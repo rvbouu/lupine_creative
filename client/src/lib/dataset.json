@@ -6,7 +6,6 @@
      "price": 14.00,
      "qty": 5
    }, 
-   
    {
      "name": "Black Betty Round",
      "description": "Black, Bronze and Blue. Two halves make a whole. Light weight polymer clay earrings",
@@ -188,6 +187,5 @@
    "image": ["/earring.images/blackarch.jpeg"],
    "price": 14.00,
    "qty": 3
- }, 
-
+ }
 ]
