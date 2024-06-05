@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import About from "./pages/About"
 import Product from "./pages/Product"
@@ -12,7 +12,7 @@ import CheckoutForm from './components/CheckoutForm'
 import Return from './components/Return'
 import AppProvider from "./providers/AppProvider"
 import Store from "./pages/Store"
-import NotFound from "./components/NotFound"
+// import NotFound from "./components/NotFound"
 // import TopBanner from './components/TopBanner'
 
 function App() {
@@ -33,8 +33,8 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/checkout" element={<CheckoutForm />} />
             <Route path="/return" element={<Return />} />
-            <Route path="notfound" element={<NotFound />} />
-            <Redirect to="/notfound" />
+            {/* <Route path="notfound" element={<NotFound />} />
+            <Redirect to="/notfound" /> */}
           </Routes>
         </div>
         <Footer />

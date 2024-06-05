@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const productsJSON = require('../seed/products_stripe.json')
+const productsJSON = require('../seeds/products_stripe.json')
 require("dotenv").config()
 const stripe = require('stripe')(process.env.STRIPE_API_TEST_KEY);
 
