@@ -1,5 +1,5 @@
 const connection = require("../config/connection");
-const { Product, User } = require("../models");
+const { Product } = require("../models");
 const productdata = require("./products.json");
 
 
