@@ -33,11 +33,6 @@ export default function Nav() {
                 return isActive ? { textDecoration: 'underline' } : {};
             }}>Contact</NavLink>
 
-            {/* Profile tab - figure out how to make it appear only when logged in */}
-            <NavLink to="/profile" style={({ isActive }) => {
-                return isActive ? { textDecoration: 'underline' } : {};
-            }}>Your Account</NavLink>
-
             {/* if else for displaying sign up/login tab */}
             {(currentUser === undefined || currentUser === null) ? (
                 <>
@@ -52,8 +47,15 @@ export default function Nav() {
                     }}>Login</NavLink>
                 </>
             ) : (
-                // Logout tab
-                <span onClick={logout}>Logout</span>
+                <>
+                    {/* Profile tab - figure out how to make it appear only when logged in */}
+                    <NavLink to="/profile" style={({ isActive }) => {
+                        return isActive ? { textDecoration: 'underline' } : {};
+                    }}>Your Account</NavLink>
+
+                    {/* Logout button */}
+                    <span onClick={logout}>Logout</span>
+                </>
             )}
             <NavLink to='/cart'><img src='/cart.png' alt='cart image' className="cartimg" /></NavLink>
         </nav >
