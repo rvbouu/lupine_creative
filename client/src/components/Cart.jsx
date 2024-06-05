@@ -6,6 +6,8 @@ export default function Cart() {
     <>
       <title>Shopping Cart</title>
       <h2>Your Cart</h2>
+      {/* Was testing out checkout feature */}
+      <Link to='/checkout'><button>Checkout</button></Link>
 
     </>
   )
