@@ -21,6 +21,7 @@ router.post('/create-checkout-session', async (req, res) => {
 });
 
 router.get('/session-status', async (req, res) => {
+  console.log("stripe.js: ",req.query)
   const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
 
   res.send({
