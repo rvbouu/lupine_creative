@@ -11,12 +11,26 @@ router.post('/create-checkout-session', async (req, res) => {
     line_items: [
       {
         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: "price_1PO6puP1dwZ6prVFI0FHJqGL",
+        price: "price_1POPEmP1dwZ6prVFLfLFvRUP",
+        quantity: 1,
+      },
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: "price_1POPEmP1dwZ6prVFOz6PtLwR",
+        quantity: 1,
+      },
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: "price_1POP0IP1dwZ6prVF1hHbzrwp",
         quantity: 1,
       },
     ],
     mode: 'payment',
     return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
+    billing_address_collection: 'required',
+    shipping_address_collection: {
+      allowed_countries: ['US']
+    }
   });
   console.log(session.client_secret)
   res.send({ clientSecret: session.client_secret });
@@ -53,7 +67,7 @@ router.get('/session-status', async (req, res) => {
 // }
 router.post('/product', async (req, res) => {
   try {
-    for(let i = 0; i < productsJSON.length; i++){
+    for (let i = 0; i < productsJSON.length; i++) {
       stripe.products.create({
         name: productsJSON[i].name,
         active: true,
@@ -63,10 +77,11 @@ router.post('/product', async (req, res) => {
           currency: 'usd'
         },
         expand: ['default_price'],
-      })};
+      })
+    };
 
     // console.log(product)
-    res.status(200).json({status: 'success'})
+    res.status(200).json({ status: 'success' })
   }
   catch (err) {
     console.log(err)
