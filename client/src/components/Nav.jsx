@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom"
 import { useAppContext } from "../providers/AppProvider"
 import Cookie from "js-cookie"
+import '../assets/Nav.css'
 
 export default function Nav() {
 
@@ -13,23 +14,24 @@ export default function Nav() {
 
     return (
         <nav>
+            <div>
             {/* Home tab */}
-            <NavLink to="/" style={({ isActive }) => {
+            <NavLink className="navbar" to="/" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
             }}>Home</NavLink>
 
             {/* About Lupine Creative */}
-            <NavLink to="/about" style={({ isActive }) => {
+            <NavLink className="navbar" to="/about" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
             }}>About Lupine Creative</NavLink>
 
             {/* Shop tab */}
-            <NavLink to="/shop" style={({ isActive }) => {
+            <NavLink className="navbar" to="/shop" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
             }}>Shop</NavLink>
 
             {/* Contact tab */}
-            <NavLink to="/contact" style={({ isActive }) => {
+            <NavLink className="navbar" to="/contact" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
             }}>Contact</NavLink>
 
@@ -37,19 +39,19 @@ export default function Nav() {
             {(currentUser === undefined || currentUser === null) ? (
                 <>
                     {/* Signup tab */}
-                    <NavLink to="/signup" style={({ isActive }) => {
+                    <NavLink className="navbar" to="/signup" style={({ isActive }) => {
                         return isActive ? { textDecoration: 'underline' } : {};
                     }}>Sign Up</NavLink>
 
                     {/* Login tab */}
-                    <NavLink to="/signup" style={({ isActive }) => {
+                    <NavLink className="navbar" to="/signup" style={({ isActive }) => {
                         return isActive ? { textDecoration: 'underline' } : {};
                     }}>Login</NavLink>
                 </>
             ) : (
                 <>
                     {/* Profile tab - figure out how to make it appear only when logged in */}
-                    <NavLink to="/profile" style={({ isActive }) => {
+                    <NavLink className="navbar" to="/profile" style={({ isActive }) => {
                         return isActive ? { textDecoration: 'underline' } : {};
                     }}>Your Account</NavLink>
 
@@ -57,7 +59,8 @@ export default function Nav() {
                     <span onClick={logout}>Logout</span>
                 </>
             )}
-            <NavLink to='/cart'><img src='/cart.png' alt='cart image' className="cartimg" /></NavLink>
+            <NavLink to='/cart'><img src='/cart.png' alt='cart image' className="cartimg navbar" /></NavLink>
+            </div>
         </nav >
     )
 }
