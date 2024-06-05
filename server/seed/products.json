@@ -1,32 +1,8 @@
 [
   {
-    "name": "Black Betty Short",
-    "description": "Black, Bronze and Blue. Short, lightweight and sassy polymer clay earrings",
-    "image": [
-      "/model.images/blackbettyshort.jpeg",
-      "/earrings.images/blackbettyshort.jpeg",
-      "/earrings.images/blackbettycollection.jpeg"
-    ],
-    "price": 1400,
-    "qty": 5
-  },
-  {
-    "name": "Black Betty Round",
-    "description": "Black, Bronze and Blue. Two halves make a whole. Light weight polymer clay earrings",
-    "image": [
-      "/model.images/blackbettyround.jpeg",
-      "/earrings.images/blackbettycollection.jpeg"
-    ],
-    "price": 1700,
-    "qty": 3
-  },
-  {
-    "name": "Blueberry Diamond",
-    "description": "Navy blue with a delicate design",
-    "image": [
-      "/model.images/blueberrydia.JPG"
-    ],
-    "price": 1400,
-    "qty": 3
+    "fname": "John",
+    "lname": "Doe",
+    "email": "jdoe@gmail.com",
+    "password": "johndoe123"
   }
 ]
