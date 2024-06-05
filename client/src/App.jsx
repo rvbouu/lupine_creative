@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import About from "./pages/About"
 import Product from "./pages/Product"
-// import Store from "./pages/Store"
 import Profile from "./pages/Profile"
 import Contact from "./pages/Contact"
 import SignUp from "./pages/SignUp"
@@ -11,6 +10,7 @@ import Footer from "./components/Footer"
 import Cart from "./components/Cart"
 import CheckoutForm from './components/CheckoutForm'
 import Return from './components/Return'
+import AppProvider from "./providers/AppProvider"
 // import TopBanner from './components/TopBanner'
 
 
@@ -18,7 +18,7 @@ function App() {
 
 
   return (
-    <>
+    <AppProvider>
       {/* <TopBanner /> */}
       <BrowserRouter>
         <Header />
@@ -37,7 +37,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
-    </>
+    </AppProvider>
   )
 }
 

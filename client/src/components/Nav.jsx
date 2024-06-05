@@ -1,6 +1,15 @@
 import { NavLink } from "react-router-dom"
+import { useAppContext } from "../providers/AppProvider"
+import Cookie from "js-cookie"
 
 export default function Nav() {
+
+    const { currentUser } = useAppContext();
+
+    function logout() {
+        Cookie.remove('auth-cookie')
+        window.location.href = '/'
+    }
 
     return (
         <nav>
@@ -29,22 +38,24 @@ export default function Nav() {
                 return isActive ? { textDecoration: 'underline' } : {};
             }}>Your Account</NavLink>
 
-            {/* Signup tab */}
-            <NavLink to="/signup" style={({ isActive }) => {
-                return isActive ? { textDecoration: 'underline' } : {};
-            }}>Sign Up</NavLink>
+            {/* if else for displaying sign up/login tab */}
+            {(currentUser === undefined || currentUser === null) ? (
+                <>
+                    {/* Signup tab */}
+                    <NavLink to="/signup" style={({ isActive }) => {
+                        return isActive ? { textDecoration: 'underline' } : {};
+                    }}>Sign Up</NavLink>
 
-            {/* Login tab */}
-            <NavLink to="/signup" style={({ isActive }) => {
-                return isActive ? { textDecoration: 'underline' } : {};
-            }}>Login</NavLink>
-
-            {/* Logout tab */}
-            <NavLink to="/signup" style={({ isActive }) => {
-                return isActive ? { textDecoration: 'underline' } : {};
-            }}>Logout</NavLink>
-
+                    {/* Login tab */}
+                    <NavLink to="/signup" style={({ isActive }) => {
+                        return isActive ? { textDecoration: 'underline' } : {};
+                    }}>Login</NavLink>
+                </>
+            ) : (
+                // Logout tab
+                <span onClick={logout}>Logout</span>
+            )}
             <NavLink to='/cart'><img src='/cart.png' alt='cart image' className="cartimg" /></NavLink>
-        </nav>
+        </nav >
     )
 }
