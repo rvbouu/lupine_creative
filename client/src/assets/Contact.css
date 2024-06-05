@@ -14,7 +14,7 @@
   width: 100%;
   border: 2px darkslategrey solid;
   height: 400px;
-  width: 70%;
+  width: 40%;
   justify-content: center;
   background-color: rgb(233, 240, 240);
   box-shadow: 0 0 15px 0 cadetblue;
@@ -24,4 +24,5 @@
   margin-top: 50px;
   font-size: 2.5rem;
 }
+
 
