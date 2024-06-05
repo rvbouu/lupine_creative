@@ -1,0 +1,28 @@
+.form-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  width: 100%;
+  border: 2px darkslategrey solid;
+  height: 400px;
+  width: 40%;
+  justify-content: center;
+  background-color: rgb(233, 240, 240);
+  box-shadow: 0 0 15px 0 cadetblue;
+}
+
+.contact-title {
+  margin-top: 50px;
+  font-size: 2.5rem;
+}
+
+
