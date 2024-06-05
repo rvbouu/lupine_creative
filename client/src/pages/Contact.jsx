@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../assets/Contact.css'
 
 export default function Contact() {
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -49,8 +50,8 @@ export default function Contact() {
     return (
         <>
             <div className="form-field">
+                <h3 className='contact-title'>Let's talk!</h3>
                 <form className="contact-form">
-                    <h3>Let's talk!</h3>
                     <label className="firstName">First Name:</label>
                     <input
                         defaultValue={firstName}
@@ -83,7 +84,7 @@ export default function Contact() {
                         type='message'
                         placeholder='Say hello!'
                     />
-                    <button type="submit">Submit</button>
+                    <button className='submitbtn' type="submit">Submit</button>
                     {errorMessage && (
                         <div>
                             <p className="error-text">{errorMessage}</p>
