@@ -7,7 +7,7 @@ export default function Header() {
 
     return (
         <header>
-            <Link to='/'><span>Where logo will go</span></Link>
+            <Link to='/'><img className="logo" src="/logo.branding/lupinecreativenew.svg"/></Link>
             <Nav />
         </header>
     )
