@@ -1,6 +1,16 @@
 const router = require("express").Router();
 const {Cart} = require('../../models')
 
+router.get('/', async(req, res) => {
+  try{
+    const cart = await Cart.find()
+    res.status(200).json(cart)
+  }
+  catch(err){
+    res.status(500).json({status: err, message: "An error has occured"});
+  }
+})
+
 router.post('/', async(req, res) => {
   const newCart = new Cart(req.body);
 
@@ -18,7 +28,7 @@ router.put('/:id', async(req, res) => {
     const updateCart = await Cart.findByIdAndUpdate(
       req.params.id,
       {
-        $set: req.body
+        $addToSet: req.body
       },
       {new: true}
     )
