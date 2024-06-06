@@ -1,22 +1,52 @@
 const router = require("express").Router();
+const {Cart} = require('../../models')
 
-const { 
-  getUserCart,  
-  getUserCartById,
-  createUserCart, 
-  updateUserCartById, 
-  deleteUserCartById 
-} = require("../../controllers/cart.controllers")
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken")
-require("dotenv").config()
+router.get('/', async(req, res) => {
+  try{
+    const cart = await Cart.find()
+    res.status(200).json(cart)
+  }
+  catch(err){
+    res.status(500).json({status: err, message: "An error has occured"});
+  }
+})
 
-//Ask about this part. 
-async function createToken(user){
-  const tokenData = { email: user.email }
-  const token = await jwt.sign(tokenData, process.env.TOKEN_ENCRYPT_KEY)
-  return token
-}
+router.post('/', async(req, res) => {
+  const newCart = new Cart(req.body);
 
+  try{
+    const savedCart = await newCart.save();
+    res.status(200).json(savedCart);
+  }
+  catch(err){
+    res.status(500).json({status: err, message: "An error has occured"});
+  }
+});
 
+router.put('/:id', async(req, res) => {
+  try{
+    const updateCart = await Cart.findByIdAndUpdate(
+      req.params.id,
+      {
+        $addToSet: req.body
+      },
+      {new: true}
+    )
+    res.status(200).json(updateCart)
+  }
+  catch(err){
+    res.status(500).json({status: err, message: "An error has occured"})
+  }
+})
 
+router.delete('/:id', async (req, res) => {
+  try{
+    const cart = await Cart.findOneAndDelete(req.params.id)
+    res.status(200).json("Cart has been deleted.")
+  }
+  catch(err){
+    res.status(500).json({status: err, message: "An error has occured"})
+  }
+})
+
+module.exports = router
