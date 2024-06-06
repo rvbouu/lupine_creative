@@ -1,4 +1,4 @@
-import personal from "../../public/logo.branding/personal.jpeg";
+
 import "../assets/About.css";
 
 export default function About() {
@@ -8,7 +8,7 @@ export default function About() {
         <div className="col-6 text-center row justify-content-center">
           
           <div className="photodisplay">
-            <img src={personal} className="aboutmepic" alt="about me pic"></img>
+            <img src="/logo.branding/personal.jpeg" className="aboutmepic" alt="about me pic"></img>
           </div>
         </div>
        
