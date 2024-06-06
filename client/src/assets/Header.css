@@ -16,6 +16,9 @@ nav {
   align-items: center;
   width: 60%;
   font-style: italic;
+  font-size: xx-large;
+  cursor: pointer;
+  
 }
 
 .cartimg{
@@ -26,9 +29,11 @@ nav {
 .logo{
   width: 100%;
   height: 220px;
+  
 }
 
 a.navbar{
  display: inline-block;
  color: #e1ddcc;
 }
+
