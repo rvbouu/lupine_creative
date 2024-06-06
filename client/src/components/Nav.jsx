@@ -16,11 +16,11 @@ export default function Nav() {
 
     return (
         <nav>
-            <div>
-                {/* Home tab */}
-                <NavLink className="navbar" to="/" style={({ isActive }) => {
-                    return isActive ? { textDecoration: 'underline' } : {};
-                }}>Home</NavLink>
+          
+            {/* Home tab */}
+            <NavLink className="navbar" to="/" style={({ isActive }) => {
+                return isActive ? { textDecoration: 'underline' } : {};
+            }}>Home</NavLink>
 
                 {/* About Lupine Creative */}
                 <NavLink className="navbar" to="/about" style={({ isActive }) => {
@@ -66,7 +66,6 @@ export default function Nav() {
                         <ShoppingBagOutlinedIcon />
                     </Badge>
                 </NavLink>
-            </div>
         </nav >
     )
 }

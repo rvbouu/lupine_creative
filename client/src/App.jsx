@@ -33,8 +33,8 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/checkout" element={<CheckoutForm />} />
             <Route path="/return" element={<Return />} />
-            {/* <Route path="notfound" element={<NotFound />} />
-            <Redirect to="/notfound" /> */}
+            {/* <Route path="notfound" element={<NotFound />} /> */}
+            {/* <Redirect to="/notfound" /> */}
           </Routes>
         </div>
         <Footer />
