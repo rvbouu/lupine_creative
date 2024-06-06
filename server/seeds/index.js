@@ -1,7 +1,6 @@
 const connection = require("../config/connection");
-const { Product, User } = require("../models");
-const dizzydata = require("./dizzydata.json");
-const userdata = require("./userdata.json");
+const { Product } = require("../models");
+const productdata = require("./products.json");
 
 
 connection.once('open', async() => {
@@ -16,24 +15,12 @@ connection.once('open', async() => {
   if( productsExists.length ){
     await connection.db.dropCollection("products")
   }
-  
-  const usersExists = await connection.db.listCollections({ name: "users" }).toArray()
-  if( usersExists.length ){
-    await connection.db.dropCollection("users")
-  }
 
   try {
-    await Product.insertMany(dizzydata)
+    await Product.insertMany(productdata)
     console.log("Product seeding successful")
   } catch(err){
     console.log("Product seeding failed - " + err.message)
-  }
-
-  try {
-    await User.insertMany(userdata)
-    console.log("User seeding successful")
-  } catch(err){
-    console.log("User seeding failed - " + err.message)
   }
 
   process.exit(0)
