@@ -26,3 +26,9 @@ export default function Store() {
         </>
     )
 }
+
+
+// function addToCart(){
+
+    
+// }
