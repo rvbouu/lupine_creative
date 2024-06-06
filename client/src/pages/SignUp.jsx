@@ -1,8 +1,10 @@
 import '../assets/SignUp.css'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useAppContext } from "../providers/AppProvider"
 
 export default function SignUp() {
+  const { verifyUser } = useAppContext();
 
   const navigate = useNavigate();
 
@@ -111,6 +113,7 @@ export default function SignUp() {
       const result = await response.json()
       clearForms()
       if (result.status === 'success') {
+verifyUser()
         navigate("/");
       } else {
         setErrorLoginMessage("We could not log you in with the credentials provided")
