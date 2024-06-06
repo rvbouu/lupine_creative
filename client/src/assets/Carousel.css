@@ -1,0 +1,19 @@
+
+.store-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px #666;
+    /* background-color: blue; */
+}
+
+.card-image {
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 7px #666;
+    background-color: blue;
+}
+
+card-body{
+    border: solid 2px black;
+    background-color: blue;
+}
