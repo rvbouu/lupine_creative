@@ -43,12 +43,12 @@ export default function Nav() {
                         {/* Signup tab */}
                         <NavLink className="navbar" to="/signup" style={({ isActive }) => {
                             return isActive ? { textDecoration: 'underline' } : {};
-                        }}>Sign Up</NavLink>
+                        }}>Sign Up / Login</NavLink>
 
                         {/* Login tab */}
-                        <NavLink className="navbar" to="/signup" style={({ isActive }) => {
+                        {/* <NavLink className="navbar" to="/signup" style={({ isActive }) => {
                             return isActive ? { textDecoration: 'underline' } : {};
-                        }}>Login</NavLink>
+                        }}>Login</NavLink> */}
                     </>
                 ) : (
                     <>
