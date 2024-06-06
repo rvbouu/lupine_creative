@@ -6,6 +6,7 @@ export const useAppContext = () => useContext(AppContext);
 
 export default function AppProvider(props){
   const [currentUser, setCurrentUser] = useState()
+  const [cartData, setCartData] = useState([])
   async function verifyUser(){
     const foundCookie = Cookie.get('auth-cookie')
     if(foundCookie){
@@ -14,6 +15,10 @@ export default function AppProvider(props){
       console.log(foundUser)
       setCurrentUser(foundUser)
     }
+  }
+
+  async function cartTotal(){
+    fetch
   }
 
   useEffect(() => {

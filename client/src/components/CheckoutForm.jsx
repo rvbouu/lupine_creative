@@ -16,9 +16,9 @@ export default function CheckoutForm() {
     // Create a Checkout Session
     return fetch("/api/stripe/create-checkout-session", {
       method: "POST",
-      body: JSON.stringify({
-        line_items: cartData
-      })
+      // body: JSON.stringify({
+      //   line_items: cartData
+      // })
     })
       .then((res) => res.json())
       .then((data) => data.clientSecret);

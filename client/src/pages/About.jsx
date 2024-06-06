@@ -1,4 +1,4 @@
-// import personal from ".. /logo.branding/personal.jpeg";
+// import personal from "../../public/logo.branding/personal.jpeg";
 import "../assets/About.css";
 
 export default function About() {

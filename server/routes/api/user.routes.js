@@ -6,6 +6,7 @@ require("dotenv").config()
 
 async function createToken(user){
   const tokenData = { email: user.email }
+  console.log(tokenData)
   const token = await jwt.sign(tokenData, process.env.TOKEN_ENCRYPT_KEY)
   return token
 }
@@ -32,8 +33,11 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
+    console.log(req.body)
     const user = await create(req.body)
+    console.log(user)
     const token = await createToken(user)
+    console.log(token)
     res
       .status(200)
       .cookie('auth-cookie', token, {
@@ -56,7 +60,7 @@ router.post("/login", async(req, res) => {
     const verify = await bcrypt.compare(req.body.password, user.password)
     console.log(verify)
   if( !verify ){
-    res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
+    res.status(404).json({ status: 'error', message: 'Could not authenticate user' })
   }
   
   const token = await createToken(user)
@@ -70,14 +74,11 @@ router.post("/login", async(req, res) => {
   })
   .json({ status: 'success', results: user })
   } catch(err){
-    res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
+    res.status(401).json({ status: 'error', message: 'Could not authenticate user' })
   }
-
   if(!user){
     res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
-
-  
 })
 
 

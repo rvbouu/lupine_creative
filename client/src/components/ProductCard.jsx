@@ -1,5 +1,5 @@
 import '../assets/ProductCard.css'
-function ProductCard({product}) {
+function ProductCard({ product }) {
 
   return (
     <>
@@ -7,10 +7,13 @@ function ProductCard({product}) {
         <h2 className="card-title">{product.name}</h2>
         {console.log(product.image)}
         <img className="card-image" src={product.image[0]} />
-        <div>${product.price}</div>
+        <div className="cost-box">
+          <div>${product.price}</div>
+          <button className="cart-button">Add to Cart</button>
+        </div>
       </div>
     </>
-  );
+      );
 }
 
-export default ProductCard
+      export default ProductCard
