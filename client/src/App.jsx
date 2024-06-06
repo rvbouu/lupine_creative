@@ -7,7 +7,7 @@ import Contact from "./pages/Contact"
 import SignUp from "./pages/SignUp"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import Cart from "./components/Cart"
+import Cart from "./pages/Cart"
 import CheckoutForm from './components/CheckoutForm'
 import Return from './components/Return'
 import AppProvider from "./providers/AppProvider"
