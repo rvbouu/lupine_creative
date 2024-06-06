@@ -13,7 +13,7 @@ module.exports = {
         res.status(404).json({ message: "There are no Products in the Store" })
       }
 
-      res.status(200).json({ message: "Here are all of the Products." })
+      // res.status(200).json({ message: "Here are all of the Products." })
     } catch (err) {
       res.status(500).json({ message: "There are no Products in the Store - Server Issue" });
     }
