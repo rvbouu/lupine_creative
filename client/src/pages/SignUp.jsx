@@ -1,6 +1,78 @@
 import '../assets/SignUp.css'
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function SignUp() {
+
+    const navigate = useNavigate();
+
+    const [ formData, setFormData ] = useState({
+      signupEmail: "", signupPassword: "", loginEmail: "", loginPassword: ""
+    })
+  
+    const [message, setMessage] = useState("")
+  
+    function clearForms(){
+      setFormData({ signupEmail: "", signupPassword: "", loginEmail: "", loginPassword: "" })
+    }
+  
+    function handleInputChange(event){
+      setMessage("")
+      setFormData({
+        ...formData,
+        [event.target.name]: event.target.value
+      })
+    }
+  
+    async function handleSignup(event){
+      event.preventDefault()
+      try {
+        const response = await fetch("/api/user", {
+          method: 'POST',
+          body: JSON.stringify({
+            email: formData.signupEmail,
+            password: formData.signupPassword
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        const result = await response.json()
+        if(result.status === "success"){
+          setMessage("Signup successful")
+        }
+        clearForms()
+      } catch(err){
+        console.log(err)
+        setMessage("We could not sign you up with the credentials provided")
+      }
+    }
+  
+    async function handleLogin(event){
+      event.preventDefault()
+      try {
+        const response = await fetch("/api/user/login", {
+          method: 'POST',
+          body: JSON.stringify({
+            email: formData.loginEmail,
+            password: formData.loginPassword
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        const result = await response.json()
+        clearForms()
+        if( result.status === 'success' ){
+          navigate("/");
+        } else {
+          setMessage("We could not log you in with the credentials provided")
+        }
+      } catch(err){
+        console.log(err.message)
+        setMessage("We could not log you in with the credentials provided")
+      }
+    }
 
 
     return (
