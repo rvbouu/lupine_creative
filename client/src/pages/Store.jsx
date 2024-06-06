@@ -6,7 +6,7 @@ export default function Store() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/product')
+        fetch('/api/product')
             .then(res => res.json())
             .then(info => {
                 setData(info)

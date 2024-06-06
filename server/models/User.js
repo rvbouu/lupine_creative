@@ -1,4 +1,4 @@
-const {Schema, model} = require("mongoose");
+const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
@@ -6,6 +6,7 @@ const userSchema = new Schema(
     name: {
       type: String,
       required: true,
+      trim: true,
     },
     email: {
       type: String,
@@ -18,12 +19,6 @@ const userSchema = new Schema(
       minLength: 8,
       required: true
     },
-    purchases: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'product'
-      }
-    ]
   },
   {
     toJSON: {
@@ -38,10 +33,6 @@ userSchema.pre("save", async function (next) {
   console.log("pre-save hashing")
   this.password = await bcrypt.hash(this.password, 10);
   next()
-});
-
-userSchema.virtual('purchaseCount').get(function(){
-  return this.purchases.length;
 });
 
 const User = model("user", userSchema);

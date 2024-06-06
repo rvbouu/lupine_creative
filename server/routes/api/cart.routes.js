@@ -1,22 +1,17 @@
 const router = require("express").Router();
 
 const { 
-  getUserCart,  
-  getUserCartById,
-  createUserCart, 
-  updateUserCartById, 
-  deleteUserCartById 
+  getCart,
+  createCart,
+  deleteItemFromCart
 } = require("../../controllers/cart.controllers")
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken")
-require("dotenv").config()
+// const bcrypt = require("bcrypt");
+// const jwt = require("jsonwebtoken")
+// require("dotenv").config()
 
-//Ask about this part. 
-async function createToken(user){
-  const tokenData = { email: user.email }
-  const token = await jwt.sign(tokenData, process.env.TOKEN_ENCRYPT_KEY)
-  return token
-}
+router.route('/').get(getCart).post(createCart)
+
+// router.route('/:productId').get(getSingleProduct).put(updateProduct).delete(deleteProduct)
 
 
 
