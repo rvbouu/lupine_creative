@@ -1,20 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-
+// Video 7 from this series  https://www.youtube.com/watch?v=0T7P6Mb2XNE&list=PL63c_Ws9ecIRnNHCSqmIzfsMAYZrN71L6&index=9
 const initialState = {
   items: [],
-  status: null
+  status: null,
+  error: null
 };
 
 
 export const productsFetch = createAsyncThunk(
   "products/productsFetch",
   async () => {
-    const response = await axios.get("http://localhost:3000/products")
-    return response?.data
+    // try {
+
+      const response = await axios.get("http://localhost:5173/shop")
+      return response?.data;
+    // } catch (err) {
+      // return rejectWithValue("An error occured: Features > ProductsSlice.js");
   }
-)
+);
 
 
 // logic on retaining Users and Actions
@@ -34,8 +39,9 @@ const productsSlice = createSlice({
     },
     [productsFetch.rejected]: (state, action) => {
       state.status = "pending"
+      state.error = action.payload;
     }
   }
 })
 
-export default productsSlice.reducer
+export default productsSlice.reducer;

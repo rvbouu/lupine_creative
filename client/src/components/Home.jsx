@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
+import { useGetAllProductsQuery } from "../features/productsApi"
 
 export default function Home() {
+  const { data, err, isLoading } = useGetAllProductsQuery()
 
   return (
     <>
@@ -10,17 +12,3 @@ export default function Home() {
     </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

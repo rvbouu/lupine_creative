@@ -6,15 +6,21 @@ import App from './App';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import productReducer from './features/productsSlice';
+import productReducer, { productsFetch } from './features/productsSlice';
+import { productsApi } from './features/productsApi';
 
 // passing reducer object
 const store = configureStore({
   reducer:{
     products: productReducer,
-  }
+  [productsApi.reducerPath]: productsApi.reducer, 
+  },
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat(productsApi.middleware)
+  },
 })
 
+store.dispatch(productsFetch());
 
 ReactDOM.render(
   <React.StrictMode>
