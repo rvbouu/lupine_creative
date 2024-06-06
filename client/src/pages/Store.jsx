@@ -28,7 +28,7 @@ export default function Store() {
 }
 
 
-function addToCart(){
+// function addToCart(){
 
     
-}
+// }
