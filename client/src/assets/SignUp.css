@@ -19,13 +19,14 @@
   height: 400px;
   width: 70%;
   justify-content: center;
-  background-color: rgb(233, 240, 240);
-  box-shadow: 0 0 15px 0 cadetblue;
+  background-color: #cb8cae;
+  box-shadow: 0 0 15px 0 #2b6b6e;
 }
 
 .form-title{
   margin-top: 50px;
   font-size: 2.5rem;
+  color: #2b6b6e;
 }
 
 .label{
@@ -36,7 +37,7 @@
   width: 90%;
   height: 2rem;
   margin: 10px;
-  border: darkslategrey 2px solid;
+  border:#2b6b6e 2px solid;
   padding: 5px
 }
 
@@ -44,8 +45,8 @@
   font-size: 1.2rem;
   height: 30px;
   width: 90%;
-  background-color:rgb(139, 175, 176);
+  background-color:#e1ddcc;
   min-width: 100px;
-  border: 2px solid darkslategrey;
+  border: 2px solid #2b6b6e;
   margin: 5px;
 }

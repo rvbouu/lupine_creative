@@ -78,28 +78,28 @@
     }, 
     {
       "name": "Maroon Hands",
-      "description": "Black, granite, and maroon hands. Post earrings, light weight and comfortable",
+      "description": "Black, granite, and maroon hands. Post earrings, lightweight and comfortable",
       "image": ["/model.images/maroonhands.JPG", "/earring.images/maroonhands.jpeg"],
       "price": 14.00,
       "qty": 3
     }, 
     {
       "name": "Mustard Hands",
-      "description": "Black, granite, and mustard hands. Post earrings, light weight and comfortable",
+      "description": "Black, granite, and mustard hands. Post earrings, lightweight and comfortable",
       "image": ["/earring.images/mustardhands.jpeg"],
       "price": 14.00,
       "qty": 3
     }, 
     {
       "name": "Funky Town Long",
-      "description": "Bronze, mustard and translucent funkyness",
+      "description": "Bronze, mustard and translucent teal funkyness",
       "image": ["/model.images/funkytownlong.JPG", "/model.images/funkytownlong2.jpeg"],
       "price": 17.00,
       "qty": 3
     }, 
     {
       "name": "Funky Town Short",
-      "description": "Bronze, mustard and translucent funkyness",
+      "description": "Bronze and mustard funkyness",
       "image": ["/model.images/funkytownshortbronze.jpeg"],
       "price": 14.00,
       "qty": 3
@@ -127,7 +127,7 @@
     }, 
     {
       "name": "Purple Tiger Purple",
-      "description": "Purple post with rose gold flecks and white dangles",
+      "description": "White post with purple and rose gold flecked dangles",
       "image": ["/model.images/purpletigerpurple.jpeg", "/earring.images/purpletigerpurple.jpeg"],
       "price": 16.00,
       "qty": 3
@@ -140,29 +140,29 @@
       "qty": 3
     }, 
     {
-      "name": "Tassle Tassle",
-      "description": "Brown posts, pearly white center piece with mustard color tassles",
+      "name": "Tassel Tassel",
+      "description": "Brown posts, pearly white centerpiece with mustard color tassels",
       "image": ["/model.images/tassletassle.jpeg"],
       "price": 14.00,
       "qty": 3
     }, 
     {
       "name": "Terragotta",
-      "description": "Tan post with teracota and gold fleck dangles",
+      "description": "Tan post with terracotta and gold fleck dangles",
       "image": ["/model.images/terragotta.jpeg"],
       "price": 14.00,
       "qty": 3
     }, 
   {
    "name": "ViVi Double Dangle",
-   "description": "Pearly pink post with the tourquise dangles to match",
+   "description": "Pearly pink post with the turquoise dangles to match",
    "image": ["/model.images/vividoubledangle.JPG"],
    "price": 16.00,
    "qty": 3
  }, 
  {
    "name": "ViVi Maroon",
-   "description": "Maroon post, turquiose and rose gold center and a maroon drop",
+   "description": "Maroon post, turquoise and rose gold center and a maroon drop",
    "image": ["/model.images/vivimaroon.jpeg"],
    "price": 14.00,
    "qty": 3
@@ -176,9 +176,9 @@
  }, 
  {
    "name": "70s Mom",
-   "description": "Gold hooked earings with white, terracota and gold polymer clay",
+   "description": "Gold hooked earrings with white, terracotta and gold polymer clay",
    "image": ["/earring.images/70smom.jpeg"],
-   "price": 14.00,
+   "price": 16.00,
    "qty": 3
  }, 
  {

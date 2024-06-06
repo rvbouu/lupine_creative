@@ -14,7 +14,7 @@ export default function Nav() {
 
     return (
         <nav>
-            <div>
+          
             {/* Home tab */}
             <NavLink className="navbar" to="/" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
@@ -60,7 +60,7 @@ export default function Nav() {
                 </>
             )}
             <NavLink to='/cart'><img src='/cart.png' alt='cart image' className="cartimg navbar" /></NavLink>
-            </div>
+            
         </nav >
     )
 }

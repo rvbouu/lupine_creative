@@ -1,0 +1,36 @@
+.aboutmepic {
+  height: 375px;
+  padding: 20px;
+  margin-right: 30px;
+}
+
+.photodisplay {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.flex-container {
+   padding: 30px;
+   color: #2b6b6e;
+   font-size: 20px;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.about-container{
+   display: flex;
+   flex-direction: row-reverse;
+}
+
+.title {
+   color: #2b6b6e;
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 30px;
+   display: flex;
+   justify-content: flex-start;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.h2 {
+   margin-bottom: 20px;
+}
