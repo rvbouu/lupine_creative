@@ -12,17 +12,18 @@
   align-items: center;
   margin: 30px;
   width: 100%;
-  border: 2px darkslategrey solid;
+  border: 2px #2b6b6e solid;
   height: 400px;
   width: 40%;
   justify-content: center;
-  background-color: rgb(233, 240, 240);
-  box-shadow: 0 0 15px 0 cadetblue;
+  background-color: #cb8cae;
+  box-shadow: 0 0 15px 0 #2b6b6e;
 }
 
 .contact-title {
   margin-top: 50px;
   font-size: 2.5rem;
+  color: #2b6b6e;
 }
 
 
