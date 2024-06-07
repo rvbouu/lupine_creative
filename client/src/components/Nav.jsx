@@ -68,16 +68,15 @@ export default function Nav() {
                     <NavLink className="navbar" to="/profile" style={({ isActive }) => {
                         return isActive ? { textDecoration: 'underline' } : {};
                     }}>Your Account</NavLink>
-
-                    {/* Logout button */}
-                    <span onClick={logout}>Logout</span>
-                </>
-            )}
-            <NavLink to='/cart'>
-                <Badge badgeContent={4} color="success">
-                    <ShoppingBagOutlinedIcon />
-                </Badge>
-            </NavLink>
+                        {/* Logout button */}
+                        <span onClick={logout}>Logout</span>
+                    </>
+                )}
+                <NavLink to='/checkout'>
+                    <Badge badgeContent={4} color="secondary">
+                        <ShoppingBagOutlinedIcon />
+                    </Badge>
+                </NavLink>
         </nav >
     )
 }

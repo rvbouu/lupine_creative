@@ -5,7 +5,7 @@ const AppContext = createContext({});
 export const useAppContext = () => useContext(AppContext);
 
 export default function AppProvider(props){
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState()
   async function verifyUser(){
     const foundCookie = Cookies.get()
     console.log(foundCookie)
@@ -22,8 +22,20 @@ export default function AppProvider(props){
     }
   }
 
+  const [cartData, setCartData] = useState({})
+  async function cartTotal(){
+
+
+    // const response = await fetch('api/cart/:userId')
+    // const cart = await response.json()
+    // console.log(cart)
+    // setCartData(cart)
+  }
+  console.log('Cart data: ', cartData)
+
   useEffect(() => {
-    verifyUser()
+    verifyUser(),
+    cartTotal()
   }, [])
 
   useEffect(() => {
@@ -31,7 +43,7 @@ export default function AppProvider(props){
   }, [currentUser])
 
   return(
-    <AppContext.Provider value={{currentUser, verifyUser}}>
+    <AppContext.Provider value={{currentUser, cartData}}>
       {props.children}
     </AppContext.Provider>
   )

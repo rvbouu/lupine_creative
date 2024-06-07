@@ -6,7 +6,7 @@ import Contact from "./pages/Contact"
 import SignUp from "./pages/SignUp"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import Cart from "./pages/Cart"
+// import Cart from "./pages/Cart"
 import CheckoutForm from './components/CheckoutForm'
 import Return from './components/Return'
 import AppProvider from "./providers/AppProvider"
@@ -27,10 +27,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/shop" element={<Store />} />
-            <Route path="/cart" exact element={<Cart />} />
+            <Route path="/checkout" exact element={<CheckoutForm />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/checkout" element={<CheckoutForm />} />
+            {/* <Route path="/checkout" element={<CheckoutForm />} /> */}
             <Route path="/return" element={<Return />} />
             {/* {/* <Route path="notfound" element={<NotFound />} /> */}
             {/* <Redirect to="/notfound" /> */} 

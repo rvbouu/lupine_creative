@@ -2,190 +2,258 @@
   {
     "name": "Black Betty Short",
     "description": "Black, Bronze and Blue. Short, lightweight and sassy polymer clay earrings",
-    "image": ["/model.images/blackbettyshort.jpeg", "/earrings.images/blackbettyshort.jpeg", "/earrings.images/blackbettycollection.jpeg"],
+    "image": [
+      "/model.images/blackbettyshort.jpeg",
+      "/earrings.images/blackbettyshort.jpeg",
+      "/earrings.images/blackbettycollection.jpeg"
+    ],
     "price": 14.00,
-    "qty": 5
-  }, 
+    "priceId": "price_1POXrLK3bqf7nNHbLGKFOhgb"
+  },
   {
     "name": "Black Betty Round",
     "description": "Black, Bronze and Blue. Two halves make a whole. Light weight polymer clay earrings",
-    "image": ["/model.images/blackbettyround.jpeg", "/earrings.images/blackbettycollection.jpeg"],
+    "image": [
+      "/model.images/blackbettyround.jpeg",
+      "/earrings.images/blackbettycollection.jpeg"
+    ],
     "price": 17.00,
-    "qty": 3
-  }, 
+    "priceId": "price_1POXsmK3bqf7nNHbxpTUKazo"
+  },
   {
-     "name": "Blueberry Diamond",
-     "description": "Navy blue with a delicate design",
-     "image": ["/model.images/blueberrydia.JPG"],
-     "price": 14.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Blueberry Long",
-     "description": "Pearly white post with a navy blue delicate design.",
-     "image": ["/model.images/blueberrylong3.JPG", "/model.images/blueberrylong.jpeg"],
-     "price": 17.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Blue Medusa",
-     "description": "Granite, brass, and blue leather",
-     "image": ["/model.images/bluemedusa.JPG"],
-     "price": 22.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Diamond Leather",
-     "description": "Turquoise stone, brown leather and a brass charm",
-     "image": ["/model.images/dialeather.jpeg", "/model.images/dialeather2.JPG"],
-     "price": 17.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Maggie's Favs",
-     "description": "Marbled white, yellow, green and terracotta clay with a long leather dangle",
-     "image": ["/model.images/favs.JPG"],
-     "price": 26.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Gold Jungle",
-     "description": "Tan posts with jungle green and gold for the swing",
-     "image": ["/model.images/goldjungle.jpeg", "/earring.images/goldjungle.jpeg"],
-     "price": 14.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Leather Sun Black",
-     "description": "Tassled black leather with a brass charm to brighten your day",
-     "image": ["/model.images/leathersunblack.JPG", "/earring.images/leathersunblack.JPG"],
-     "price": 21.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Leather Sun Purple",
-     "description": "Tassled purple leather with a brass charm to brighten your day",
-     "image": ["/model.images/leathersunpurple.jpeg", "/earring.images/leathersunpurple.jpeg"],
-     "price": 21.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Leather Sun Grey",
-     "description": "Tassled grey leather with a brass charm to brighten your day",
-     "image": ["/earring.images/leathersungrey.jpeg"],
-     "price": 21.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Maroon Hands",
-     "description": "Black, granite, and maroon hands. Post earrings, light weight and comfortable",
-     "image": ["/model.images/maroonhands.JPG", "/earring.images/maroonhands.jpeg"],
-     "price": 14.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Mustard Hands",
-     "description": "Black, granite, and mustard hands. Post earrings, light weight and comfortable",
-     "image": ["/earring.images/mustardhands.jpeg"],
-     "price": 14.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Funky Town Long",
-     "description": "Bronze, mustard and translucent funkyness",
-     "image": ["/model.images/funkytownlong.JPG", "/model.images/funkytownlong2.jpeg"],
-     "price": 17.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Funky Town Short",
-     "description": "Bronze, mustard and translucent funkyness",
-     "image": ["/model.images/funkytownshortbronze.jpeg"],
-     "price": 14.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Pink Moon Dangle",
-     "description": "Tan posts, pink moon and a dangle with a real wooden bead",
-     "image": ["/model.images/pinkmoondangle.jpeg"],
-     "price": 16.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Pink Moon Triangle",
-     "description": "Asymmetrical triangles of pink and tan and moons and fun",
-     "image": ["/model.images/pinkmoontriangle.jpeg", "/model.images/pinkmoontriangle2.jpeg" ],
-     "price": 22.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Purple Tiger White",
-     "description": "Purple post with rose gold flecks and white dangles",
-     "image": ["/model.images/purpletigerwhite.jpeg", "/earring.images/purpletigerwhite.jpeg"],
-     "price": 16.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Purple Tiger Purple",
-     "description": "Purple post with rose gold flecks and white dangles",
-     "image": ["/model.images/purpletigerpurple.jpeg", "/earring.images/purpletigerpurple.jpeg"],
-     "price": 16.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Purple Tiger Double Moon",
-     "description": "White pearly post with two purple and rose gold half moons stacked",
-     "image": ["/earring.images/purpletigerdoublemoon.jpeg"],
-     "price": 18.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Tassle Tassle",
-     "description": "Brown posts, pearly white center piece with mustard color tassles",
-     "image": ["/model.images/tassletassle.jpeg"],
-     "price": 14.00,
-     "qty": 3
-   }, 
-   {
-     "name": "Terragotta",
-     "description": "Tan post with teracota and gold fleck dangles",
-     "image": ["/model.images/terragotta.jpeg"],
-     "price": 14.00,
-     "qty": 3
-   }, 
- {
-  "name": "ViVi Double Dangle",
-  "description": "Pearly pink post with the tourquise dangles to match",
-  "image": ["/model.images/vividoubledangle.JPG"],
-  "price": 16.00,
-  "qty": 3
-}, 
-{
-  "name": "ViVi Maroon",
-  "description": "Maroon post, turquiose and rose gold center and a maroon drop",
-  "image": ["/model.images/vivimaroon.jpeg"],
-  "price": 14.00,
-  "qty": 3
-}, 
-{
-  "name": "ViVi Small",
-  "description": "Pearly pink post with a small turquoise drop",
-  "image": ["/model.images/vivismall.JPG", "/model.images/vivismall2.JPG"],
-  "price": 12.00,
-  "qty": 3
-}, 
-{
-  "name": "70s Mom",
-  "description": "Gold hooked earings with white, terracota and gold polymer clay",
-  "image": ["/earring.images/70smom.jpeg"],
-  "price": 14.00,
-  "qty": 3
-}, 
-{
-  "name": "Black Arch",
-  "description": "Gold hooks, granite top with a black arched bottom",
-  "image": ["/earring.images/blackarch.jpeg"],
-  "price": 14.00,
-  "qty": 3
-}
+    "name": "Blueberry Diamond",
+    "description": "Navy blue with a delicate design",
+    "image": [
+      "/model.images/blueberrydia.JPG"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POXxFK3bqf7nNHbFHbZ530b"
+  },
+  {
+    "name": "Blueberry Long",
+    "description": "Pearly white post with a navy blue delicate design.",
+    "image": [
+      "/model.images/blueberrylong3.JPG",
+      "/model.images/blueberrylong.jpeg"
+    ],
+    "price": 17.00,
+    "priceId": "price_1POYFHK3bqf7nNHbETFOVbNb"
+  },
+  {
+    "name": "Blue Medusa",
+    "description": "Granite, brass, and blue leather",
+    "image": [
+      "/model.images/bluemedusa.JPG"
+    ],
+    "price": 22.00,
+    "priceId": "price_1POYLyK3bqf7nNHbw40eHjda"
+  },
+  {
+    "name": "Diamond Leather",
+    "description": "Turquoise stone, brown leather and a brass charm",
+    "image": [
+      "/model.images/dialeather.jpeg",
+      "/model.images/dialeather2.JPG"
+    ],
+    "price": 17.00,
+    "priceId": "price_1POYNKK3bqf7nNHbN0AVGbmm"
+  },
+  {
+    "name": "Maggie's Favs",
+    "description": "Marbled white, yellow, green and terracotta clay with a long leather dangle",
+    "image": [
+      "/model.images/favs.JPG"
+    ],
+    "price": 26.00,
+    "priceId": "price_1POYOjK3bqf7nNHbq6ABRt0k"
+  },
+  {
+    "name": "Gold Jungle",
+    "description": "Tan posts with jungle green and gold for the swing",
+    "image": [
+      "/model.images/goldjungle.jpeg",
+      "/earring.images/goldjungle.jpeg"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POYPSK3bqf7nNHbAKsFwD5Z"
+  },
+  {
+    "name": "Leather Sun Black",
+    "description": "Tassled black leather with a brass charm to brighten your day",
+    "image": [
+      "/model.images/leathersunblack.JPG",
+      "/earring.images/leathersunblack.JPG"
+    ],
+    "price": 21.00,
+    "priceId": "price_1POYRBK3bqf7nNHbR8X7orlD"
+  },
+  {
+    "name": "Leather Sun Purple",
+    "description": "Tassled purple leather with a brass charm to brighten your day",
+    "image": [
+      "/model.images/leathersunpurple.jpeg",
+      "/earring.images/leathersunpurple.jpeg"
+    ],
+    "price": 21.00,
+    "priceId": "price_1POYS4K3bqf7nNHb1Cb8vysb"
+  },
+  {
+    "name": "Leather Sun Grey",
+    "description": "Tassled grey leather with a brass charm to brighten your day",
+    "image": [
+      "/earring.images/leathersungrey.jpeg"
+    ],
+    "price": 21.00,
+    "priceId": "price_1POYUSK3bqf7nNHbnsZlVZet"
+  },
+  {
+    "name": "Maroon Hands",
+    "description": "Black, granite, and maroon hands. Post earrings, light weight and comfortable",
+    "image": [
+      "/model.images/maroonhands.JPG",
+      "/earring.images/maroonhands.jpeg"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POYVSK3bqf7nNHbH0rXK9AE"
+  },
+  {
+    "name": "Mustard Hands",
+    "description": "Black, granite, and mustard hands. Post earrings, light weight and comfortable",
+    "image": [
+      "/earring.images/mustardhands.jpeg"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POYWWK3bqf7nNHbLTrLHF3L"
+  },
+  {
+    "name": "Funky Town Long",
+    "description": "Bronze, mustard and translucent funkyness",
+    "image": [
+      "/model.images/funkytownlong.JPG",
+      "/model.images/funkytownlong2.jpeg"
+    ],
+    "price": 17.00,
+    "priceId": "price_1POYdPK3bqf7nNHbWEZkRyJf"
+  },
+  {
+    "name": "Funky Town Short",
+    "description": "Bronze, mustard and translucent funkyness",
+    "image": [
+      "/model.images/funkytownshortbronze.jpeg"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POYf0K3bqf7nNHbCNQV5kxg"
+  },
+  {
+    "name": "Pink Moon Dangle",
+    "description": "Tan posts, pink moon and a dangle with a real wooden bead",
+    "image": [
+      "/model.images/pinkmoondangle.jpeg"
+    ],
+    "price": 16.00,
+    "priceId": "price_1POYfwK3bqf7nNHbauoj217s"
+  },
+  {
+    "name": "Pink Moon Triangle",
+    "description": "Asymmetrical triangles of pink and tan and moons and fun",
+    "image": [
+      "/model.images/pinkmoontriangle.jpeg",
+      "/model.images/pinkmoontriangle2.jpeg"
+    ],
+    "price": 22.00,
+    "priceId": "price_1POYgnK3bqf7nNHbCam0XahV"
+  },
+  {
+    "name": "Purple Tiger White",
+    "description": "Purple post with rose gold flecks and white dangles",
+    "image": [
+      "/model.images/purpletigerwhite.jpeg",
+      "/earring.images/purpletigerwhite.jpeg"
+    ],
+    "price": 16.00,
+    "priceId": "price_1POYiQK3bqf7nNHbSwdfkmNT"
+  },
+  {
+    "name": "Purple Tiger Purple",
+    "description": "Purple post with rose gold flecks and white dangles",
+    "image": [
+      "/model.images/purpletigerpurple.jpeg",
+      "/earring.images/purpletigerpurple.jpeg"
+    ],
+    "price": 16.00,
+    "priceId": "price_1POYk6K3bqf7nNHbCMpUhXFg"
+  },
+  {
+    "name": "Purple Tiger Double Moon",
+    "description": "White pearly post with two purple and rose gold half moons stacked",
+    "image": [
+      "/earring.images/purpletigerdoublemoon.jpeg"
+    ],
+    "price": 18.00,
+    "priceId": "price_1POYlPK3bqf7nNHbVPpZcoIR"
+  },
+  {
+    "name": "Tassle Tassle",
+    "description": "Brown posts, pearly white center piece with mustard color tassles",
+    "image": [
+      "/model.images/tassletassle.jpeg"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POYmtK3bqf7nNHbq0chXitb"
+  },
+  {
+    "name": "Terragotta",
+    "description": "Tan post with teracota and gold fleck dangles",
+    "image": [
+      "/model.images/terragotta.jpeg"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POYnsK3bqf7nNHbyjMUCvsQ"
+  },
+  {
+    "name": "ViVi Double Dangle",
+    "description": "Pearly pink post with the tourquise dangles to match",
+    "image": [
+      "/model.images/vividoubledangle.JPG"
+    ],
+    "price": 16.00,
+    "priceId": "price_1POYpwK3bqf7nNHbHvilsId3"
+  },
+  {
+    "name": "ViVi Maroon",
+    "description": "Maroon post, turquiose and rose gold center and a maroon drop",
+    "image": [
+      "/model.images/vivimaroon.jpeg"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POYqyK3bqf7nNHbx92Y1NdD"
+  },
+  {
+    "name": "ViVi Small",
+    "description": "Pearly pink post with a small turquoise drop",
+    "image": [
+      "/model.images/vivismall.JPG",
+      "/model.images/vivismall2.JPG"
+    ],
+    "price": 12.00,
+    "priceId": "price_1POYshK3bqf7nNHbapMQ4bYU"
+  },
+  {
+    "name": "70s Mom",
+    "description": "Gold hooked earings with white, terracota and gold polymer clay",
+    "image": [
+      "/earring.images/70smom.jpeg"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POZ3SK3bqf7nNHb5cqNMndr"
+  },
+  {
+    "name": "Black Arch",
+    "description": "Gold hooks, granite top with a black arched bottom",
+    "image": [
+      "/earring.images/blackarch.jpeg"
+    ],
+    "price": 14.00,
+    "priceId": "price_1POZ4FK3bqf7nNHbIaVyaN02"
+  }
 ]
