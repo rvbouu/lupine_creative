@@ -14,7 +14,7 @@
 }
 
 .banner {
-    border: solid 2px #cb8cae;
+    border: solid 2px #e1ddcc;
     border-radius: 10px;
     background-color: #2b6b6e;
     color: #e1ddcc;
@@ -29,6 +29,7 @@
     justify-items: center;
     justify-content: center;
     font-size: xx-large;
+    box-shadow: 0px 0px 10px #666;
 }
 .box{
     border: solid 2px #2b6b6e;
