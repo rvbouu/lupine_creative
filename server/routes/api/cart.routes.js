@@ -11,6 +11,16 @@ router.get('/', async(req, res) => {
   }
 })
 
+router.get('/:id', async(req, res) => {
+  try{
+    const cart = await Cart.findOne({_id: req.params.id})
+    res.status(200).json(cart)
+  }
+  catch(err){
+    res.status(500).json({status: err, message: "An error has occured"});
+  }
+})
+
 router.post('/', async(req, res) => {
   const newCart = new Cart(req.body);
 

@@ -10,18 +10,21 @@ const stripePromise = loadStripe("pk_test_51PO0m9P1dwZ6prVFf0Fd2XT9kB4g8koQLfRGZ
 
 
 export default function CheckoutForm() {
-  const {cartData} = useAppContext();
-  console.log(cartData)
-  const fetchClientSecret = useCallback(() => {
+  const { cartData } = useAppContext();
+  const total = cartData.total
+  console.log(total)
+
+  const fetchClientSecret = useCallback(async () => {
     // Create a Checkout Session
-    return fetch("/api/stripe/create-checkout-session", {
+    const res = await fetch("/api/stripe/create-checkout-session", {
       method: "POST",
-      // body: JSON.stringify({
-      //   line_items: cartData
-      // })
-    })
-      .then((res) => res.json())
-      .then((data) => data.clientSecret);
+      body: JSON.stringify(total),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await res.json();
+    return data.clientSecret;
   }, []);
   console.log({ fetchClientSecret })
   const options = { fetchClientSecret };

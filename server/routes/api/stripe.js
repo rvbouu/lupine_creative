@@ -6,25 +6,10 @@ const stripe = require('stripe')(process.env.STRIPE_API_TEST_KEY);
 const YOUR_DOMAIN = 'http://localhost:3001';
 
 router.post('/create-checkout-session', async (req, res) => {
+  console.log(req.body)
   const session = await stripe.checkout.sessions.create({
     ui_mode: 'embedded',
-    line_items: [
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: "price_1POPEmP1dwZ6prVFLfLFvRUP",
-        quantity: 1,
-      },
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: "price_1POPEmP1dwZ6prVFOz6PtLwR",
-        quantity: 1,
-      },
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: "price_1POP0IP1dwZ6prVF1hHbzrwp",
-        quantity: 1,
-      },
-    ],
+    line_items: req.body,
     mode: 'payment',
     return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
     billing_address_collection: 'required',
