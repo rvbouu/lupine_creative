@@ -1,5 +1,14 @@
 import '../assets/ProductCard.css'
+import { useAppContext } from '../providers/AppProvider';
 function ProductCard({ product }) {
+  const {cartData} = useAppContext();
+  let total = cartData.total
+  function addToCart(e){
+    console.log(e.target.id)
+    total.push({price: e.target.id, quantity: 1})
+    console.log(total)
+  }
+
 
   return (
     <>
@@ -9,11 +18,11 @@ function ProductCard({ product }) {
         <img className="card-image" src={product.image[0]} />
         <div className="cost-box">
           <div>${product.price}</div>
-          <button className="cart-button">Add to Cart</button>
+          <button className="cart-button" id={product.priceId} onClick={addToCart}>Add to Cart</button>
         </div>
       </div>
     </>
-      );
+  );
 }
 
-      export default ProductCard
+export default ProductCard
