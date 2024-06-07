@@ -87,4 +87,27 @@ router.put('/product/:id', async (req, res) => {
   }
 })
 
+
+// Test key is at the top of the page.
+// Customer Session
+router.post('/', async (req, res) => {
+  try {
+    const customerSession = await stripe.customerSessions.create({
+      customer: 'cus_PO34b57IOUb83c',
+      components: {
+        pricing_table: {
+          // prevents the customer from seeing the priceing table from the product.
+          enabled: false,
+        },
+      },
+    });
+    res.status(200).json(customerSession)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json({ status: 'error', message: err.message })
+  }
+})
+
+
+
 module.exports = router;

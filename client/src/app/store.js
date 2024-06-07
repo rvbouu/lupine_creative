@@ -1,5 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit'
+// Website changed Direction > Stripe Library housed our Cart Structure, Code is not needed
 
-export default configureStore({
-  reducer: {}
-})
+// import { configureStore } from '@reduxjs/toolkit'
+
+// export default configureStore({
+//   reducer: {}
+// })

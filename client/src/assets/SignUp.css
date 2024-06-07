@@ -12,6 +12,7 @@
   align-items: center;
   margin: 30px;
   width: 100%;
+  border-radius: 20px;
 }
 
 .form{
@@ -27,6 +28,7 @@
   margin-top: 50px;
   font-size: 2.5rem;
   color: #2b6b6e;
+  text-shadow: 1px 0 5px #e1ddcc;
 }
 
 .label{
@@ -49,4 +51,5 @@
   min-width: 100px;
   border: 2px solid #2b6b6e;
   margin: 5px;
+  border-radius: 5px;
 }

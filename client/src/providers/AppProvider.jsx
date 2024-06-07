@@ -1,18 +1,23 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import Cookie from 'js-cookie';
+import Cookies from 'js-cookie';
 
 const AppContext = createContext({});
 export const useAppContext = () => useContext(AppContext);
 
 export default function AppProvider(props){
   const [currentUser, setCurrentUser] = useState()
-
   async function verifyUser(){
-    const foundCookie = Cookie.get('auth-cookie')
+    const foundCookie = Cookies.get()
+    console.log(foundCookie)
     if(foundCookie){
-      const response = await fetch('/api/user/verify')
+      const response = await fetch('/api/user/verify', {
+        method: 'POST'
+      })
+      if (!response.ok) {
+        return setCurrentUser(null)
+      }
       const foundUser = await response.json()
-      console.log(foundUser)
+      // console.log(foundUser)
       setCurrentUser(foundUser)
     }
   }
@@ -32,6 +37,10 @@ export default function AppProvider(props){
     verifyUser(),
     cartTotal()
   }, [])
+
+  useEffect(() => {
+    console.log(currentUser)
+  }, [currentUser])
 
   return(
     <AppContext.Provider value={{currentUser, cartData}}>
