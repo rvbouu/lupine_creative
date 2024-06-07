@@ -3,7 +3,7 @@ const productsJSON = require('../../seeds/products_stripe.json')
 require("dotenv").config()
 const stripe = require('stripe')(process.env.STRIPE_API_TEST_KEY);
 
-const YOUR_DOMAIN = 'http://localhost:3001';
+const YOUR_DOMAIN = 'http://localhost:5173';
 
 router.post('/create-checkout-session', async (req, res) => {
   console.log(req.body)

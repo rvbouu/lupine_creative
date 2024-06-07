@@ -19,10 +19,12 @@ export default function AppProvider(props){
 
   const [cartData, setCartData] = useState({})
   async function cartTotal(){
-    const response = await fetch('api/cart/6662366cc5452265e860f1d0')
-    const cart = await response.json()
-    console.log(cart)
-    setCartData(cart)
+
+
+    // const response = await fetch('api/cart/:userId')
+    // const cart = await response.json()
+    // console.log(cart)
+    // setCartData(cart)
   }
   console.log('Cart data: ', cartData)
 
