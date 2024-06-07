@@ -1,15 +1,19 @@
 import '../assets/Profile.css'
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useAppContext } from '../providers/AppProvider';
 import { useNavigate } from "react-router-dom"
 
 export default function Update() {
 
     const navigate = useNavigate();
+    const { currentUser } = useAppContext()
 
     const [formData, setFormData] = useState({
         sname: "", semail: "", spassword: "", lemail: "", lpassword: ""
     })
-
+    // console.log(currentUser)
+    const [userData, setUserData] = useState({});
+    // console.log(currentUser)
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const [errorUpdateMessage, setErrorUpdateMessage] = useState('');
 
@@ -26,18 +30,6 @@ export default function Update() {
             }
 
         }
-        if (name === 'lemail') {
-            if (value === '') {
-                setFormData('')
-                return setErrorUpdateMessage('Email is required')
-            }
-            if (!regex.test(value)) {
-                setFormData('')
-                return setErrorUpdateMessage('Please enter a valid email')
-            } else {
-                setErrorUpdateMessage('')
-            }
-        }
         if (name === 'sname') {
             if (value === '') {
                 setFormData('')
@@ -50,23 +42,17 @@ export default function Update() {
                 return setErrorUpdateMessage('Password is required')
             }
         }
-        if (name === 'lpassword') {
-            if (value === '') {
-                setFormData('')
-                return setErrorUpdateMessage('Password is required')
-            }
-        }
     }
 
     function clearForms() {
-        setFormData({ semail: "", spassword: "", lemail: "", lpassword: "", sname: "" })
+        setFormData({ semail: "", spassword: "", sname: "" })
     }
 
     async function handleUpdate(event) {
         event.preventDefault()
         try {
-            const response = await fetch("/api/user", {
-                method: 'POST',
+            const response = await fetch(`/api/user/${userData._id}`, {
+                method: 'PUT',
                 body: JSON.stringify({
                     name: formData.sname,
                     email: formData.semail,
@@ -79,8 +65,8 @@ export default function Update() {
             console.log(response)
             const result = await response.json()
             if (result.status === "success") {
-                navigate("/");
                 setErrorUpdateMessage("Update successful")
+                // window.location.href="/profile"
             }
             clearForms()
         } catch (err) {
@@ -89,29 +75,43 @@ export default function Update() {
         }
     }
 
+    // function getUser() {
+    //     console.log(currentUser)
+    //     fetch(`/api/user/${currentUser.results._id}`)
 
-    // const [userData, setUserData] = useState([]);
-    // useEffect(() => {
-    //     fetch('/api/user/:id')
     //         .then(res => res.json())
     //         .then(info => {
     //             setUserData(info)
+    //             console.log("100", info)
     //         })
     //         .catch(error => console.error(error));
-    // }, []);
-    // console.log("User data: ", userData)
 
+    // }
+
+
+
+    useEffect(() => {
+        console.log(currentUser)
+        currentUser && setUserData(currentUser.results)
+    }, [currentUser])
+
+    useEffect(() => {
+        console.log(userData)
+    }, [userData])
 
     return (
 
         <>
-            {/* <section className='info-card'>
-                <h1 className='welcome'> {userData.name}! </h1>
-                <div className='user-info'>
-                    <p>Name: {userData.name}  </p>
-                    <p>Email: {userData.email} </p>
-                </div>
-            </section> */}
+            {userData && (
+                <section className='info-card'>
+                    <h1 className='welcome'> {userData?.name}! </h1>
+                    <div className='user-info'>
+                        <p>Name: {userData?.name} {console.log("114", userData?.name)} </p>
+                        <p>Email: {userData?.email} </p>
+                    </div>
+                </section>
+            )}
+
 
 
             <section className='update1'>

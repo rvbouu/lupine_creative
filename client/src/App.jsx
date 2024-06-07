@@ -9,7 +9,7 @@ import Footer from "./components/Footer"
 // import Cart from "./pages/Cart"
 import CheckoutForm from './components/CheckoutForm'
 import Return from './components/Return'
-import AppProvider from "./providers/AppProvider"
+import { AppProvider } from "./providers/AppProvider"
 import Store from "./pages/Store"
 // import NotFound from "./components/NotFound"
 // import TopBanner from './components/TopBanner'

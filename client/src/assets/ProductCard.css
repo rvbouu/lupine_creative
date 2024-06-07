@@ -38,27 +38,35 @@
 
 .cart-button {
     border: none;
-    padding: 15px 80px;
+    padding: 0px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 10px;
     background-color: #2e4142;
     color: #e1ddcc;
     border: 2px solid #e1ddcc;
     cursor: pointer;
+    height: 40px;
 }
 
 .cart-button:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+.cart-button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
 .cost-box {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
+    align-items: center;
+
 }
 
 .card-title{
