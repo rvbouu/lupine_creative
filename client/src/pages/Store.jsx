@@ -9,6 +9,7 @@ export default function Store() {
         fetch('/api/product')
             .then(res => res.json())
             .then(info => {
+                console.log(info)
                 setData(info)
             })
             .catch(error => console.error(error));
@@ -17,8 +18,9 @@ export default function Store() {
 
     return (
         <>
+            <p>Cart:</p>
             <div className='store-body'>
-                {data.map((product, i) => (
+                {data?.map((product, i) => (
                     <ProductCard product={product} key={i} />
                 ))}
             </div>

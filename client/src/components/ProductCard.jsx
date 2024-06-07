@@ -4,19 +4,22 @@ import { useAppContext } from '../providers/AppProvider';
 let total = []
 function ProductCard({ product }) {
   // const {cartData} = useAppContext();
-  const [cartData, setCartData] = useState()
+  const [cart, setCart] = useState()
 
 
   function addToCart(e) {
     console.log(e.target.id)
     total.push({ price: e.target.id, quantity: 1 })
-    setCartData(total)
+    setCart(total)
   }
   
-  console.log(cartData)
+  console.log(cart)
   useEffect(() => {
-    sessionStorage.setItem('cart', JSON.stringify(cartData))
-  }, [cartData])
+    console.log('update cart')
+    if( cart ){
+      sessionStorage.setItem('cart', JSON.stringify(cart))
+    }
+  }, [cart])
 
   return (
     <>
