@@ -32,7 +32,7 @@ export default function Nav() {
             }}>About Lupine Creative</NavLink>
 
             {/* Shop tab */}
-            <NavLink className="navbar" to="/shop" style={({ isActive }) => {
+            <NavLink reload="true" className="navbar" to="/shop" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
             }}>Shop</NavLink>
 
@@ -60,11 +60,13 @@ export default function Nav() {
                 <span onClick={logout}>Logout</span>
             </>
                 )}
-            <NavLink to='/checkout'>
+            {/* <NavLink to='/checkout' reload='true'>
                 <Badge badgeContent={4} color="secondary">
                     <ShoppingBagOutlinedIcon />
                 </Badge>
-            </NavLink>
+            </NavLink> */}
+
+            <a href='/checkout' >Checkout</a>
         </nav >
     )
 }
