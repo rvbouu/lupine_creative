@@ -21,10 +21,6 @@ export default function Nav() {
     }, [currentUser])
     return (
         <nav>
-            {/* Profile tab - figure out how to make it appear only when logged in */}
-            <NavLink className="navbar" to="/profile" style={({ isActive }) => {
-                return isActive ? { textDecoration: 'underline' } : {};
-            }}>Your Account</NavLink>
             {/* Home tab */}
             <NavLink className="navbar" to="/" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
@@ -52,11 +48,6 @@ export default function Nav() {
                     <NavLink className="navbar" to="/signup" style={({ isActive }) => {
                         return isActive ? { textDecoration: 'underline' } : {};
                     }}>Sign Up | Login</NavLink>
-
-                    {/* Login tab */}
-                    {/* <NavLink className="navbar" to="/signup" style={({ isActive }) => {
-                            return isActive ? { textDecoration: 'underline' } : {};
-                        }}>Login</NavLink> */}
 
                 </>
             ) : (

@@ -87,9 +87,8 @@ export default function SignUp() {
       console.log(response)
       const result = await response.json()
       if (result.status === "success") {
-        navigate("/");
-        setErrorSignupMessage("Signup successful")
-        verifyUser()
+        window.location.href = '/';
+        // setErrorSignupMessage("Signup successful")
       }
       clearForms()
     } catch (err) {
@@ -114,8 +113,7 @@ export default function SignUp() {
       const result = await response.json()
       clearForms()
       if (result.status === 'success') {
-        verifyUser()
-        navigate("/");
+        window.location.href = '/';
       } else {
         setErrorLoginMessage("We could not log you in with the credentials provided")
       }
