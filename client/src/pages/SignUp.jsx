@@ -1,8 +1,10 @@
 import '../assets/SignUp.css'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useAppContext } from "../providers/AppProvider"
 
 export default function SignUp() {
+  const { verifyUser } = useAppContext();
 
   const navigate = useNavigate();
 
@@ -16,7 +18,7 @@ export default function SignUp() {
 
   const handleInputChange = (e) => {
     console.log(e);
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     console.log(name, value);
     setFormData({ ...formData, [name]: value });
 
@@ -65,7 +67,7 @@ export default function SignUp() {
   }
 
   function clearForms() {
-    setFormData({     semail: "", spassword: "", lemail: "", lpassword: "", sname: "" })
+    setFormData({ semail: "", spassword: "", lemail: "", lpassword: "", sname: "" })
   }
 
   async function handleSignup(event) {
@@ -81,12 +83,13 @@ export default function SignUp() {
         headers: {
           'Content-Type': 'application/json'
         }
-      }) 
+      })
       console.log(response)
       const result = await response.json()
       if (result.status === "success") {
         navigate("/");
         setErrorSignupMessage("Signup successful")
+        verifyUser()
       }
       clearForms()
     } catch (err) {
@@ -111,6 +114,7 @@ export default function SignUp() {
       const result = await response.json()
       clearForms()
       if (result.status === 'success') {
+        verifyUser()
         navigate("/");
       } else {
         setErrorLoginMessage("We could not log you in with the credentials provided")
@@ -141,8 +145,8 @@ export default function SignUp() {
           <button id="submit-login" type='submit' className='submitbtn' >Submit</button>
 
           {/* errMsg and successMsg */}
-           {/* <div className='successMsg'>{successMsg}</div> */}
-                    <div className='errMsg'>{errorLoginMessage}</div> 
+          {/* <div className='successMsg'>{successMsg}</div> */}
+          <div className='errMsg'>{errorLoginMessage}</div>
         </form>
       </section>
       <section className='signup'>
@@ -166,8 +170,8 @@ export default function SignUp() {
           <button id="submit-signup" type='submit' className='submitbtn' >Submit</button>
 
           {/* errMsg and successMsg */}
-            {/* <div className='successMsg'>{successMsg}</div>*/}
-                    <div className='errMsg'>{errorSignupMessage}</div> 
+          {/* <div className='successMsg'>{successMsg}</div>*/}
+          <div className='errMsg'>{errorSignupMessage}</div>
         </form>
       </section>
     </div>
