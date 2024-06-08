@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 const AppContext = createContext({});
 export const useAppContext = () => useContext(AppContext);
 
-export default function AppProvider(props){
+export function AppProvider(props){
   const [currentUser, setCurrentUser] = useState()
   async function verifyUser(){
     const foundCookie = Cookies.get()
@@ -13,11 +13,12 @@ export default function AppProvider(props){
       const response = await fetch('/api/user/verify', {
         method: 'POST'
       })
+      console.log(response)
       if (!response.ok) {
         return setCurrentUser(null)
       }
       const foundUser = await response.json()
-      // console.log(foundUser)
+      console.log(foundUser)
       setCurrentUser(foundUser)
     }
   }
@@ -37,8 +38,10 @@ export default function AppProvider(props){
   console.log('Cart data: ', cartData)
 
   useEffect(() => {
-    verifyUser(),
-    cartTotal()
+    // window.addEventListener('afterunload', () => {
+      verifyUser()
+      cartTotal()
+    // })
   }, [])
 
   useEffect(() => {
