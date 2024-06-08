@@ -14,7 +14,7 @@ export default function Nav() {
         Cookie.remove('auth-cookie')
         window.location.href = '/'
     }
-
+// json.parse session storage
     useEffect(() => {
         console.log(currentUser)
         currentUser && setLoggedIn(true)
@@ -61,6 +61,7 @@ export default function Nav() {
             </>
                 )}
             <NavLink to='/checkout'>
+                {/* write a funtion so the badge doesnt shows a 4 */}
                 <Badge badgeContent={4} color="secondary">
                     <ShoppingBagOutlinedIcon />
                 </Badge>
