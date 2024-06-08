@@ -29,7 +29,7 @@ export default function Nav() {
             {/* About Lupine Creative */}
             <NavLink className="navbar" to="/about" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
-            }}>About Lupine Creative</NavLink>
+            }}>About</NavLink>
 
             {/* Shop tab */}
             <NavLink className="navbar" to="/shop" style={({ isActive }) => {
