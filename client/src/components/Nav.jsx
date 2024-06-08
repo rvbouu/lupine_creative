@@ -14,7 +14,7 @@ export default function Nav() {
         Cookie.remove('auth-cookie')
         window.location.href = '/'
     }
-
+// json.parse session storage
     useEffect(() => {
         console.log(currentUser)
         currentUser && setLoggedIn(true)
@@ -29,7 +29,7 @@ export default function Nav() {
             {/* About Lupine Creative */}
             <NavLink className="navbar" to="/about" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
-            }}>About Lupine Creative</NavLink>
+            }}>About</NavLink>
 
             {/* Shop tab */}
             <NavLink reload="true" className="navbar" to="/shop" style={({ isActive }) => {
@@ -60,11 +60,12 @@ export default function Nav() {
                 <span onClick={logout}>Logout</span>
             </>
                 )}
-            {/* <NavLink to='/checkout' reload='true'>
+                {/* write a funtion so the badge doesnt shows a 4 */}
+            <NavLink to='/checkout' reload='true'>
                 <Badge badgeContent={4} color="secondary">
                     <ShoppingBagOutlinedIcon />
                 </Badge>
-            </NavLink> */}
+            </NavLink>
 
             <a href='/checkout' >Checkout</a>
         </nav >
