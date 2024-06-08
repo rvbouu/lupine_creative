@@ -17,9 +17,9 @@ export default function SignUp() {
   const [errorSignupMessage, setErrorSignupMessage] = useState('');
 
   const handleInputChange = (e) => {
-    console.log(e);
+    // console.log(e);
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
     setFormData({ ...formData, [name]: value });
 
     if (name === 'semail') {
@@ -27,12 +27,6 @@ export default function SignUp() {
         setFormData('')
         return setErrorSignupMessage('Email is required')
       }
-      // if (!regex.test(formData.semail)) {
-      //   setFormData('')
-      //   return setErrorSignupMessage('Please enter a valid email')
-      // } else {
-      //   setErrorSignupMessage('')
-      // }
     }
     if (name === 'lemail') {
       if (value === '') {
@@ -84,7 +78,7 @@ export default function SignUp() {
           'Content-Type': 'application/json'
         }
       })
-      console.log(response)
+      // console.log(response)
       const result = await response.json()
       if (result.status === "success") {
         window.location.href = '/';
@@ -92,7 +86,7 @@ export default function SignUp() {
       }
       clearForms()
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       setErrorSignupMessage("We could not sign you up with the credentials provided")
     }
   }
@@ -118,11 +112,10 @@ export default function SignUp() {
         setErrorLoginMessage("We could not log you in with the credentials provided")
       }
     } catch (err) {
-      console.log(err.message)
+      // console.log(err.message)
       setErrorLoginMessage("We could not log you in with the credentials provided")
     }
   }
-
 
   return (
     <div className="authForm">
@@ -143,7 +136,6 @@ export default function SignUp() {
           <button id="submit-login" type='submit' className='submitbtn' >Submit</button>
 
           {/* errMsg and successMsg */}
-          {/* <div className='successMsg'>{successMsg}</div> */}
           <div className='errMsg'>{errorLoginMessage}</div>
         </form>
       </section>
@@ -168,7 +160,6 @@ export default function SignUp() {
           <button id="submit-signup" type='submit' className='submitbtn' >Submit</button>
 
           {/* errMsg and successMsg */}
-          {/* <div className='successMsg'>{successMsg}</div>*/}
           <div className='errMsg'>{errorSignupMessage}</div>
         </form>
       </section>

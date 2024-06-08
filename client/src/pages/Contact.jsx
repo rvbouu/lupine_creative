@@ -29,9 +29,9 @@ export default function Contact() {
     }
 
     const handleInputChange = (e) => {
-        console.log(e);
+        // console.log(e);
         const { name, value } = e.target;
-        console.log(name, value);
+        // console.log(name, value);
         setFormData({ ...formData, [name]: value });
 
         if (name === 'email') {
@@ -81,14 +81,14 @@ export default function Contact() {
                     'Content-Type': 'application/json'
                 }
             })
-            console.log(response)
+            // console.log(response)
             const result = await response.json()
             if (result.status === "success") {
                 setErrorUpdateMessage("Update successful")
             }
             clearForms()
         } catch (err) {
-            console.log(err)
+            // console.log(err)
             setErrorUpdateMessage("We could not sign you up with the credentials provided")
         }
     }
@@ -104,10 +104,10 @@ export default function Contact() {
             })
             .then(
                 () => {
-                    console.log('SUCCESS!');
+                    // console.log('SUCCESS!');
                 },
                 (error) => {
-                    console.log('FAILED...', error.text);
+                    // console.log('FAILED...', error.text);
                 },
                 handleEmail()
             );
@@ -162,7 +162,6 @@ export default function Contact() {
                         placeholder='Say hello!'
                     />
                     <button type='button' onClick={sendEmail}>Submit</button>
-                    {/* <input className="submitbtn" type="submit" value="Send" /> */}
                     {errorMessage && (
                         <div>
                             <p className="error-text">{errorMessage}</p>
