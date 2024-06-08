@@ -8,8 +8,9 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 // import Cart from "./pages/Cart"
 import CheckoutForm from './components/CheckoutForm'
+import CartChooser from './components/CartChooser'
 import Return from './components/Return'
-import AppProvider from "./providers/AppProvider"
+import { AppProvider } from "./providers/AppProvider"
 import Store from "./pages/Store"
 // import NotFound from "./components/NotFound"
 // import TopBanner from './components/TopBanner'
@@ -27,13 +28,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/shop" element={<Store />} />
-            <Route path="/checkout" exact element={<CheckoutForm />} />
+            <Route path="/checkout" exact element={<CartChooser />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
-            {/* <Route path="/checkout" element={<CheckoutForm />} /> */}
             <Route path="/return" element={<Return />} />
-            {/* {/* <Route path="notfound" element={<NotFound />} /> */}
-            {/* <Redirect to="/notfound" /> */} 
           </Routes>
         </div>
         <Footer />
