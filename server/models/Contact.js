@@ -2,19 +2,19 @@ const mongoose = require("mongoose");
 
 const contactSchema = new mongoose.Schema(
   {
-    firstName:{
+    firstName: {
       type: String,
       required: true
     },
-    lastName:{
+    lastName: {
       type: String,
       required: true
     },
-    email:{
+    email: {
       type: String,
       required: true
     },
-    message:{
+    message: {
       type: String,
       required: true
     },
