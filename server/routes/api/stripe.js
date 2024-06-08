@@ -6,19 +6,23 @@ const stripe = require('stripe')("sk_test_51PNzsBK3bqf7nNHby1JMfddkNdAYX8wb8c1Yi
 const YOUR_DOMAIN = 'http://localhost:5173';
 
 router.post('/create-checkout-session', async (req, res) => {
-  console.log(req.body)
-  const session = await stripe.checkout.sessions.create({
-    ui_mode: 'embedded',
-    line_items: req.body,
-    mode: 'payment',
-    return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
-    billing_address_collection: 'required',
-    shipping_address_collection: {
-      allowed_countries: ['US']
-    }
-  });
-  console.log(session.client_secret)
-  res.send({ clientSecret: session.client_secret });
+  console.log("ok")
+  try {
+    const session = await stripe.checkout.sessions.create({
+      ui_mode: 'embedded',
+      line_items: req.body,
+      mode: 'payment',
+      return_url: `${YOUR_DOMAIN}/return?session_id={CHECKOUT_SESSION_ID}`,
+      billing_address_collection: 'required',
+      shipping_address_collection: {
+        allowed_countries: ['US']
+      }
+    });
+    console.log(session.client_secret)
+    res.send({ clientSecret: session.client_secret });
+  } catch(err){
+    console.log(err)
+  }
 });
 
 router.get('/session-status', async (req, res) => {

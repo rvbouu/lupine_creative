@@ -72,24 +72,14 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 60px;
-    margin-top: 60px;
+    padding: 40px;
+    margin-top: 150px;
 }
 
-/* .gallery{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-div.alice-carousel {
-    width: auto;
-}
 
-.alice-carousel_stage {
+.alice-carousel_stage-item {
     display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
 }
 
 #homepage {
@@ -98,3 +88,9 @@ div.alice-carousel {
     align-items: center;
 }
 
+ul {
+    display: flex;
+    /* flex-wrap: wrap; */
+    overflow-x:auto;
+    justify-content: space-evenly;
+}

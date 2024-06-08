@@ -1,4 +1,5 @@
 footer{
+  color:#e1ddcc;
   width: 100%;
   height: 8rem;
   background-color: #cb8cae;
@@ -10,13 +11,27 @@ footer{
 }
 
 .topfooter{
+  color:#e1ddcc;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
 .instalogo{
+  color:#e1ddcc;
   height: 40px;
   width: 40px;
+}
+
+.contact{
+  color:#e1ddcc;
+}
+
+.shop{
+  color:#e1ddcc;
+}
+
+.about{
+  color:#e1ddcc;
 }

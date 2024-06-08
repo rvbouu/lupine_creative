@@ -23,14 +23,17 @@ export function AppProvider(props){
     }
   }
 
-  const [cartData, setCartData] = useState({})
+  const [cartData, setCartData] = useState(false)
+
   async function cartTotal(){
-
-
-    // const response = await fetch('api/cart/:userId')
-    // const cart = await response.json()
-    // console.log(cart)
-    // setCartData(cart)
+    console.log("accessing cart session")
+    const cart = sessionStorage.getItem('cart');
+    console.log(cart)
+    if(cart == undefined){
+      setCartData(false)
+    }else{
+      setCartData(true)
+    }
   }
   console.log('Cart data: ', cartData)
 
@@ -45,8 +48,12 @@ export function AppProvider(props){
     console.log(currentUser)
   }, [currentUser])
 
+  useEffect(() => {
+    cartTotal()
+  }, [cartData])
+
   return(
-    <AppContext.Provider value={{currentUser, cartData}}>
+    <AppContext.Provider value={{currentUser, cartData, cartTotal}}>
       {props.children}
     </AppContext.Provider>
   )
