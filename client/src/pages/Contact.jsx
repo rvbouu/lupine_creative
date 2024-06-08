@@ -11,12 +11,18 @@ export default function Contact() {
     const [errorMessage, setErrorMessage] = useState('');
 
     const [formData, setFormData] = useState({
-        firstName: "", lastName: "", email: "", message: ""
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: ""
     })
 
     function clearForms() {
         setFormData({
-            firstName: "", lastName: "", email: "", message: ""
+            firstName: "",
+            lastName: "",
+            email: "",
+            message: ""
         })
     }
 
@@ -67,7 +73,6 @@ export default function Contact() {
     }
 
     async function handleEmail(event) {
-
         try {
             const response = await fetch("/api/contact", {
                 method: 'POST',
@@ -162,7 +167,6 @@ export default function Contact() {
                         placeholder='Say hello!'
                     />
                     <button type='button' onClick={sendEmail}>Submit</button>
-                    {/* <input className="submitbtn" type="submit" value="Send" /> */}
                     {errorMessage && (
                         <div>
                             <p className="error-text">{errorMessage}</p>

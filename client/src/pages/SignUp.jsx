@@ -9,7 +9,11 @@ export default function SignUp() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    sname: "", semail: "", spassword: "", lemail: "", lpassword: ""
+    sname: "",
+    semail: "",
+    spassword: "",
+    lemail: "",
+    lpassword: ""
   })
 
   const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -17,9 +21,9 @@ export default function SignUp() {
   const [errorSignupMessage, setErrorSignupMessage] = useState('');
 
   const handleInputChange = (e) => {
-    console.log(e);
+    // console.log(e);
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
     setFormData({ ...formData, [name]: value });
 
     if (name === 'semail') {
@@ -27,12 +31,6 @@ export default function SignUp() {
         setFormData('')
         return setErrorSignupMessage('Email is required')
       }
-      // if (!regex.test(formData.semail)) {
-      //   setFormData('')
-      //   return setErrorSignupMessage('Please enter a valid email')
-      // } else {
-      //   setErrorSignupMessage('')
-      // }
     }
     if (name === 'lemail') {
       if (value === '') {
@@ -66,8 +64,22 @@ export default function SignUp() {
     }
   }
 
+  function handleChange(event) {
+    setMessage("")
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    })
+  }
+
   function clearForms() {
-    setFormData({ semail: "", spassword: "", lemail: "", lpassword: "", sname: "" })
+    setFormData({
+      semail: "",
+      spassword: "",
+      lemail: "",
+      lpassword: "",
+      sname: ""
+    })
   }
 
   async function handleSignup(event) {
@@ -84,15 +96,14 @@ export default function SignUp() {
           'Content-Type': 'application/json'
         }
       })
-      console.log(response)
+      // console.log(response)
       const result = await response.json()
       if (result.status === "success") {
         window.location.href = '/';
-        // setErrorSignupMessage("Signup successful")
       }
       clearForms()
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       setErrorSignupMessage("We could not sign you up with the credentials provided")
     }
   }
@@ -118,11 +129,10 @@ export default function SignUp() {
         setErrorLoginMessage("We could not log you in with the credentials provided")
       }
     } catch (err) {
-      console.log(err.message)
+      // console.log(err.message)
       setErrorLoginMessage("We could not log you in with the credentials provided")
     }
   }
-
 
   return (
     <div className="authForm">
@@ -131,19 +141,52 @@ export default function SignUp() {
 
         {/* Submission handling through netlify */}
         {/* onBlur used for when user clicks out of field and leaves it empty, the errMsg will display */}
-        <form className='form' onSubmit={handleLogin}>
+        <form
+          className='form'
+          onSubmit={handleLogin}
+        >
           {/* Email input field */}
-          <label className='label' htmlFor="lemail" >Email:</label>
-          <input id='lemail' className='input' name="lemail" type="email" defaultValue={formData.lemail} onBlur={handleInputChange} required />
+          <label
+            className='label'
+            htmlFor="lemail"
+          >Email:
+          </label>
+          <input
+            id='lemail'
+            className='input'
+            name="lemail"
+            type="email"
+            defaultValue={formData.lemail}
+            onBlur={handleInputChange}
+            onChange={handleChange}
+            required
+          />
 
           {/* Message input field */}
-          <label className='label' htmlFor="lpassword">Password:</label>
-          <input className='input' name="lpassword" id='lpassword' type="password" defaultValue={formData.lpassword} onBlur={handleInputChange} required />
+          <label
+            className='label'
+            htmlFor="lpassword"
+          >Password:
+          </label>
+          <input
+            className='input'
+            name="lpassword"
+            id='lpassword'
+            type="password"
+            defaultValue={formData.lpassword}
+            onBlur={handleInputChange}
+            onChange={handleChange}
+            required
+          />
 
-          <button id="submit-login" type='submit' className='submitbtn' >Submit</button>
+          <button
+            id="submit-login"
+            type='submit'
+            className='submitbtn'
+          >Submit
+          </button>
 
           {/* errMsg and successMsg */}
-          {/* <div className='successMsg'>{successMsg}</div> */}
           <div className='errMsg'>{errorLoginMessage}</div>
         </form>
       </section>
@@ -152,23 +195,71 @@ export default function SignUp() {
 
         {/* Submission handling through netlify */}
         {/* onBlur used for when user clicks out of field and leaves it empty, the errMsg will display */}
-        <form className='form' onSubmit={handleSignup}>
+        <form
+          className='form'
+          onSubmit={handleSignup}
+        >
           {/* Name input field */}
-          <label className='label' htmlFor="sname" >Name:</label>
-          <input id='sname' className='input' name="sname" type="text" defaultValue={formData.sname} placeholder='Enter Your Name' onBlur={handleInputChange} required />
+          <label
+            className='label'
+            htmlFor="sname"
+          >Name:
+          </label>
+          <input
+            id='sname'
+            className='input'
+            name="sname"
+            type="text"
+            defaultValue={formData.sname}
+            placeholder='Enter Your Name'
+            onBlur={handleInputChange}
+            onChange={handleChange}
+            required
+          />
 
           {/* Email input field */}
-          <label className='label' htmlFor="semail" >Email:</label>
-          <input id='semail' className='input' name="semail" type="email" defaultValue={formData.semail} placeholder='Enter Your Email Address' onBlur={handleInputChange} required />
+          <label
+            className='label'
+            htmlFor="semail"
+          >Email:
+          </label>
+          <input
+            id='semail'
+            className='input'
+            name="semail"
+            type="email"
+            defaultValue={formData.semail}
+            placeholder='Enter Your Email Address'
+            onBlur={handleInputChange}
+            onChange={handleChange}
+            required
+          />
 
           {/* Message input field */}
-          <label className='label' htmlFor="spassword">Password:</label>
-          <input id='spassword' className='input' name="spassword" type="password" defaultValue={formData.spassword} onBlur={handleInputChange} required />
+          <label
+            className='label'
+            htmlFor="spassword"
+          >Password:
+          </label>
+          <input
+            id='spassword'
+            className='input'
+            name="spassword"
+            type="password"
+            defaultValue={formData.spassword}
+            onBlur={handleInputChange}
+            onChange={handleChange}
+            required
+          />
 
-          <button id="submit-signup" type='submit' className='submitbtn' >Submit</button>
+          <button
+            id="submit-signup"
+            type='submit'
+            className='submitbtn'
+          >Submit
+          </button>
 
           {/* errMsg and successMsg */}
-          {/* <div className='successMsg'>{successMsg}</div>*/}
           <div className='errMsg'>{errorSignupMessage}</div>
         </form>
       </section>
