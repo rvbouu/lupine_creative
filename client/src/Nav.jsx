@@ -14,13 +14,17 @@ export default function Nav() {
         Cookie.remove('auth-cookie')
         window.location.href = '/'
     }
-// json.parse session storage
+
     useEffect(() => {
         console.log(currentUser)
         currentUser && setLoggedIn(true)
     }, [currentUser])
     return (
         <nav>
+          {/* Profile tab - figure out how to make it appear only when logged in
+        <NavLink className="navbar" to="/profile" style={({ isActive }) => {
+                            return isActive ? { textDecoration: 'underline' } : {};
+                        }}>Your Account</NavLink> */}
             {/* Home tab */}
             <NavLink className="navbar" to="/" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
@@ -29,10 +33,10 @@ export default function Nav() {
             {/* About Lupine Creative */}
             <NavLink className="navbar" to="/about" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
-            }}>About</NavLink>
+            }}>About Lupine Creative</NavLink>
 
             {/* Shop tab */}
-            <NavLink reload="true" className="navbar" to="/shop" style={({ isActive }) => {
+            <NavLink className="navbar" to="/shop" style={({ isActive }) => {
                 return isActive ? { textDecoration: 'underline' } : {};
             }}>Shop</NavLink>
 
@@ -47,27 +51,32 @@ export default function Nav() {
                     {/* Signup tab */}
                     <NavLink className="navbar" to="/signup" style={({ isActive }) => {
                         return isActive ? { textDecoration: 'underline' } : {};
-                    }}>Sign Up | Login</NavLink>
+                    }}>Sign Up / Login</NavLink>
 
+                    {/* Login tab */}
+                    {/* <NavLink className="navbar" to="/signup" style={({ isActive }) => {
+                            return isActive ? { textDecoration: 'underline' } : {};
+                        }}>Login</NavLink> */}
+
+                    </>
+                ) : (
+                    <>
                 </>
-            ) : (
-            <>
-                {/* Profile tab - figure out how to make it appear only when logged in */}
-                <NavLink className="navbar" to="/profile" style={({ isActive }) => {
-                    return isActive ? { textDecoration: 'underline' } : {};
-                }}>Your Account</NavLink>
-                {/* Logout button */}
-                <span className="logout" onClick={logout}>Logout</span>
-            </>
-                )}
-                {/* write a funtion so the badge doesnt shows a 4 */}
-            <NavLink to='/checkout' reload='true'>
-                <Badge badgeContent={4} color="secondary">
-                    <img src='/logo.branding/shopping_light.png' alt='shopping bag' className="cartimg" />
-                </Badge>
-            </NavLink>
-
-            {/* <a href='/checkout' >Checkout</a> */}
+            ) } (
+                <>
+                    {/* Profile tab - figure out how to make it appear only when logged in */}
+                    <NavLink className="navbar" to="/profile" style={({ isActive }) => {
+                        return isActive ? { textDecoration: 'underline' } : {};
+                    }}>Your Account</NavLink>
+                        {/* Logout button */}
+                        <span onClick={logout}>Logout</span>
+                    </>
+                )
+                <NavLink to='/checkout'>
+                    <Badge badgeContent={4} color="secondary">
+                        <ShoppingBagOutlinedIcon />
+                    </Badge>
+                </NavLink>
         </nav >
     )
 }

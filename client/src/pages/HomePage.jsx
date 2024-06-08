@@ -4,23 +4,8 @@ import "react-alice-carousel/lib/alice-carousel.css"
 import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 
-const handleDragStart = (e) => e.preventDefault();
-
-const items = [
-	<img className="cimage" src="/earring.images/70smom.jpeg" onDragStart={handleDragStart} role="presentation" />,
-	<img className="cimage" src="/earring.images/purpletigerdoublemoon.jpeg" onDragStart={handleDragStart} role="presentation1" />,
-	<img className="cimage" src="/model.images/pinkmoontriangle.jpeg" onDragStart={handleDragStart} role="presentation2" />,
-    <img className="cimage" src="/earring.images/purpletigerpurple.jpeg" onDragStart={handleDragStart} role="presentation3" />,
-    <img className="cimage" src="/earring.images/leathersungrey.jpeg" onDragStart={handleDragStart} role="presentation4" />,
-    <img className="cimage" src="/earrings.images/blackbettycollection.jpeg" onDragStart={handleDragStart} role="presentation6" />,
-    <img className="cimage" src="/model.images/blueberrydia.JPG" onDragStart={handleDragStart} role="presentation7" />,
-    <img className="cimage" src="/earring.images/goldjungle.jpeg" onDragStart={handleDragStart} role="presentation8" />,
-    <img className="cimage" src="/model.images/bluemedusa.JPG" onDragStart={handleDragStart} role="presentation9" />,
-    <img className="cimage" src="/earrings.images/blackbettyshort.jpeg" onDragStart={handleDragStart} role="presentation5" />,
-  ];
-
-  
 const Gallery = () => (
+    <div className= "app">
         <AliceCarousel
             mouseTracking
             items={items}
@@ -33,17 +18,43 @@ const Gallery = () => (
             autoPlayStrategy="none"
             autoPlayInterval={1000}
             animationDuration={1000}
-            // animationType="fadeout"
-            // touchTracking={false}
+            animationType="slide"
+            touchTracking={false}
             disableDotsControls
             disableButtonsControls
+            swipeDelta={10}
+            swipeExtraPadding={500}
         />
+      </div>
     );
 
+const handleDragStart = (e) => e.preventDefault();
+
+const items = [
+	<img className="cimage" src="/earring.images/70smom.jpeg" onDragStart={handleDragStart} role="presentation" />,
+	<img className="cimage" src="/earring.images/purpletigerdoublemoon.jpeg" onDragStart={handleDragStart} role="presentation" />,
+	<img className="cimage" src="/model.images/pinkmoontriangle.jpeg" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/earring.images/purpletigerpurple.jpeg" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/earring.images/leathersungrey.jpeg" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/model.images/blueberrydia.JPG" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/earring.images/goldjungle.jpeg" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/model.images/bluemedusa.JPG" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/earring.images/70smom.jpeg" onDragStart={handleDragStart} role="presentation" />,
+	<img className="cimage" src="/earring.images/purpletigerdoublemoon.jpeg" onDragStart={handleDragStart} role="presentation" />,
+	<img className="cimage" src="/model.images/pinkmoontriangle.jpeg" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/earring.images/purpletigerpurple.jpeg" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/earring.images/leathersungrey.jpeg" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/model.images/blueberrydia.JPG" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/earring.images/goldjungle.jpeg" onDragStart={handleDragStart} role="presentation" />,
+    <img className="cimage" src="/model.images/bluemedusa.JPG" onDragStart={handleDragStart} role="presentation" />,
+  ];
+
+  
     const responsive = {
         0: { items: 1 },
         568: { items: 2 },
-        1024: { items: 3 },
+        1024: { items: 5 },
+        1600: {items: 10},
     };
 
 
