@@ -57,16 +57,16 @@ export default function Nav() {
                     return isActive ? { textDecoration: 'underline' } : {};
                 }}>Your Account</NavLink>
                 {/* Logout button */}
-                <span onClick={logout}>Logout</span>
+                <span className="logout" onClick={logout}>Logout</span>
             </>
                 )}
-            {/* <NavLink to='/checkout' reload='true'>
-                <Badge badgeContent={4} color="secondary">
-                    <ShoppingBagOutlinedIcon />
+            <NavLink to='/checkout' reload='true'>
+                <Badge badgeContent={5} color="secondary">
+                    <img src='/logo.branding/shopping_light.png' alt='shopping bag' className="cartimg" />
                 </Badge>
-            </NavLink> */}
+            </NavLink>
 
-            <a href='/checkout' >Checkout</a>
+            {/* <a href='/checkout' >Checkout</a> */}
         </nav >
     )
 }

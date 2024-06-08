@@ -32,7 +32,7 @@ nav {
   
 }
 
-a.navbar{
+a.navbar, .logout{
  display: inline-block;
  color: #e1ddcc;
 }
