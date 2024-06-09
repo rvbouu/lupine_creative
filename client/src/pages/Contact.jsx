@@ -106,7 +106,7 @@ export default function Contact() {
         e.preventDefault();
 
         emailjs
-            .sendForm('service_c7aey73', 'template_j0wsdxo', form.current, {
+            .sendForm('lupine_email', 'contact_form', form.current, {
                 publicKey: '6jmeWZE--gIJU4Au5',
             })
             .then(
