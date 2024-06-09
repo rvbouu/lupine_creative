@@ -67,5 +67,6 @@ export default function Nav() {
             </NavLink>
         </nav >
     )
-}
+};
+
 

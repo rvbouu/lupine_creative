@@ -27,6 +27,16 @@
   color: #2b6b6e;
 }
 
+<<<<<<< HEAD
+@media screen and (max-width: 430px) {
+  .contact-title {
+    font-size: 1.5rem;
+    }
+  .contact-form {
+    width: 70%;
+  }
+}
+=======
 .contactbtn {
   color: #ffffff; 
   font-size: 16px; 
@@ -51,4 +61,5 @@
 background: #1C6EA4; }
 .contactbtn:active {
 background: #144E75; }
+>>>>>>> main
 

@@ -21,6 +21,11 @@ function ProductCard({ product }) {
     }
   }, [cart])
 
+  // const handleAddToCart = () => {
+
+  //   addItemToCart()
+  // }
+
   return (
     <>
       <div className="card-body">
@@ -36,4 +41,8 @@ function ProductCard({ product }) {
   );
 }
 
-export default ProductCard
+
+export default ProductCard;
+
+
+

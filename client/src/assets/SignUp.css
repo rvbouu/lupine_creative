@@ -43,6 +43,36 @@
   padding: 5px
 }
 
+<<<<<<< HEAD
+.submitbtn{
+  font-size: 1.2rem;
+  height: 30px;
+  width: 90%;
+  background-color:#e1ddcc;
+  min-width: 100px;
+  border: 2px solid #2b6b6e;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 430px) {
+  .form-title {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  .login, .signup, .form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .bodycontent {
+    width:100%;
+    margin-left: -55px;
+  }
+  .form {
+   width: 105%;
+  }
+}
+=======
 
 .submitbtn {
   color: #ffffff; 
@@ -68,3 +98,4 @@
 background: #1C6EA4; }
 .submitbtn:active {
 background: #144E75; }
+>>>>>>> main
