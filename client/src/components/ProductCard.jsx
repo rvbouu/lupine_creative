@@ -1,6 +1,6 @@
 import '../assets/ProductCard.css'
 import { useState, useEffect } from 'react';
-let total = [];
+let total = JSON.parse(sessionStorage.getItem('cart')) || [];
 
 function ProductCard({ product }) {
   const [cart, setCart] = useState()
@@ -10,6 +10,7 @@ function ProductCard({ product }) {
     // console.log(e.target.id)
     total.push({ price: e.target.id, quantity: 1 })
     setCart(total)
+    window.location.href = '/shop'
   }
 
   // console.log(cart)
