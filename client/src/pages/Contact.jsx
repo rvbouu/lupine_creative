@@ -17,6 +17,7 @@ export default function Contact() {
         message: ""
     })
 
+    //clear forms
     function clearForms() {
         setFormData({
             firstName: "",
@@ -26,6 +27,7 @@ export default function Contact() {
         })
     }
 
+    //handles the form change function
     function handleChange(event) {
         setMessage("")
         setFormData({
@@ -34,6 +36,7 @@ export default function Contact() {
         })
     }
 
+    //handles the onBlur portion, displays error when user clicks outside of ield without valid data
     const handleInputChange = (e) => {
         // console.log(e);
         const { name, value } = e.target;
@@ -72,6 +75,7 @@ export default function Contact() {
         }
     }
 
+    //sends a backup of a contact form to the db in case of mishaps
     async function handleEmail(event) {
         try {
             const response = await fetch("/api/contact", {
@@ -100,6 +104,7 @@ export default function Contact() {
 
     const form = useRef();
 
+    //sends an email to the linked account via Emailjs
     function sendEmail(e) {
         e.preventDefault();
 
@@ -128,6 +133,7 @@ export default function Contact() {
                     onSubmit={sendEmail}>
                     <label className="firstName">First Name:</label>
                     <input
+                    //ended up needing both handle functions for our form to work correctly, in onBlur and onChange respectively
                         className='input'
                         value={formData.firstName}
                         name="firstName"

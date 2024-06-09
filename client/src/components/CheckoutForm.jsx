@@ -4,8 +4,6 @@ import {
 } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useCallback, useState, useRef } from 'react';
-import { useAppContext } from "../providers/AppProvider";
-import EmptyCart from './Cart'
 
 const stripePromise = loadStripe("pk_test_51PNzsBK3bqf7nNHbMVQASGkWbrH8Yqn0WBOOZhyrOuHNuzbfIftSWpliaq8GJAqXv8Bp04jmZb7wliTlM2gg3z3500cMxybeKc");
 

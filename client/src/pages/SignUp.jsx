@@ -1,12 +1,7 @@
 import '../assets/SignUp.css'
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { useAppContext } from "../providers/AppProvider"
 
 export default function SignUp() {
-  const { verifyUser } = useAppContext();
-
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     sname: "",
@@ -20,6 +15,7 @@ export default function SignUp() {
   const [errorLoginMessage, setErrorLoginMessage] = useState('');
   const [errorSignupMessage, setErrorSignupMessage] = useState('');
 
+  //handles the onBlur function
   const handleInputChange = (e) => {
     // console.log(e);
     const { name, value } = e.target;
@@ -64,6 +60,7 @@ export default function SignUp() {
     }
   }
 
+  //handles the onChange function
   function handleChange(event) {
     setMessage("")
     setFormData({
@@ -72,6 +69,7 @@ export default function SignUp() {
     })
   }
 
+  //clear forms
   function clearForms() {
     setFormData({
       semail: "",
@@ -82,6 +80,7 @@ export default function SignUp() {
     })
   }
 
+  //signs up a new user
   async function handleSignup(event) {
     event.preventDefault()
     try {
@@ -108,6 +107,7 @@ export default function SignUp() {
     }
   }
 
+  //logins in an existing user
   async function handleLogin(event) {
     event.preventDefault()
     try {
