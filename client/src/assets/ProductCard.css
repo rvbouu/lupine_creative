@@ -58,7 +58,7 @@
 .cart-button:active {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+}
 
 .cost-box {
     display: flex;
@@ -66,10 +66,8 @@
     justify-content: space-evenly;
     width: 100%;
     align-items: center;
-
 }
 
 .card-title{
-
     text-align: center;
 }
