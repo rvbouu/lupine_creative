@@ -55,6 +55,8 @@
     margin-right: 250px;
 }
 
+/* carousel styling */
+
 .cimage {
     height: 300px;
     display: flex;
@@ -62,7 +64,8 @@
     align-items: center;
     text-align: center;
     padding: 40px;
-    margin-top: 150px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     border-radius: 70px;
     width: 275px;
     object-fit: cover;
@@ -92,3 +95,68 @@ ul {
     overflow-x:auto;
     justify-content: space-evenly;
 }
+
+
+/* media queries */
+
+@media screen and (max-width: 430px) {
+    .image {
+        max-height: 400px;
+        margin: 40px;
+    }
+    #homepage {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .first-view{
+        margin-left: 100px;
+    }
+    .banner {
+    height: 2rem;
+    width: 400px;
+    z-index: 800;
+    position: relative;
+    padding: .5rem;    
+    margin-top: -50px;
+    font-size: medium;
+    margin-left: 80px;
+    }
+    .boxL {
+        margin-right: 50px;
+    }
+    .boxR {
+        margin-left: 70px;
+    }
+    .box {
+    font-size: medium;
+    padding: 1rem;
+    position: relative;
+    margin-top: 40px;
+    height: 200px;
+    width: 125px;
+    }
+    
+    
+    .cimage {
+        height: 150px;
+        width: 125px;
+        padding: 2px;
+        margin-top: 70px;
+        margin-bottom: 10pxpx;
+        border-radius: 30px;
+        }
+    .carousel {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        }
+
+    .alice-carousel_stage-item {
+        width: 50px !important;
+        }
+}
+
+
+
+

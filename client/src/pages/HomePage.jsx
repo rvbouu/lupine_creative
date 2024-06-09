@@ -16,9 +16,9 @@ const Gallery = () => (
             autoPlay
             autoPlayControls ={false}
             autoPlayStrategy="none"
-            autoPlayInterval={1000}
-            animationDuration={1000}
-            animationType="slide"
+            autoPlayInterval={1500}
+            animationDuration={1500}
+            animationType="fadeout"
             touchTracking={false}
             disableDotsControls
             disableButtonsControls

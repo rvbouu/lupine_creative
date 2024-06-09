@@ -7,7 +7,7 @@ export default function Footer() {
         <footer>
             <div className='topfooter'>
                 <Link className='contact' to='/contact'>Contact!</Link>
-                <Link className='shop' to='/shop'>Check out our store</Link>
+                <Link className='shop' to='/shop'>Check out our store!</Link>
                 <Link className='about' to='/about'>What's the story?</Link>
             </div>
             <a href="https://www.instagram.com/lupine.creative/"><img src="/logo.branding/instalogo2.svg" className='instalogo' /></a>
