@@ -70,9 +70,9 @@ router.post("/login", async (req, res) => {
 })
 
 router.get("/verify", async (req, res) => {
-  console.log('are we there yet')
+  // console.log('are we there yet')
   const cookie = req.cookies['auth-cookie']
-  console.log(cookie)
+  // console.log(cookie)
   if (!cookie) {
     return res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }

@@ -47,7 +47,6 @@ export function AppProvider(props) {
   console.log(total)
 
   useEffect(() => {
-    // window.addEventListener('afterunload', () => {
     verifyUser()
     cartTotal()
     getBagTotal()

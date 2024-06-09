@@ -27,14 +27,8 @@ footer{
   width: 40px;
 }
 
-.contact{
+.about, .shop, .contact{
   color:#e1ddcc;
-}
+  font-size: 1.4rem;
 
-.shop{
-  color:#e1ddcc;
-}
-
-.about{
-  color:#e1ddcc;
 }
