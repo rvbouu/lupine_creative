@@ -53,3 +53,21 @@
   margin: 5px;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 430px) {
+  .form-title {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  .login, .signup, .form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .bodycontent {
+    width:100%;
+    margin-left: -55px;
+  }
+  .form {
+   width: 105%;
+  }
+}

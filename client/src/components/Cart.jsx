@@ -9,7 +9,7 @@ export default function Cart() {
     <>
       <title>Shopping Cart</title>
       <h2>Your Cart is Empty</h2>
-
+    
 
     </>
   )

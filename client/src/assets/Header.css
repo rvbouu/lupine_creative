@@ -37,3 +37,19 @@ a.navbar, .logout{
  color: #e1ddcc;
 }
 
+
+@media screen and (max-width: 430px) {
+  nav {
+  font-size: small;
+  }
+  .cartimg {
+    height: 15px;
+    width: 15px;
+  }
+  .logo{
+    height: 110px;
+  }
+
+
+
+}

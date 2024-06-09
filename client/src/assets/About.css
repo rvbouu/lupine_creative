@@ -10,6 +10,8 @@
 }
 
 .flex-container {
+   display: inline;
+   text-align: center;
    padding: 30px;
    color: #2b6b6e;
    font-size: 20px;
@@ -33,4 +35,33 @@
 
 .h2 {
    margin-bottom: 20px;
+}
+
+li.list{
+   display: table;
+   text-align: center;
+   margin-left: 200px;
+}
+
+@media screen and (max-width: 430px) {
+
+.aboutmepic {
+   height: 200px;
+   }
+.about-container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;   
+}
+.flex-container {
+   font-size: 17px;
+}
+.title{
+   font-size: 20px;
+}
+.fulllist{
+   display: block;
+   justify-content: left;
+   align-items: start;
+}
 }

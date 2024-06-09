@@ -6,19 +6,41 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import Cookie from "js-cookie"
 import '../assets/Nav.css'
 
-export default function Nav() {
+
+export const addItemToCart = (setCartItemCount, cartItemCount) => {
+    setCartItemCount(cartItemCount + 1);
+}
+
+export const updateCartItemCount = (setCartItemCount, newCount) => {
+    setCartItemCount(newCount);
+}
+
+
+const Nav = () => {
     const [loggedIn, setLoggedIn] = useState(false)
+    const [cartItemCount, setCartItemCount] = useState(0)
     const { currentUser } = useAppContext();
 
-    function logout() {
-        Cookie.remove('auth-cookie')
-        window.location.href = '/'
-    }
-// json.parse session storage
+   
+    
+    // json.parse session storage
     useEffect(() => {
         console.log(currentUser)
         currentUser && setLoggedIn(true)
     }, [currentUser])
+    
+    
+    function logout() {
+        Cookie.remove('auth-cookie')
+        window.location.href = '/'
+    }
+
+    const handleCartClick = () => {
+        addItemToCart(setCartItemCount, cartItemCount);
+        updateCartItemCount(setCartItemCount, cartItemCount + 1);
+    }
+
+
     return (
         <nav>
             {/* Home tab */}
@@ -61,8 +83,8 @@ export default function Nav() {
             </>
                 )}
                 {/* write a funtion so the badge doesnt shows a 4 */}
-            <NavLink to='/checkout' reload='true'>
-                <Badge badgeContent={4} color="secondary">
+            <NavLink to='/checkout' reload='true' onClick{...handleCartClick}>
+                <Badge badgeContent={cartItemCount} color="secondary">
                     <img src='/logo.branding/shopping_light.png' alt='shopping bag' className="cartimg" />
                 </Badge>
             </NavLink>
@@ -70,5 +92,6 @@ export default function Nav() {
             {/* <a href='/checkout' >Checkout</a> */}
         </nav >
     )
-}
+};
 
+export default Nav;

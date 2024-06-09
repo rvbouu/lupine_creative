@@ -1,7 +1,11 @@
 import '../assets/ProductCard.css'
 import { useState, useEffect } from 'react';
 import { useAppContext } from '../providers/AppProvider';
+import {addItemToCart, updateCartItemCount}  from './Nav'
+
 let total = []
+
+
 function ProductCard({ product }) {
   // const {cartData} = useAppContext();
   const [cart, setCart] = useState()
@@ -11,15 +15,22 @@ function ProductCard({ product }) {
     console.log(e.target.id)
     total.push({ price: e.target.id, quantity: 1 })
     setCart(total)
-  }
+    addItemToCart(setCartItemCount, cartItemCount);
+    updateCartItemCount(setCartItemCount, cartItemCount);
+    }
   
   console.log(cart)
   useEffect(() => {
     console.log('update cart')
     if( cart ){
-      sessionStorage.setItem('cart', JSON.stringify(cart))
-    }
+      sessionStorage.setItem('cart', JSON.stringify(cart)) 
+    } 
   }, [cart])
+
+  // const handleAddToCart = () => {
+
+  //   addItemToCart()
+  // }
 
   return (
     <>
@@ -36,4 +47,8 @@ function ProductCard({ product }) {
   );
 }
 
-export default ProductCard
+
+export default ProductCard;
+
+
+

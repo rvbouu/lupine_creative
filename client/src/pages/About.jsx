@@ -21,11 +21,13 @@ export default function About() {
             <br></br>
           <p>cheap route....ha   ha    ha</p>
             <br></br>
-          <p>If you've ever been to and arts and crafts store
-          <li> The products are not cheap</li>
-          <li> It's impossible to not buy a lot of stuff</li>
-          <li> You always need more tools than you think. "Need" might not be the right word.</li>
-          </p>
+          <p>If you've ever been to and arts and crafts store:</p>
+            <br></br>
+          <div className="fulllist">
+            <li className="list"> 1. The products are not cheap</li>
+            <li className="list"> 2. It's impossible to not buy a lot of stuff</li>
+            <li className="list"> 3. You always need more tools than you think. "Need" might not be the right word.</li>
+          </div>
             <br></br>
           <p>I ended up getting all of the things I thought I would want for making polymer clay earrings, went home, and went to town. At this point polymer clay earrings were gaining popularity but weren't quite to the volume they are today. But I loved the idea and knew it would be worth the craft store expense. Light weight, customizable earrings? Sign me up!</p>
             <br></br>
