@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useAppContext } from "../providers/AppProvider"
 import Badge from '@mui/material/Badge';
 import Cookie from "js-cookie"
-import '../assets/Nav.css'
+// import '../assets/Nav.css'
 
 export default function Nav() {
     const [loggedIn, setLoggedIn] = useState(false)

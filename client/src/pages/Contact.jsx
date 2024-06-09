@@ -146,7 +146,7 @@ export default function Contact() {
                         type="text"
                         placeholder="Almes"
                     />
-                    <label className="email">E-mail</label>
+                    <label className="email">E-mail:</label>
                     <input
                         className='input'
                         value={formData.email}
@@ -156,7 +156,7 @@ export default function Contact() {
                         type="email"
                         placeholder="garytalmes@hotmail.com"
                     />
-                    <label className="message">Message</label>
+                    <label className="message">Message:</label>
                     <textarea
                         className='input'
                         value={formData.message}
@@ -166,7 +166,7 @@ export default function Contact() {
                         type='message'
                         placeholder='Say hello!'
                     />
-                    <button type='button' onClick={sendEmail}>Submit</button>
+                    <button type='button' onClick={sendEmail} className='contactbtn'>Submit</button>
                     {errorMessage && (
                         <div>
                             <p className="error-text">{errorMessage}</p>
