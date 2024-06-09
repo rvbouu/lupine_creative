@@ -75,7 +75,7 @@ export default function Update() {
 
     useEffect(() => {
         // console.log(currentUser)
-        currentUser && setUserData(currentUser.results)
+        currentUser && setUserData(currentUser)
     }, [currentUser])
 
     useEffect(() => {
