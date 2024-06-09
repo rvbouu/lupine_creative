@@ -8,7 +8,7 @@ export default function CartChooser(){
   // Gary
   const [ ready, setReady ] = useState(false)
 
-  // gets total from sessionStorage
+  // gets total from localStorage
   function checkTotal(){
     // console.log("checking total")
     // console.log(total)

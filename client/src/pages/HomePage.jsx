@@ -14,7 +14,7 @@ const Gallery = () => (
             autoWidth
             infinite
             autoPlay
-            autoPlayControls={false}
+            autoPlayControls ={false}
             autoPlayStrategy="none"
             autoPlayInterval={1500}
             animationDuration={1500}
