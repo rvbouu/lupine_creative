@@ -4,6 +4,7 @@ import { useAppContext } from "../providers/AppProvider"
 import Badge from '@mui/material/Badge';
 import Cookie from "js-cookie"
 
+
 export default function Nav() {
     const [loggedIn, setLoggedIn] = useState(false)
     const { currentUser, total } = useAppContext();
