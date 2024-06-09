@@ -3,14 +3,15 @@ import {
   EmbeddedCheckout
 } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { useCallback, useState, useRef } from 'react';
-import { useAppContext } from "../providers/AppProvider";
-// import EmptyCart from './Cart'
+import { useCallback } from 'react';
 
+
+// Test Key from Stripe - told to add here
 const stripePromise = loadStripe("pk_test_51PNzsBK3bqf7nNHbMVQASGkWbrH8Yqn0WBOOZhyrOuHNuzbfIftSWpliaq8GJAqXv8Bp04jmZb7wliTlM2gg3z3500cMxybeKc");
 
+// Stripe function 
 export default function CheckoutForm({total}) {
-
+  // Stripe embedded checkout form
     const fetchClientSecret = useCallback(async () => {
         const res = await fetch("/api/stripe/create-checkout-session", {
           method: "POST",
@@ -20,6 +21,7 @@ export default function CheckoutForm({total}) {
           }
         });
         const data = await res.json();
+        // getting clientSecret key from Stripe that they need to load checkout form
         return data.clientSecret
     }, []);
 

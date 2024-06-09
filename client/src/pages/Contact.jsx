@@ -4,9 +4,6 @@ import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const [email, setEmail] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
     const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -89,12 +86,12 @@ export default function Contact() {
             // console.log(response)
             const result = await response.json()
             if (result.status === "success") {
-                setErrorUpdateMessage("Update successful")
+                setErrorMessage("Update successful")
             }
             clearForms()
         } catch (err) {
             // console.log(err)
-            setErrorUpdateMessage("We could not sign you up with the credentials provided")
+            setErrorMessage("We could not sign you up with the credentials provided")
         }
     }
 

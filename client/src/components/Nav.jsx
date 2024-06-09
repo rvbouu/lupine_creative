@@ -3,21 +3,22 @@ import { useEffect, useState } from 'react'
 import { useAppContext } from "../providers/AppProvider"
 import Badge from '@mui/material/Badge';
 import Cookie from "js-cookie"
-// import '../assets/Nav.css'
 
 export default function Nav() {
     const [loggedIn, setLoggedIn] = useState(false)
-    const { currentUser } = useAppContext();
-
+    const { currentUser, total } = useAppContext();
     function logout() {
         Cookie.remove('auth-cookie')
         window.location.href = '/'
     }
+
+
     // json.parse session storage
     useEffect(() => {
         // console.log(currentUser)
         currentUser && setLoggedIn(true)
     }, [currentUser])
+
     return (
         <nav>
             {/* Home tab */}
@@ -60,7 +61,7 @@ export default function Nav() {
                 </>
             )}
             <NavLink to='/checkout' reload='true'>
-                <Badge badgeContent={4} color="secondary">
+                <Badge badgeContent={total} color="secondary">
                     <img src='/logo.branding/shopping_light.png' alt='shopping bag' className="cartimg" />
                 </Badge>
             </NavLink>
