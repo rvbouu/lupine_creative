@@ -24,7 +24,6 @@
     position: relative;
     padding: 1rem;    
     margin-top: -130px;
-    margin-left: 220px;
     display: flex;
     justify-items: center;
     justify-content: center;
@@ -54,18 +53,6 @@
     margin-right: 250px;
 }
 
-/* .carousel{
-    position: relative;
-    display: flex;
-    max-height: 10%;
-    width: 70%;
-    border: solid yellow 5px;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-} */
-
-
 .cimage {
     height: 300px;
     display: flex;
@@ -80,6 +67,7 @@
 .alice-carousel_stage-item {
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 #homepage {

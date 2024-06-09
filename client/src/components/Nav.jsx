@@ -13,9 +13,9 @@ export default function Nav() {
         Cookie.remove('auth-cookie')
         window.location.href = '/'
     }
-// json.parse session storage
+    // json.parse session storage
     useEffect(() => {
-        console.log(currentUser)
+        // console.log(currentUser)
         currentUser && setLoggedIn(true)
     }, [currentUser])
     return (
@@ -50,16 +50,15 @@ export default function Nav() {
 
                 </>
             ) : (
-            <>
-                {/* Profile tab - figure out how to make it appear only when logged in */}
-                <NavLink className="navbar" to="/profile" style={({ isActive }) => {
-                    return isActive ? { textDecoration: 'underline' } : {};
-                }}>Your Account</NavLink>
-                {/* Logout button */}
-                <span className="logout" onClick={logout}>Logout</span>
-            </>
-                )}
-                {/* write a funtion so the badge doesnt shows a 4 */}
+                <>
+                    {/* Profile tab */}
+                    <NavLink className="navbar" to="/profile" style={({ isActive }) => {
+                        return isActive ? { textDecoration: 'underline' } : {};
+                    }}>Your Account</NavLink>
+                    {/* Logout button */}
+                    <span className="logout" onClick={logout}>Logout</span>
+                </>
+            )}
             <NavLink to='/checkout' reload='true'>
                 <Badge badgeContent={4} color="secondary">
                     <img src='/logo.branding/shopping_light.png' alt='shopping bag' className="cartimg" />

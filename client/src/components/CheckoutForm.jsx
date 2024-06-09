@@ -24,9 +24,8 @@ export default function CheckoutForm({total}) {
     }, []);
 
     // console.log({ fetchClientSecret })
+    // console.log({ fetchClientSecret })
     const options = { fetchClientSecret };
-    
-
   
   return (
     <div id="checkout">
