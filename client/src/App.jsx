@@ -6,7 +6,6 @@ import Contact from "./pages/Contact"
 import SignUp from "./pages/SignUp"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import CheckoutForm from './components/CheckoutForm'
 import CartChooser from './components/CartChooser'
 import Return from './components/Return'
 import { AppProvider } from "./providers/AppProvider"

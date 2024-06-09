@@ -4,56 +4,66 @@ import Cookies from 'js-cookie';
 const AppContext = createContext({});
 export const useAppContext = () => useContext(AppContext);
 
-export function AppProvider(props){
+export function AppProvider(props) {
   const [currentUser, setCurrentUser] = useState()
-  async function verifyUser(){
-    const foundCookie = Cookies.get()
-    console.log(foundCookie)
-    if(foundCookie){
-      const response = await fetch('/api/user/verify', {
-        method: 'POST'
-      })
-      console.log(response)
+  async function verifyUser() {
+    const foundCookie = Cookies.get('auth-cookie')
+    // console.log(foundCookie)
+    if (foundCookie) {
+      const response = await fetch('/api/user/verify')
+      // console.log(response)
       if (!response.ok) {
         return setCurrentUser(null)
       }
       const foundUser = await response.json()
-      console.log(foundUser)
-      setCurrentUser(foundUser)
+      // console.log(foundUser)
+      setCurrentUser(foundUser.results)
     }
   }
-
   const [cartData, setCartData] = useState(false)
 
-  async function cartTotal(){
-    console.log("accessing cart session")
+  async function cartTotal() {
+    // console.log("accessing cart session")
     const cart = sessionStorage.getItem('cart');
-    console.log(cart)
-    if(cart == undefined){
+    // console.log(cart)
+    if (cart == undefined) {
       setCartData(false)
-    }else{
+    } else {
       setCartData(true)
     }
   }
-  console.log('Cart data: ', cartData)
+  // console.log('Cart data: ', cartData)
+  const [total, setTotal] = useState()
+  async function getBagTotal() {
+    if (sessionStorage.getItem('cart')) {
+      const storage = sessionStorage.getItem('cart')
+      // console.log("storage", storage)
+      if (storage) {
+        // console.log("we have stuff")
+        setTotal(JSON.parse(storage).length)
+      }
+    }
+  }
+  console.log(total)
 
   useEffect(() => {
     // window.addEventListener('afterunload', () => {
-      verifyUser()
-      cartTotal()
+    verifyUser()
+    cartTotal()
+    getBagTotal()
     // })
   }, [])
 
   useEffect(() => {
-    console.log(currentUser)
+    // console.log(currentUser)
   }, [currentUser])
 
   useEffect(() => {
     cartTotal()
   }, [cartData])
 
-  return(
-    <AppContext.Provider value={{currentUser, cartData, cartTotal}}>
+  return (
+    <AppContext.Provider value={{ currentUser, cartData, cartTotal, total }}>
       {props.children}
     </AppContext.Provider>
   )

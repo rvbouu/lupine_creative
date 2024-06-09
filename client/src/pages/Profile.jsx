@@ -7,11 +7,7 @@ export default function Update() {
     const { currentUser } = useAppContext()
 
     const [formData, setFormData] = useState({
-        sname: "",
-        semail: "",
-        spassword: "",
-        lemail: "",
-        lpassword: ""
+        sname: "", semail: "", spassword: ""
     })
     // console.log(currentUser)
     const [userData, setUserData] = useState({});
@@ -81,7 +77,7 @@ export default function Update() {
 
     useEffect(() => {
         // console.log(currentUser)
-        currentUser && setUserData(currentUser.results)
+        currentUser && setUserData(currentUser)
     }, [currentUser])
 
     useEffect(() => {
@@ -103,8 +99,6 @@ export default function Update() {
 
             <section className='update1'>
                 <h2 className='form-title1'>Update Information</h2>
-                {/* Submission handling through netlify */}
-                {/* onBlur used for when user clicks out of field and leaves it empty, the errMsg will display */}
                 <form className='form1' onSubmit={handleUpdate}>
                     {/* Name input field */}
                     <label className='label1' htmlFor="sname" >Name:</label>
@@ -132,7 +126,7 @@ export default function Update() {
                         required
                     />
 
-                    {/* Message input field */}
+                    {/* Password input field */}
                     <label className='label1' htmlFor="spassword">Password:</label>
                     <input
                         id='spassword'

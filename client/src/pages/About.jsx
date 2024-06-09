@@ -4,29 +4,29 @@ import "../assets/About.css";
 export default function About() {
   return (
     <main className="container mt-5">
-      <div className= "about-container">
+      <div className="about-container">
         <div className="col-6 text-center row justify-content-center">
-          
+
           <div className="photodisplay">
             <img src="/logo.branding/personal.jpeg" className="aboutmepic" alt="about me pic"></img>
           </div>
         </div>
-       
+
         <div className="flex-container">
         <h1 className="title">If you really wanna know the whooooollle story of how this came to be....here's the deets</h1>
             <h2 className="h2"> Lupine Creative has officially taken over Jypsea Lady Jewelry! </h2>
             <br></br>
           <p className="p1">
-          A few years ago I was hung up after a big shoulder surgery with nothing to do. I couldn't work so funds were tight but I still wanted to get my friends something for Christmas. I've always loved doing arts and crafts so I figured the "cheaper route" would be better.</p>
-            <br></br>
+            A few years ago I was hung up after a big shoulder surgery with nothing to do. I couldn't work so funds were tight but I still wanted to get my friends something for Christmas. I've always loved doing arts and crafts so I figured the "cheaper route" would be better.</p>
+          <br></br>
           <p>cheap route....ha   ha    ha</p>
-            <br></br>
+          <br></br>
           <p>If you've ever been to and arts and crafts store
-          <li> The products are not cheap</li>
-          <li> It's impossible to not buy a lot of stuff</li>
-          <li> You always need more tools than you think. "Need" might not be the right word.</li>
+            <li> The products are not cheap</li>
+            <li> It's impossible to not buy a lot of stuff</li>
+            <li> You always need more tools than you think. "Need" might not be the right word.</li>
           </p>
-            <br></br>
+          <br></br>
           <p>I ended up getting all of the things I thought I would want for making polymer clay earrings, went home, and went to town. At this point polymer clay earrings were gaining popularity but weren't quite to the volume they are today. But I loved the idea and knew it would be worth the craft store expense. Light weight, customizable earrings? Sign me up!</p>
             <br></br>
           <p>I started by wanting to make some for myself and for gifts. I shared a few photos on social media and, completely unexpectedly, got a bunch of comments and messages of people who wanted to BUY them! Whaaaaat?! So I started selling a few here and there and made a few custom pieces too. </p>
@@ -44,7 +44,7 @@ export default function About() {
           <p>Fast forward a few years and I'm on my journey to MOTHERHOOD! HOLY CRAP! I decided I needed a stay at home job and stumbled upon an interest in computer coding. I don't know wtf I was thinking. It's so hard. BUT, it's also another form of art! For our last group project my team wanted to do an e-commerce site. Sitting at my desk I look up and see earring making material. HMMMMM I just so happen to have left over inventory from my jewelry days and I would looooove to get back into it! </p>
             <br></br>
           <p>What a freaking blessing! These people working with me to make this site are God sends. They are the reason this site actually works and I am beyond grateful for not only choosing this as our final project, but its reignited a spark that I had wondered if I'd ever get back. </p>
-            <br></br>
+          <br></br>
           <p>YAY!!! I hope you love these special creations as much as I do! I am thankful for every page visit and every purchase. Good vibes and love to my handmade crafts loving community! </p>
             <br></br>
           <p>Love, </p>

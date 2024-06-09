@@ -21,14 +21,7 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.get("/:id", async (req, res) => {
-  try {
-    const user = await getById(req.params.id)
-    res.status(200).json({ status: 'success', results: user })
-  } catch (err) {
-    res.status(500).json({ status: 'error', message: err.message })
-  }
-})
+
 
 router.post("/", async (req, res) => {
   try {
@@ -76,9 +69,10 @@ router.post("/login", async (req, res) => {
   }
 })
 
-router.post("/verify", async (req, res) => {
+router.get("/verify", async (req, res) => {
+  console.log('are we there yet')
   const cookie = req.cookies['auth-cookie']
-  // console.log(cookie)
+  console.log(cookie)
   if (!cookie) {
     return res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
@@ -93,6 +87,15 @@ router.post("/verify", async (req, res) => {
     return res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
   res.status(200).json({ status: 'success', results: user })
+})
+
+router.get("/:id", async (req, res) => {
+  try {
+    const user = await getById(req.params.id)
+    res.status(200).json({ status: 'success', results: user })
+  } catch (err) {
+    res.status(500).json({ status: 'error', message: err.message })
+  }
 })
 
 router.put("/:id", async (req, res) => {
