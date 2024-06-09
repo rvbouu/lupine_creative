@@ -19,6 +19,7 @@ export default function CheckoutForm({total}) {
           }
         });
         const data = await res.json();
+        // getting clientSecret key from Stripe that they need to load checkout form
         return data.clientSecret
     }, []);
 

@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import '../assets/Cart.css'
 
 
 export default function Return(){
@@ -16,6 +17,7 @@ export default function Return(){
       .then((data) => {
         setStatus(data.status);
         setCustomerEmail(data.customer_email);
+        sessionStorage.clear();
       });
   }, []);
 

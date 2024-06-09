@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom"
 import { useEffect, useState } from 'react'
 import { useAppContext } from "../providers/AppProvider"
 import Badge from '@mui/material/Badge';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import Cookie from "js-cookie"
 import '../assets/Nav.css'
 
@@ -66,8 +65,6 @@ export default function Nav() {
                     <img src='/logo.branding/shopping_light.png' alt='shopping bag' className="cartimg" />
                 </Badge>
             </NavLink>
-
-            {/* <a href='/checkout' >Checkout</a> */}
         </nav >
     )
 }

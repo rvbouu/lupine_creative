@@ -5,6 +5,7 @@ import '../assets/Cart.css'
 
 export default function CartChooser(){
   const [ currTotal, setCurrTotal ] = useState()
+  // Gary
   const [ ready, setReady ] = useState(false)
 
   function checkTotal(){

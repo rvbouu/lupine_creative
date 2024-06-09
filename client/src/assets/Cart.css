@@ -38,3 +38,10 @@
   background-color: white;
   min-height: calc(100vh - 18rem);
 }
+
+#success {
+  padding-top: 25%;
+  text-align: center;
+  color: #c33d84;
+  font-size: 2rem;
+}
