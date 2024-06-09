@@ -9,12 +9,12 @@ export default function Store() {
         fetch('/api/product')
             .then(res => res.json())
             .then(info => {
-                console.log(info)
+                // console.log(info)
                 setData(info)
             })
             .catch(error => console.error(error));
     }, []);
-    console.log("Product data: ",data)
+    // console.log("Product data: ",data)
 
     return (
         <>
@@ -27,5 +27,3 @@ export default function Store() {
         </>
     )
 }
-
-

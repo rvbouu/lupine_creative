@@ -1,17 +1,16 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
-
-export default function Return(){
+export default function Return() {
   const [status, setStatus] = useState(null);
   const [customerEmail, setCustomerEmail] = useState('');
 
   useEffect(() => {
     const queryString = window.location.search;
-    console.log(queryString)
+    // console.log(queryString)
     const urlParams = new URLSearchParams(queryString);
     const sessionId = urlParams.get('session_id');
 
-      fetch(`/api/stripe/session-status?session_id=${sessionId}`)
+    fetch(`/api/stripe/session-status?session_id=${sessionId}`)
       .then((res) => res.json())
       .then((data) => {
         setStatus(data.status);

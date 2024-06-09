@@ -18,9 +18,9 @@ export default function Update() {
     const [errorUpdateMessage, setErrorUpdateMessage] = useState('');
 
     const handleInputChange = (e) => {
-        console.log(e);
+        // console.log(e);
         const { name, value } = e.target;
-        console.log(name, value);
+        // console.log(name, value);
         setFormData({ ...formData, [name]: value });
 
         if (name === 'semail') {
@@ -62,7 +62,7 @@ export default function Update() {
                     'Content-Type': 'application/json'
                 }
             })
-            console.log(response)
+            // console.log(response)
             const result = await response.json()
             if (result.status === "success") {
                 setErrorUpdateMessage("Update successful")
@@ -70,33 +70,18 @@ export default function Update() {
             }
             clearForms()
         } catch (err) {
-            console.log(err)
+            // console.log(err)
             setErrorUpdateMessage("We could not sign you up with the credentials provided")
         }
     }
 
-    // function getUser() {
-    //     console.log(currentUser)
-    //     fetch(`/api/user/${currentUser.results._id}`)
-
-    //         .then(res => res.json())
-    //         .then(info => {
-    //             setUserData(info)
-    //             console.log("100", info)
-    //         })
-    //         .catch(error => console.error(error));
-
-    // }
-
-
-
     useEffect(() => {
-        console.log(currentUser)
+        // console.log(currentUser)
         currentUser && setUserData(currentUser.results)
     }, [currentUser])
 
     useEffect(() => {
-        console.log(userData)
+        // console.log(userData)
     }, [userData])
 
     return (
@@ -106,13 +91,11 @@ export default function Update() {
                 <section className='info-card'>
                     <h1 className='welcome'> {userData?.name}! </h1>
                     <div className='user-info'>
-                        <p>Name: {userData?.name} {console.log("114", userData?.name)} </p>
+                        <p>Name: {userData?.name} </p>
                         <p>Email: {userData?.email} </p>
                     </div>
                 </section>
             )}
-
-
 
             <section className='update1'>
                 <h2 className='form-title1'>Update Information</h2>
@@ -134,7 +117,6 @@ export default function Update() {
                     <button id="submit-update" type='submit' className='submitbtn1' >Submit</button>
 
                     {/* errMsg and successMsg */}
-                    {/* <div className='successMsg'>{successMsg}</div>*/}
                     <div className='errMsg1'>{errorUpdateMessage}</div>
                 </form>
             </section>
