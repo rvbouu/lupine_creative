@@ -55,23 +55,34 @@
     margin-right: 250px;
 }
 
+/* carousel styling */
+
 .cimage {
     height: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 40px;
-    margin-top: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     border-radius: 70px;
 }
 
+.carousel {
+    max-width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
 
-.alice-carousel_stage-item {
+
+/* .alice-carousel_stage-item {
     display: flex;
     flex-wrap: wrap;
     
-}
+} */
 
 #homepage {
     display: flex;

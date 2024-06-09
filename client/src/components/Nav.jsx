@@ -19,6 +19,7 @@ export default function Nav() {
         currentUser && setLoggedIn(true)
     }, [currentUser])
 
+
     return (
         <nav>
             {/* Home tab */}
