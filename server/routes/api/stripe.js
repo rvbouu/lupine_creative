@@ -6,7 +6,7 @@ const stripe = require('stripe')("sk_test_51PNzsBK3bqf7nNHby1JMfddkNdAYX8wb8c1Yi
 const YOUR_DOMAIN = 'http://localhost:5173';
 
 router.post('/create-checkout-session', async (req, res) => {
-  console.log("ok")
+  // console.log("ok")
   try {
     const session = await stripe.checkout.sessions.create({
       ui_mode: 'embedded',
@@ -18,15 +18,15 @@ router.post('/create-checkout-session', async (req, res) => {
         allowed_countries: ['US']
       }
     });
-    console.log(session.client_secret)
+    // console.log(session.client_secret)
     res.send({ clientSecret: session.client_secret });
   } catch(err){
-    console.log(err)
+    // console.log(err)
   }
 });
 
 router.get('/session-status', async (req, res) => {
-  console.log("stripe.js: ", req.query)
+  // console.log("stripe.js: ", req.query)
   const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
 
   res.send({
@@ -34,26 +34,7 @@ router.get('/session-status', async (req, res) => {
     customer_email: session.customer_details.email
   });
 });
-// {
-//   "id": "prod_NWjs8kKbJWmuuc",
-//   "object": "product",
-//   "active": true,
-//   "created": 1678833149,
-//   "default_price": null,
-//   "description": null,
-//   "images": [],
-//   "features": [],
-//   "livemode": false,
-//   "metadata": {},
-//   "name": "Gold Plan",
-//   "package_dimensions": null,
-//   "shippable": null,
-//   "statement_descriptor": null,
-//   "tax_code": null,
-//   "unit_label": null,
-//   "updated": 1678833149,
-//   "url": null
-// }
+
 router.post('/product', async (req, res) => {
   try {
     for (let i = 0; i < productsJSON.length; i++) {
@@ -73,7 +54,7 @@ router.post('/product', async (req, res) => {
     res.status(200).json({ status: 'success' })
   }
   catch (err) {
-    console.log(err)
+    // console.log(err)
     res.status(500).json({ status: 'error', message: err.message })
   }
 })
@@ -82,15 +63,14 @@ router.put('/product/:id', async (req, res) => {
   try {
     const product = await stripe.products.update(req.params.id, req.body);
 
-    console.log(product)
+    // console.log(product)
     res.status(200).json(product)
   }
   catch (err) {
-    console.log(err)
+    // console.log(err)
     res.status(500).json({ status: 'error', message: err.message })
   }
 })
-
 
 // Test key is at the top of the page.
 // Customer Session
@@ -107,11 +87,9 @@ router.post('/', async (req, res) => {
     });
     res.status(200).json(customerSession)
   } catch (err) {
-    console.log(err)
+    // console.log(err)
     res.status(500).json({ status: 'error', message: err.message })
   }
 })
-
-
 
 module.exports = router;

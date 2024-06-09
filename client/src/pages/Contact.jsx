@@ -4,22 +4,27 @@ import emailjs from '@emailjs/browser';
 
 export default function Contact() {
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const [email, setEmail] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
     const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
     const [formData, setFormData] = useState({
-        firstName: "", lastName: "", email: "", message: ""
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: ""
     })
 
+    //clear forms
     function clearForms() {
         setFormData({
-            firstName: "", lastName: "", email: "", message: ""
+            firstName: "",
+            lastName: "",
+            email: "",
+            message: ""
         })
     }
 
+    //handles the form change function
     function handleChange(event) {
         setMessage("")
         setFormData({
@@ -28,10 +33,11 @@ export default function Contact() {
         })
     }
 
+    //handles the onBlur portion, displays error when user clicks outside of ield without valid data
     const handleInputChange = (e) => {
-        console.log(e);
+        // console.log(e);
         const { name, value } = e.target;
-        console.log(name, value);
+        // console.log(name, value);
         setFormData({ ...formData, [name]: value });
 
         if (name === 'email') {
@@ -66,8 +72,8 @@ export default function Contact() {
         }
     }
 
+    //sends a backup of a contact form to the db in case of mishaps
     async function handleEmail(event) {
-
         try {
             const response = await fetch("/api/contact", {
                 method: 'POST',
@@ -81,20 +87,21 @@ export default function Contact() {
                     'Content-Type': 'application/json'
                 }
             })
-            console.log(response)
+            // console.log(response)
             const result = await response.json()
             if (result.status === "success") {
-                setErrorUpdateMessage("Update successful")
+                setErrorMessage("Update successful")
             }
             clearForms()
         } catch (err) {
-            console.log(err)
-            setErrorUpdateMessage("We could not sign you up with the credentials provided")
+            // console.log(err)
+            setErrorMessage("We could not sign you up with the credentials provided")
         }
     }
 
     const form = useRef();
 
+    //sends an email to the linked account via Emailjs
     function sendEmail(e) {
         e.preventDefault();
 
@@ -104,10 +111,10 @@ export default function Contact() {
             })
             .then(
                 () => {
-                    console.log('SUCCESS!');
+                    // console.log('SUCCESS!');
                 },
                 (error) => {
-                    console.log('FAILED...', error.text);
+                    // console.log('FAILED...', error.text);
                 },
                 handleEmail()
             );
@@ -123,6 +130,7 @@ export default function Contact() {
                     onSubmit={sendEmail}>
                     <label className="firstName">First Name:</label>
                     <input
+                    //ended up needing both handle functions for our form to work correctly, in onBlur and onChange respectively
                         className='input'
                         value={formData.firstName}
                         name="firstName"
@@ -141,7 +149,7 @@ export default function Contact() {
                         type="text"
                         placeholder="Almes"
                     />
-                    <label className="email">E-mail</label>
+                    <label className="email">E-mail:</label>
                     <input
                         className='input'
                         value={formData.email}
@@ -151,7 +159,7 @@ export default function Contact() {
                         type="email"
                         placeholder="garytalmes@hotmail.com"
                     />
-                    <label className="message">Message</label>
+                    <label className="message">Message:</label>
                     <textarea
                         className='input'
                         value={formData.message}
@@ -161,8 +169,7 @@ export default function Contact() {
                         type='message'
                         placeholder='Say hello!'
                     />
-                    <button type='button' onClick={sendEmail}>Submit</button>
-                    {/* <input className="submitbtn" type="submit" value="Send" /> */}
+                    <button type='button' onClick={sendEmail} className='contactbtn'>Submit</button>
                     {errorMessage && (
                         <div>
                             <p className="error-text">{errorMessage}</p>

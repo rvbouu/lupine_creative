@@ -1,10 +1,6 @@
-
-
-
 export default function EmptyCart(){
 
   return (
-    <h1>Gary is Awesome</h1>
+    <h1 className='gary'>Gary is Awesome, your cart is empty.</h1>
   )
-
 }

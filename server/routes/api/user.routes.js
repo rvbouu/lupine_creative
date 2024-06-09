@@ -6,9 +6,9 @@ require("dotenv").config()
 
 async function createToken(user) {
   const tokenData = { email: user.email }
-  console.log(tokenData)
+  // console.log(tokenData)
   const token = await jwt.sign(tokenData, process.env.TOKEN_ENCRYPT_KEY)
-  console.log(token)
+  // console.log(token)
   return token
 }
 
@@ -21,23 +21,15 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.get("/:id", async (req, res) => {
-  try {
-    const user = await getById(req.params.id)
-    res.status(200).json({ status: 'success', results: user })
-  } catch (err) {
-    res.status(500).json({ status: 'error', message: err.message })
-  }
-})
 
 
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body)
+    // console.log(req.body)
     const user = await create(req.body)
-    console.log(user)
+    // console.log(user)
     const token = await createToken(user)
-    console.log(token)
+    // console.log(token)
     res
       .status(200)
       .cookie('auth-cookie', token, {
@@ -50,7 +42,6 @@ router.post("/", async (req, res) => {
     res.status(500).json({ status: 'error', message: err.message })
   }
 })
-
 
 router.post("/login", async (req, res) => {
   let user;
@@ -65,7 +56,6 @@ router.post("/login", async (req, res) => {
     }
 
     const token = await createToken(user)
-
     res
       .status(200)
       .cookie('auth-cookie', token, {
@@ -79,10 +69,10 @@ router.post("/login", async (req, res) => {
   }
 })
 
-
-router.post("/verify", async (req, res) => {
+router.get("/verify", async (req, res) => {
+  console.log('are we there yet')
   const cookie = req.cookies['auth-cookie']
-  // console.log(cookie)
+  console.log(cookie)
   if (!cookie) {
     return res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
@@ -92,14 +82,21 @@ router.post("/verify", async (req, res) => {
 // console.log(decryptedCookie)
   // Decrypted cookie will be an object with user's email 
   const user = await getOne({ email: decryptedCookie.email })
-console.log(user)
+// console.log(user)
   if (!user) {
     return res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
-
   res.status(200).json({ status: 'success', results: user })
 })
 
+router.get("/:id", async (req, res) => {
+  try {
+    const user = await getById(req.params.id)
+    res.status(200).json({ status: 'success', results: user })
+  } catch (err) {
+    res.status(500).json({ status: 'error', message: err.message })
+  }
+})
 
 router.put("/:id", async (req, res) => {
   try {
@@ -111,7 +108,6 @@ router.put("/:id", async (req, res) => {
   }
 })
 
-
 router.delete("/:id", async (req, res) => {
   try {
     const user = await deleteById(req.params.id)
@@ -120,6 +116,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ status: 'error', message: err.message })
   }
 })
-
 
 module.exports = router

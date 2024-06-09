@@ -2,9 +2,6 @@
 
 const { Cart, Product } = require("../models");
 
-
-
-
 module.exports = {
   // GET /cart
   async getCart(req, res) {
@@ -18,7 +15,7 @@ module.exports = {
       }
     }
     catch (err) {
-      console.log(err)
+      // console.log(err)
       res.status.send()
     }
   },
@@ -71,7 +68,7 @@ module.exports = {
         return res.status(201).send(newCart);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       res.status(500).send("something went wrong");
     }
   },
@@ -98,7 +95,7 @@ module.exports = {
         res.status(404).send("product not found");
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       res.status(400).send();
     }
   }

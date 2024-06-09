@@ -1,4 +1,3 @@
-
 const { Contact } = require('../models');
 
 module.exports = {
@@ -29,7 +28,7 @@ module.exports = {
       const contact = await Contact.create(req.body);
       res.json(contact);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return res.status(500).json(err);
     }
   },

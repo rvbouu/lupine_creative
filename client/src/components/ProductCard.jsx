@@ -1,30 +1,24 @@
 import '../assets/ProductCard.css'
 import { useState, useEffect } from 'react';
-import { useAppContext } from '../providers/AppProvider';
-import {addItemToCart, updateCartItemCount}  from './Nav'
-
-let total = []
-
+let total = [];
 
 function ProductCard({ product }) {
-  // const {cartData} = useAppContext();
   const [cart, setCart] = useState()
 
-
+  // adds item to total array when button is clicked
   function addToCart(e) {
-    console.log(e.target.id)
+    // console.log(e.target.id)
     total.push({ price: e.target.id, quantity: 1 })
     setCart(total)
-    addItemToCart(setCartItemCount, cartItemCount);
-    updateCartItemCount(setCartItemCount, cartItemCount);
-    }
-  
-  console.log(cart)
+  }
+
+  // console.log(cart)
+  // if cart has something, sets sessionStorage to that array
   useEffect(() => {
-    console.log('update cart')
-    if( cart ){
-      sessionStorage.setItem('cart', JSON.stringify(cart)) 
-    } 
+    // console.log('update cart')
+    if (cart) {
+      sessionStorage.setItem('cart', JSON.stringify(cart))
+    }
   }, [cart])
 
   // const handleAddToCart = () => {

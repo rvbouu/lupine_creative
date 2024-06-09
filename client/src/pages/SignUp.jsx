@@ -1,12 +1,7 @@
 import '../assets/SignUp.css'
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { useAppContext } from "../providers/AppProvider"
 
 export default function SignUp() {
-  const { verifyUser } = useAppContext();
-
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     sname: "", semail: "", spassword: "", lemail: "", lpassword: ""
@@ -16,6 +11,7 @@ export default function SignUp() {
   const [errorLoginMessage, setErrorLoginMessage] = useState('');
   const [errorSignupMessage, setErrorSignupMessage] = useState('');
 
+  //handles the onBlur function
   const handleInputChange = (e) => {
     console.log(e);
     const { name, value } = e.target;
@@ -66,10 +62,21 @@ export default function SignUp() {
     }
   }
 
+  //handles the onChange function
+  function handleChange(event) {
+    setMessage("")
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  //clear forms
   function clearForms() {
     setFormData({ semail: "", spassword: "", lemail: "", lpassword: "", sname: "" })
   }
 
+  //signs up a new user
   async function handleSignup(event) {
     event.preventDefault()
     try {
@@ -88,7 +95,6 @@ export default function SignUp() {
       const result = await response.json()
       if (result.status === "success") {
         window.location.href = '/';
-        // setErrorSignupMessage("Signup successful")
       }
       clearForms()
     } catch (err) {
@@ -97,6 +103,7 @@ export default function SignUp() {
     }
   }
 
+  //logins in an existing user
   async function handleLogin(event) {
     event.preventDefault()
     try {
@@ -136,22 +143,18 @@ export default function SignUp() {
           <label className='label' htmlFor="lemail" >Email:</label>
           <input id='lemail' className='input' name="lemail" type="email" defaultValue={formData.lemail} onBlur={handleInputChange} required />
 
-          {/* Message input field */}
+          {/* Password input field */}
           <label className='label' htmlFor="lpassword">Password:</label>
           <input className='input' name="lpassword" id='lpassword' type="password" defaultValue={formData.lpassword} onBlur={handleInputChange} required />
 
           <button id="submit-login" type='submit' className='submitbtn' >Submit</button>
 
-          {/* errMsg and successMsg */}
-          {/* <div className='successMsg'>{successMsg}</div> */}
           <div className='errMsg'>{errorLoginMessage}</div>
         </form>
       </section>
       <section className='signup'>
         <h2 className='form-title'>Sign Up</h2>
 
-        {/* Submission handling through netlify */}
-        {/* onBlur used for when user clicks out of field and leaves it empty, the errMsg will display */}
         <form className='form' onSubmit={handleSignup}>
           {/* Name input field */}
           <label className='label' htmlFor="sname" >Name:</label>
@@ -161,14 +164,12 @@ export default function SignUp() {
           <label className='label' htmlFor="semail" >Email:</label>
           <input id='semail' className='input' name="semail" type="email" defaultValue={formData.semail} placeholder='Enter Your Email Address' onBlur={handleInputChange} required />
 
-          {/* Message input field */}
+          {/* Password input field */}
           <label className='label' htmlFor="spassword">Password:</label>
           <input id='spassword' className='input' name="spassword" type="password" defaultValue={formData.spassword} onBlur={handleInputChange} required />
 
           <button id="submit-signup" type='submit' className='submitbtn' >Submit</button>
 
-          {/* errMsg and successMsg */}
-          {/* <div className='successMsg'>{successMsg}</div>*/}
           <div className='errMsg'>{errorSignupMessage}</div>
         </form>
       </section>

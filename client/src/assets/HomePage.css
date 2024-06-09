@@ -3,6 +3,8 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px #666;
     position:absolute;
+    max-height: 510px;
+    margin: 20px;
 
 }
 
@@ -23,8 +25,7 @@
     z-index: 1000;
     position: relative;
     padding: 1rem;    
-    margin-top: -130px;
-    margin-left: 220px;
+    margin-top: -20px;
     display: flex;
     justify-items: center;
     justify-content: center;
@@ -54,18 +55,6 @@
     margin-right: 250px;
 }
 
-/* .carousel{
-    position: relative;
-    display: flex;
-    max-height: 10%;
-    width: 70%;
-    border: solid yellow 5px;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-} */
-
-
 .cimage {
     height: 300px;
     display: flex;
@@ -74,12 +63,14 @@
     text-align: center;
     padding: 40px;
     margin-top: 150px;
+    border-radius: 70px;
 }
 
 
 .alice-carousel_stage-item {
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 #homepage {
