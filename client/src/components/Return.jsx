@@ -1,14 +1,14 @@
 import {useState, useEffect} from 'react';
 import '../assets/Cart.css'
 
-
+// Stripe return page
 export default function Return(){
   const [status, setStatus] = useState(null);
   const [customerEmail, setCustomerEmail] = useState('');
 
   useEffect(() => {
     const queryString = window.location.search;
-    console.log(queryString)
+    // console.log(queryString)
     const urlParams = new URLSearchParams(queryString);
     const sessionId = urlParams.get('session_id');
 
