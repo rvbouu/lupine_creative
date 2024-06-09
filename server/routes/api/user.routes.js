@@ -23,7 +23,6 @@ router.get("/", async (req, res) => {
 
 
 
-
 router.post("/", async (req, res) => {
   try {
     // console.log(req.body)
@@ -44,7 +43,6 @@ router.post("/", async (req, res) => {
   }
 })
 
-
 router.post("/login", async (req, res) => {
   let user;
   try {
@@ -58,7 +56,6 @@ router.post("/login", async (req, res) => {
     }
 
     const token = await createToken(user)
-
     res
       .status(200)
       .cookie('auth-cookie', token, {
@@ -71,7 +68,6 @@ router.post("/login", async (req, res) => {
     res.status(401).json({ status: 'error', message: 'Could not authenticate user' })
   }
 })
-
 
 router.get("/verify", async (req, res) => {
   console.log('are we there yet')
@@ -90,7 +86,6 @@ router.get("/verify", async (req, res) => {
   if (!user) {
     return res.status(500).json({ status: 'error', message: 'Could not authenticate user' })
   }
-
   res.status(200).json({ status: 'success', results: user })
 })
 
