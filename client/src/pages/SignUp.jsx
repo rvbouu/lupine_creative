@@ -1,13 +1,7 @@
 import '../assets/SignUp.css'
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { useAppContext } from "../providers/AppProvider"
 
 export default function SignUp() {
-  const { verifyUser } = useAppContext();
-
-  const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     sname: "",
     semail: "",
@@ -139,8 +133,6 @@ export default function SignUp() {
       <section className='login'>
         <h2 className='form-title'>Login</h2>
 
-        {/* Submission handling through netlify */}
-        {/* onBlur used for when user clicks out of field and leaves it empty, the errMsg will display */}
         <form
           className='form'
           onSubmit={handleLogin}
@@ -162,7 +154,7 @@ export default function SignUp() {
             required
           />
 
-          {/* Message input field */}
+          {/* Password input field */}
           <label
             className='label'
             htmlFor="lpassword"
@@ -193,8 +185,6 @@ export default function SignUp() {
       <section className='signup'>
         <h2 className='form-title'>Sign Up</h2>
 
-        {/* Submission handling through netlify */}
-        {/* onBlur used for when user clicks out of field and leaves it empty, the errMsg will display */}
         <form
           className='form'
           onSubmit={handleSignup}
@@ -235,7 +225,7 @@ export default function SignUp() {
             required
           />
 
-          {/* Message input field */}
+          {/* Password input field */}
           <label
             className='label'
             htmlFor="spassword"
