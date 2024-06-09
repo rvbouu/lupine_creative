@@ -2,9 +2,6 @@
 
 const { Cart, Product } = require("../models");
 
-
-
-
 module.exports = {
   // GET /cart
   async getCart(req, res) {

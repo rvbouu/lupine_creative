@@ -12,7 +12,6 @@ export default function Update() {
     // console.log(currentUser)
     const [userData, setUserData] = useState({});
     // console.log(currentUser)
-    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const [errorUpdateMessage, setErrorUpdateMessage] = useState('');
 
     const handleInputChange = (e) => {
@@ -26,7 +25,6 @@ export default function Update() {
                 setFormData('')
                 return setErrorUpdateMessage('Email is required')
             }
-
         }
         if (name === 'sname') {
             if (value === '') {
@@ -43,7 +41,11 @@ export default function Update() {
     }
 
     function clearForms() {
-        setFormData({ semail: "", spassword: "", sname: "" })
+        setFormData({
+            semail: "",
+            spassword: "",
+            sname: ""
+        })
     }
 
     async function handleUpdate(event) {
@@ -100,17 +102,48 @@ export default function Update() {
                 <form className='form1' onSubmit={handleUpdate}>
                     {/* Name input field */}
                     <label className='label1' htmlFor="sname" >Name:</label>
-                    <input id='sname' className='input1' name="sname" type="text" defaultValue={formData.sname} placeholder='Enter Your Name' onBlur={handleInputChange} required />
+                    <input
+                        id='sname'
+                        className='input1'
+                        name="sname"
+                        type="text"
+                        defaultValue={formData.sname}
+                        placeholder='Enter Your Name'
+                        onBlur={handleInputChange}
+                        required
+                    />
 
                     {/* Email input field */}
                     <label className='label1' htmlFor="semail" >Email:</label>
-                    <input id='semail' className='input1' name="semail" type="email" defaultValue={formData.semail} placeholder='Enter Your Email Address' onBlur={handleInputChange} required />
+                    <input
+                        id='semail'
+                        className='input1'
+                        name="semail"
+                        type="email"
+                        defaultValue={formData.semail}
+                        placeholder='Enter Your Email Address'
+                        onBlur={handleInputChange}
+                        required
+                    />
 
                     {/* Password input field */}
                     <label className='label1' htmlFor="spassword">Password:</label>
-                    <input id='spassword' className='input1' name="spassword" type="password" defaultValue={formData.spassword} onBlur={handleInputChange} required />
+                    <input
+                        id='spassword'
+                        className='input1'
+                        name="spassword"
+                        type="password"
+                        defaultValue={formData.spassword}
+                        onBlur={handleInputChange}
+                        required
+                    />
 
-                    <button id="submit-update" type='submit' className='submitbtn1' >Submit</button>
+                    <button
+                        id="submit-update"
+                        type='submit'
+                        className='submitbtn1'
+                    >Submit
+                    </button>
 
                     {/* errMsg and successMsg */}
                     <div className='errMsg1'>{errorUpdateMessage}</div>

@@ -18,6 +18,7 @@
   justify-content: center;
   background-color: #cb8cae;
   box-shadow: 0 0 15px 0 #2b6b6e;
+  border-radius: 10px;
 }
 
 .contact-title {
@@ -26,4 +27,39 @@
   color: #2b6b6e;
 }
 
+<<<<<<< HEAD
+@media screen and (max-width: 430px) {
+  .contact-title {
+    font-size: 1.5rem;
+    }
+  .contact-form {
+    width: 70%;
+  }
+}
+=======
+.contactbtn {
+  color: #ffffff; 
+  font-size: 16px; 
+  line-height: 16px; 
+  padding: 6px; 
+  border-radius: 10px; 
+  font-family: Georgia, serif; 
+  font-weight: normal; 
+  text-decoration: none; 
+  font-style: normal; 
+  font-variant: normal; 
+  text-transform: none; 
+
+  background-image: linear-gradient(to right, #2b6b6e 0%, #0d8888 50%, #2b6b6e 100%); 
+  
+  box-shadow: 1px 1px 10px 0px #2b6b6e;
+  
+  border: 2px solid #1c6ea4; display: inline-block;
+}
+
+.contactbtn:hover {
+background: #1C6EA4; }
+.contactbtn:active {
+background: #144E75; }
+>>>>>>> main
 

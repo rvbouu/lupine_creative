@@ -2,6 +2,7 @@ import '../assets/SignUp.css'
 import { useState } from "react"
 
 export default function SignUp() {
+
   const [formData, setFormData] = useState({
     sname: "", semail: "", spassword: "", lemail: "", lpassword: ""
   })
@@ -10,6 +11,7 @@ export default function SignUp() {
   const [errorLoginMessage, setErrorLoginMessage] = useState('');
   const [errorSignupMessage, setErrorSignupMessage] = useState('');
 
+  //handles the onBlur function
   const handleInputChange = (e) => {
     console.log(e);
     const { name, value } = e.target;
@@ -60,10 +62,21 @@ export default function SignUp() {
     }
   }
 
+  //handles the onChange function
+  function handleChange(event) {
+    setMessage("")
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  //clear forms
   function clearForms() {
     setFormData({ semail: "", spassword: "", lemail: "", lpassword: "", sname: "" })
   }
 
+  //signs up a new user
   async function handleSignup(event) {
     event.preventDefault()
     try {
@@ -90,6 +103,7 @@ export default function SignUp() {
     }
   }
 
+  //logins in an existing user
   async function handleLogin(event) {
     event.preventDefault()
     try {

@@ -3,6 +3,8 @@
     border-radius: 10px;
     box-shadow: 0px 0px 10px #666;
     position:absolute;
+    max-height: 510px;
+    margin: 20px;
 
 }
 
@@ -23,7 +25,7 @@
     z-index: 1000;
     position: relative;
     padding: 1rem;    
-    margin-top: -130px;
+    margin-top: -20px;
     display: flex;
     justify-items: center;
     justify-content: center;
@@ -61,6 +63,7 @@
     text-align: center;
     padding: 40px;
     margin-top: 150px;
+    border-radius: 70px;
 }
 
 .carousel{

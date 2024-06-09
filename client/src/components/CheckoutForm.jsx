@@ -5,6 +5,7 @@ import {
 import { loadStripe } from '@stripe/stripe-js';
 import { useCallback } from 'react';
 
+
 // Test Key from Stripe - told to add here
 const stripePromise = loadStripe("pk_test_51PNzsBK3bqf7nNHbMVQASGkWbrH8Yqn0WBOOZhyrOuHNuzbfIftSWpliaq8GJAqXv8Bp04jmZb7wliTlM2gg3z3500cMxybeKc");
 
