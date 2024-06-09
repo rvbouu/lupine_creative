@@ -18,7 +18,6 @@ export default function Store() {
 
     return (
         <>
-            <p>Cart:</p>
             <div className='store-body'>
                 {data?.map((product, i) => (
                     <ProductCard product={product} key={i} />
