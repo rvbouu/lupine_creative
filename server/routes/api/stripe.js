@@ -3,7 +3,7 @@ const productsJSON = require('../../seeds/products_stripe.json')
 require("dotenv").config()
 const stripe = require('stripe')("sk_test_51PNzsBK3bqf7nNHby1JMfddkNdAYX8wb8c1YiGtdg4L8GRVpYerUtdne3YKZLdm6RQAK2uu5FzC2ZVJdww9uqkil00ft0cryif");
 
-const YOUR_DOMAIN = 'http://localhost:5173' || 'https://lupine-creative.onrender.com/';
+const YOUR_DOMAIN ='https://lupine-creative.onrender.com/';
 
 router.post('/create-checkout-session', async (req, res) => {
   // console.log("ok")
