@@ -5,6 +5,7 @@ let total = [];
 function ProductCard({ product }) {
   const [cart, setCart] = useState()
 
+  // adds item to total array when button is clicked
   function addToCart(e) {
     // console.log(e.target.id)
     total.push({ price: e.target.id, quantity: 1 })
@@ -12,6 +13,7 @@ function ProductCard({ product }) {
   }
 
   // console.log(cart)
+  // if cart has something, sets sessionStorage to that array
   useEffect(() => {
     // console.log('update cart')
     if (cart) {

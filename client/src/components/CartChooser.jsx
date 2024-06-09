@@ -8,6 +8,7 @@ export default function CartChooser(){
   // Gary
   const [ ready, setReady ] = useState(false)
 
+  // gets total from sessionStorage
   function checkTotal(){
     // console.log("checking total")
     // console.log(total)
@@ -27,7 +28,7 @@ export default function CartChooser(){
 
   useEffect(() => {
     if( currTotal ){
-      console.log("show da stuff")
+      // console.log("show da stuff")
       setReady(true)
     }
   },[currTotal])
@@ -38,7 +39,7 @@ export default function CartChooser(){
     checkTotal()
   },[])
 
-  // if total is undefined = retur 
+  // if total is not undefined = return CheckoutForm; else return EmptyCart
   return (
     <>
       { currTotal !== undefined ? (

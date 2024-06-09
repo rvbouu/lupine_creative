@@ -8,6 +8,7 @@ import { useCallback } from 'react';
 // Test Key from Stripe - told to add here
 const stripePromise = loadStripe("pk_test_51PNzsBK3bqf7nNHbMVQASGkWbrH8Yqn0WBOOZhyrOuHNuzbfIftSWpliaq8GJAqXv8Bp04jmZb7wliTlM2gg3z3500cMxybeKc");
 
+// Stripe function 
 export default function CheckoutForm({total}) {
   // Stripe embedded checkout form
     const fetchClientSecret = useCallback(async () => {
@@ -23,7 +24,6 @@ export default function CheckoutForm({total}) {
         return data.clientSecret
     }, []);
 
-    // console.log({ fetchClientSecret })
     // console.log({ fetchClientSecret })
     const options = { fetchClientSecret };
   

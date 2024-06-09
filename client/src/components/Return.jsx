@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import '../assets/Cart.css'
 
-// Stripe return page
+// Stripe return page for after order is completed
 export default function Return(){
   const [status, setStatus] = useState(null);
   const [customerEmail, setCustomerEmail] = useState('');
