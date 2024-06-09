@@ -25,3 +25,16 @@
   text-shadow: 1px 0 5px #799899;
   margin: 20px;
 }
+
+/*  Empty cart styling */
+.gary {
+  padding-top: 25%;
+  text-align: center;
+  color: #c33d84;
+  font-size: 2rem;
+}
+
+#checkout{
+  background-color: white;
+  min-height: calc(100vh - 18rem);
+}
