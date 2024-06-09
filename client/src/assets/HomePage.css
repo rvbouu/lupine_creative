@@ -64,20 +64,20 @@
     padding: 40px;
     margin-top: 150px;
     border-radius: 70px;
+    width: 275px;
+    object-fit: cover;
 }
 
 .carousel{
-    max-width: 100vw;
+    max-width: 100%;
     display: flex;
     align-items: flex-start;
-    background-color: red;
     overflow-x: hidden;
 }
 
 .alice-carousel_stage-item {
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 #homepage {
