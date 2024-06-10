@@ -1,3 +1,4 @@
+// imports
 import {useState, useEffect} from 'react';
 import '../assets/Cart.css'
 

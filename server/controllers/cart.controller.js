@@ -1,9 +1,10 @@
-// Mainly this controller will pertain to the Users. 
+// Mainly this controller will pertain to the Users. Used for testing purposes
 
 const { Cart, Product } = require("../models");
 
 module.exports = {
   // GET /cart
+  // finds cart by user id
   async getCart(req, res) {
     const user = req.user._id
     try {
@@ -21,6 +22,8 @@ module.exports = {
   },
 
   // POST /cart
+  // finds cart by user id and adds product to cart 
+  // if cart already has the item, quantity goes up instead of adding multi products
   async createCart(req, res) {
     const user = req.user._id;
     const { productId, quantity } = req.body;
@@ -73,6 +76,7 @@ module.exports = {
     }
   },
 
+  // deletes item from cart
   async deleteItemFromCart(req, res) {
     const user = req.user._id;
     const productId = req.query.productId;

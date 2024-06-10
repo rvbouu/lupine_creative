@@ -1,9 +1,12 @@
+// imports
 import { useState, useEffect } from "react"
 import EmptyCart from "./EmptyCart"
 import CheckoutForm from "./CheckoutForm"
 import '../assets/Cart.css'
 
+// exports
 export default function CartChooser(){
+  // cart total after things get added to it
   const [ currTotal, setCurrTotal ] = useState()
   // Gary
   const [ ready, setReady ] = useState(false)
