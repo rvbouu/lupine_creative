@@ -88,62 +88,66 @@ export default function Update() {
 
         <>
             {userData && (
-                <section className='info-card'>
-                    <h1 className='welcome'> {userData?.name}! </h1>
-                    <div className='user-info'>
-                        <p>Name: {userData?.name} </p>
-                        <p>Email: {userData?.email} </p>
+                <section className='info-card-field'>
+                    <div className='info-card'>
+                        <h1 className='welcome'> Hello {userData?.name}! </h1>
+                        <div className='user-info'>
+                            <p>Name: {userData?.name} </p>
+                            <p>Email: {userData?.email} </p>
+                        </div>
                     </div>
                 </section>
             )}
 
             <section className='update1'>
                 <h2 className='form-title1'>Update Information</h2>
-                <form className='form1' onSubmit={handleUpdate}>
-                    {/* Name input field */}
-                    <label className='label1' htmlFor="sname" >Name:</label>
-                    <input
-                        id='sname'
-                        className='input1'
-                        name="sname"
-                        type="text"
-                        defaultValue={formData.sname}
-                        placeholder='Enter Your Name'
-                        onBlur={handleInputChange}
-                        required
-                    />
+                <form onSubmit={handleUpdate}>
+                    <div className='form-field'>
+                        {/* Name input field */}
+                        <label className='label1' htmlFor="sname" >Name:</label>
+                        <input
+                            id='sname'
+                            className='input1'
+                            name="sname"
+                            type="text"
+                            defaultValue={formData.sname}
+                            placeholder='Enter Your Name'
+                            onBlur={handleInputChange}
+                            required
+                        />
 
-                    {/* Email input field */}
-                    <label className='label1' htmlFor="semail" >Email:</label>
-                    <input
-                        id='semail'
-                        className='input1'
-                        name="semail"
-                        type="email"
-                        defaultValue={formData.semail}
-                        placeholder='Enter Your Email Address'
-                        onBlur={handleInputChange}
-                        required
-                    />
+                        {/* Email input field */}
+                        <label className='label1' htmlFor="semail" >Email:</label>
+                        <input
+                            id='semail'
+                            className='input1'
+                            name="semail"
+                            type="email"
+                            defaultValue={formData.semail}
+                            placeholder='Enter Your Email Address'
+                            onBlur={handleInputChange}
+                            required
+                        />
 
-                    {/* Password input field */}
-                    <label className='label1' htmlFor="spassword">Password:</label>
-                    <input
-                        id='spassword'
-                        className='input1'
-                        name="spassword"
-                        type="password"
-                        defaultValue={formData.spassword}
-                        onBlur={handleInputChange}
-                        required
-                    />
+                        {/* Password input field */}
+                        <label className='label1' htmlFor="spassword">Password:</label>
+                        <input
+                            id='spassword'
+                            className='input1'
+                            name="spassword"
+                            type="password"
+                            defaultValue={formData.spassword}
+                            onBlur={handleInputChange}
+                            required
+                        />
 
-                    <button
-                        id="submit-update"
-                        type='submit'
-                        className='submitbtn1'
-                    >Submit
-                    </button>
+                        <button
+                            id="submit-update"
+                            type='submit'
+                            className='submitbtn1'
+                        >Submit
+                        </button>
+                    </div>
 
                     {/* errMsg and successMsg */}
                     <div className='errMsg1'>{errorUpdateMessage}</div>
