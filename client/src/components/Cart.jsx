@@ -1,6 +1,3 @@
-// DONT NEED
-import { Link } from "react-router-dom"
-// todo, link this to products or dataset.json?
 
 
 export default function Cart() {
