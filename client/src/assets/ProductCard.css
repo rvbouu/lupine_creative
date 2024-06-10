@@ -71,3 +71,47 @@
 .card-title{
     text-align: center;
 }
+
+@media screen and (max-width: 430px) {
+
+.card-body {
+    width: 300px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid #2b6b6e;
+    margin: 10px;
+    border-radius: 30px;
+    font-size: 20px;
+    height: 200px;
+    width: 150px;
+    padding: 2px;
+    background-color: #cb8cae;
+    text-shadow: 1px 0 5px #e1ddcc;
+    color: #2b6b6e;
+}
+
+.cart-button {
+    border: none;
+    padding: 0px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    border-radius: 10px;
+    background-color: #2e4142;
+    color: #e1ddcc;
+    border: 1px solid #e1ddcc;
+    cursor: pointer;
+    height: 20px;
+}
+.store-body {
+    padding: 10px;
+    margin-left: 55px;
+}
+}
+
+
+
