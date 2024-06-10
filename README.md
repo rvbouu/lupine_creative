@@ -53,8 +53,6 @@ Now, Lupine Creative thrives as a platform for unique handmade creations, fueled
 [![React Alice Carousel](https://img.shields.io/badge/React_Alice_Carousel-black)](https://www.npmjs.com/package/react-alice-carousel)
 [![EmailJS](https://img.shields.io/badge/Email_JS-orange)](https://www.emailjs.com/)
 
-
-
 ## Screenshots
 
 #### Home Page
