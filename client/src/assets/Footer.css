@@ -32,3 +32,29 @@ footer{
   font-size: 1.4rem;
 
 }
+
+
+/* Media Queries  */
+@media screen and (max-width: 430px) {
+  nav {
+  font-size: small;
+  }
+  .cartimg {
+    height: 15px;
+    width: 15px;
+  }
+  .logo{
+    height: 110px;
+  }
+  .topfooter{
+    color:#e1ddcc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  
+    
+    /* This is to freaking center the middle Link omg */
+    padding-left: 4%;
+  }
+}

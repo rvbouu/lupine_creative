@@ -56,7 +56,6 @@
 }
 
 /* carousel styling */
-
 .cimage {
     height: 300px;
     display: flex;
@@ -97,21 +96,23 @@ ul {
 }
 
 
-/* media queries */
-
+/* Media Queries  */
 @media screen and (max-width: 430px) {
     .image {
         max-height: 400px;
         margin: 40px;
     }
+
     #homepage {
         display: inline-flex;
         flex-direction: column;
         align-items: flex-start;
     }
+
     .first-view{
         margin-left: 100px;
     }
+
     .banner {
     height: 2rem;
     width: 400px;
@@ -122,12 +123,15 @@ ul {
     font-size: medium;
     margin-left: 80px;
     }
+
     .boxL {
         margin-right: 50px;
     }
+
     .boxR {
         margin-left: 70px;
     }
+
     .box {
     font-size: medium;
     padding: 1rem;
@@ -137,7 +141,6 @@ ul {
     width: 125px;
     }
     
-    
     .cimage {
         height: 150px;
         width: 125px;
@@ -145,16 +148,17 @@ ul {
         margin-top: 70px;
         margin-bottom: 10pxpx;
         border-radius: 30px;
-        }
+    }
+
     .carousel {
         display: flex;
         flex-wrap: wrap;
         padding: 0;
-        }
+    }
 
     .alice-carousel_stage-item {
         width: 50px !important;
-        }
+    }
 }
 
 

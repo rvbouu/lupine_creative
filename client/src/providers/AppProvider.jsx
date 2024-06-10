@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 const AppContext = createContext({});
 export const useAppContext = () => useContext(AppContext);
 
+// Verifying Users by Session Storage For the Shopping Cart
 export function AppProvider(props) {
   const [currentUser, setCurrentUser] = useState()
   async function verifyUser() {
@@ -44,7 +45,7 @@ export function AppProvider(props) {
       }
     }
   }
-  console.log(total)
+  // console.log(total)
 
   useEffect(() => {
     verifyUser()
