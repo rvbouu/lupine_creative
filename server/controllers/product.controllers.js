@@ -22,10 +22,10 @@ module.exports = {
     try {
       const product = await Product.findOne({ _id: req.params.productId });
       return res.json(product);
-      if (!product) {
-        res.status(404).json({ message: "There is not a Product with that ID." })
-      }
-      res.status(200).json({ message: "Here is the Product." })
+      // if (!product) {
+      //   res.status(404).json({ message: "There is not a Product with that ID." })
+      // }
+      // res.status(200).json({ message: "Here is the Product." })
     } catch (err) {
       res.status(500).json({ message: "Unable to find Product with that ID - Server Issue" })
     }

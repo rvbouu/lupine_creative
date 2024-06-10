@@ -27,14 +27,34 @@ footer{
   width: 40px;
 }
 
-.contact{
+.about, .shop, .contact{
   color:#e1ddcc;
+  font-size: 1.4rem;
+
 }
 
-.shop{
-  color:#e1ddcc;
-}
 
-.about{
-  color:#e1ddcc;
+/* Media Queries  */
+@media screen and (max-width: 430px) {
+  nav {
+  font-size: small;
+  }
+  .cartimg {
+    height: 15px;
+    width: 15px;
+  }
+  .logo{
+    height: 110px;
+  }
+  .topfooter{
+    color:#e1ddcc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  
+    
+    /* This is to freaking center the middle Link omg */
+    padding-left: 4%;
+  }
 }

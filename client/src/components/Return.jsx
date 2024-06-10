@@ -18,6 +18,7 @@ export default function Return(){
         setStatus(data.status);
         setCustomerEmail(data.customer_email);
         sessionStorage.clear();
+        localStorage.clear();
       });
   }, []);
 
