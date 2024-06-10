@@ -1,21 +1,24 @@
 import '../assets/SignUp.css'
 import { useState } from "react"
 
+
 export default function SignUp() {
 
+  //set data required for sign up and login
   const [formData, setFormData] = useState({
     sname: "", semail: "", spassword: "", lemail: "", lpassword: ""
   })
 
+  //regex to verify correct email and password
   const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const [errorLoginMessage, setErrorLoginMessage] = useState('');
   const [errorSignupMessage, setErrorSignupMessage] = useState('');
 
   //handles the onBlur function
   const handleInputChange = (e) => {
-    console.log(e);
+    // console.log(e);
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
     setFormData({ ...formData, [name]: value });
 
     if (name === 'semail') {
@@ -91,14 +94,14 @@ export default function SignUp() {
           'Content-Type': 'application/json'
         }
       })
-      console.log(response)
+      // console.log("94", response)
       const result = await response.json()
       if (result.status === "success") {
         window.location.href = '/';
       }
       clearForms()
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       setErrorSignupMessage("We could not sign you up with the credentials provided")
     }
   }
@@ -125,7 +128,7 @@ export default function SignUp() {
         setErrorLoginMessage("We could not log you in with the credentials provided")
       }
     } catch (err) {
-      console.log(err.message)
+      // console.log(err.message)
       setErrorLoginMessage("We could not log you in with the credentials provided")
     }
   }
