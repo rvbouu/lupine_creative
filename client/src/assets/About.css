@@ -49,6 +49,8 @@ li.list{
    margin-left: 200px;
 }
 
+
+/* Media Queries  */
 @media screen and (max-width: 430px) {
 
 .aboutmepic {
